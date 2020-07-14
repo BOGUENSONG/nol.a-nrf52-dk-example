@@ -9,6 +9,15 @@ int calc = 0;
 
 //                      //
 // Byte data function  //
+uint8_t* int_tobyte(int value){
+  static uint8_t temp[2];
+  uint8_t *p = (uint8_t *)&value;
+  printf("value = 0x%x, byte list = ", value);
+  for (int i = 0 ; i < 2; i++){
+    temp[i] =  *(p+i);
+  }
+  return temp;
+}
 
 uint8_t* snap(uint8_t format){
   static uint8_t abc[5];
@@ -18,6 +27,26 @@ uint8_t* snap(uint8_t format){
   abc[3] = format; // format
   abc[4] = abc[0] + abc[1] + abc[2] + abc[3];
   return abc;
+}
+
+uint8_t* setRTC(uint16_t year , uint8_t month, uint8_t day, uint8_t hour, uint8_t minute, uint8_t second){
+  static uint8_t rtcmsg[11];
+  uint8_t* yeartemp = int_tobyte(year);
+  rtcmsg[0] = 0x04;
+  rtcmsg[1] = 0x07;
+  rtcmsg[2] = 0x00;
+  rtcmsg[3] = yeartemp[0];
+  rtcmsg[4] = yeartemp[1];
+  rtcmsg[5] = month;
+  rtcmsg[6] = day;
+  rtcmsg[7] = hour;
+  rtcmsg[8] = minute;
+  rtcmsg[9] = second;
+  rtcmsg[10] = 0;
+  for (int i = 0; i <10 ; i++){
+    rtcmsg[10] += rtcmsg[i];
+  }
+  return rtcmsg;
 }
 
 
@@ -65,12 +94,14 @@ static void eventButton1Pressed() {
   eventButtonPressed(0);
   printf("button 1 selected. send Snap\r\n");
   uint8_t* abc = snap(0x01);
-  printf("[0x%x] [0x%x] [0x%x] [0x%x] [0x%x]\r\n",abc[0],abc[1],abc[2],abc[3],abc[4]);
+  // printf("[0x%x] [0x%x] [0x%x] [0x%x] [0x%x]\r\n",abc[0],abc[1],abc[2],abc[3],abc[4]);
   printf("send ok [%d]\r\n",Serial2.write(abc,5));
 }
 
 static void eventButton2Pressed() {
   eventButtonPressed(1);
+  uint8_t* rtc = setRTC(2020,7,14,11,10,12);
+  printf("send ok [%d]\r\n",Serial2.write(rtc,11));
 }
 
 static void eventButton3Pressed() {
