@@ -1,13 +1,32 @@
 #include <cox.h>
 
+// unknwon
+
 Timer tPrint;
 Timer tPrint2;
 
 uint8_t countNoInit __attribute__((section(".noinit")));
-int count = 0;
-int calc = 0;
-
 //                      //
+
+//bLE setting
+#include <BLEDevice.hpp>
+
+#define SERVICE_UUID        "f64f0000-7fdf-4b2c-ad31-e65ca15bef6b"
+#define CHARACTERISTIC_UUID "f64f0100-7fdf-4b2c-ad31-e65ca15bef6b"
+
+class MyCallbacks: public BLECharacteristicCallbacks {
+  void onWrite(BLECharacteristic *pChar) {
+    std::string value = pChar->getValue();
+
+    if (value.length() > 0) {
+      printf("*******\n");
+      printf("%s\n", value.c_str());
+      printf("*******\n");
+    }
+  };
+} myCallbacks;
+
+
 // Byte data function  //
 uint8_t* int_tobyte(int value){
   static uint8_t temp[2];
@@ -49,6 +68,9 @@ uint8_t* setRTC(uint16_t year , uint8_t month, uint8_t day, uint8_t hour, uint8_
   return rtcmsg;
 }
 
+uint8_t* getImage(uint32_t offset, uint16_t chunkLength, uint8_t fnsize, char* filename){
+  return 0;
+}
 
 
 
@@ -63,24 +85,7 @@ static void receivemsg(SerialPort &p) {
     // printf("0x%x 0x%x 0x%x 0x%x 0x%x 0x%x 0x%x 0x%x\r\n",buf[0],buf[1],buf[2],buf[3],buf[4],buf[5],buf[6],buf[7]);
     // printf("[0x%x 0x%x 0x%x 0x%x 0x%x 0x%x 0x%x 0x%x]\r\n",buf[8],buf[9],buf[10],buf[11],buf[12],buf[13],buf[14],buf[15]);
     char c = p.read();
-    if (count < 8){
-      printf("[0x%x]\r\n",c);
-      count++;
-      calc += c;
-    }
-    else{
-      if (count < 16){
-        printf("[%c]",c);
-        count++;
-        calc += c;
-      }
-      else{
-        printf("checksum = %x\r\n",c);
-        printf("calcchecksum = %x\r\n",calc);
-        count = 0;
-      }
-
-    }
+    printf("[0x%x]\r\n",c);
 
   }
 }
@@ -119,7 +124,36 @@ void setup() {
   System.ledOn(0);
   Serial.begin(115200);
   Serial2.begin(115200);
-  Serial.printf("\n*** [nRF52-DK] Basic Functions ***\n");
+  Serial.printf("\n*** [nRF52-DK] Serial & BLE GATT server ***\n");
+
+  // BLE settings
+  BLEDevice::init("My nRF52-DK");
+  BLEServer *server = BLEDevice::createServer();
+  printf("- Server created: %p\n", server);
+
+  BLEService *service = server->createService(SERVICE_UUID);
+  printf("- Service created\n");
+
+  BLECharacteristic *characteristic = service->createCharacteristic(
+    CHARACTERISTIC_UUID,
+    BLECharacteristic::PROPERTY_READ | BLECharacteristic::PROPERTY_WRITE
+  );
+  characteristic->setCallbacks(&myCallbacks);
+  printf("- Characteristic created\n");
+  service->start();
+  printf("- Characteristic added\n");
+
+// add advertising Data
+// reffer => https://www.coxlab.kr/doxygen/Nol.A-SDK/classBLEAdvertisementData.html
+  BLEAdvertisementData advdata;
+  advdata.setName("Coxlab_Song");
+  BLEAdvertising *adv = server->getAdvertising();
+
+  adv->addServiceUUID(SERVICE_UUID);
+  adv->setMinIntervalMicros(1000000);
+  adv->setAdvertisementData(advdata);
+  adv->start();
+  printf("- Advertising started...\n");
 
 
   // Serial.listen();
