@@ -15,9 +15,12 @@ uint8_t countNoInit __attribute__((section(".noinit")));
 #define CHARACTERISTIC_UUID "f64f0100-7fdf-4b2c-ad31-e65ca15bef6b"
 
 class MyCallbacks: public BLECharacteristicCallbacks {
+  void onRead(BLECharacteristic *pChar){
+    printf("read request on!\r\n");
+  }
   void onWrite(BLECharacteristic *pChar) {
     std::string value = pChar->getValue();
-
+    printf("write request on!\r\n");
     if (value.length() > 0) {
       printf("*******\n");
       printf("%s\n", value.c_str());
@@ -136,8 +139,9 @@ void setup() {
 
   BLECharacteristic *characteristic = service->createCharacteristic(
     CHARACTERISTIC_UUID,
-    BLECharacteristic::PROPERTY_READ | BLECharacteristic::PROPERTY_WRITE
+    BLECharacteristic::PROPERTY_READ | BLECharacteristic::PROPERTY_WRITE_NR
   );
+  characteristic->setValue("test200724");
   characteristic->setCallbacks(&myCallbacks);
   printf("- Characteristic created\n");
   service->start();
@@ -145,12 +149,14 @@ void setup() {
 
 // add advertising Data
 // reffer => https://www.coxlab.kr/doxygen/Nol.A-SDK/classBLEAdvertisementData.html
+//
   BLEAdvertisementData advdata;
-  advdata.setName("Coxlab_Song");
+  advdata.setName("Coxlab, Inc.");
+  advdata.setManufacturerData("123456789");
   BLEAdvertising *adv = server->getAdvertising();
 
   adv->addServiceUUID(SERVICE_UUID);
-  adv->setMinIntervalMicros(1000000);
+  adv->setMinIntervalMicros(1000000); //시간 단위 설정 10^-6 까지 측정
   adv->setAdvertisementData(advdata);
   adv->start();
   printf("- Advertising started...\n");

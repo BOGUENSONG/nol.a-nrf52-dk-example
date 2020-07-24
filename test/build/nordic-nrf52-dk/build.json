@@ -1,0 +1,1 @@
+{"board":"nordic-nrf52-dk","options":"NOLA_DEBUG_NRF5BLE=1 NOLA_RAM_START=0x200030d0 NOLA_CONSOLE_SWUART=1 NOLA_DEBUG_BLE=1","port":"JTAG","ver":"1.0.13"}

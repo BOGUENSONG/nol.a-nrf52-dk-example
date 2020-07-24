@@ -1,0 +1,596 @@
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccxpZfc8.s 			page 1
+
+
+   1              	# 1 "c:\\users\\stark\\.atom\\nola-sdk\\nordic-nrf52-dk\\nola_conf@gcc_startup_nrf52.s"
+   1              	/*
+   0              	
+   0              	
+   1              	/*
+   2              	 
+   3              	Copyright (c) 2009-2018 ARM Limited. All rights reserved.
+   4              	
+   5              	    SPDX-License-Identifier: Apache-2.0
+   6              	
+   7              	Licensed under the Apache License, Version 2.0 (the License); you may
+   8              	not use this file except in compliance with the License.
+   9              	You may obtain a copy of the License at
+  10              	
+  11              	    www.apache.org/licenses/LICENSE-2.0
+  12              	
+  13              	Unless required by applicable law or agreed to in writing, software
+  14              	distributed under the License is distributed on an AS IS BASIS, WITHOUT
+  15              	WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  16              	See the License for the specific language governing permissions and
+  17              	limitations under the License.
+  18              	
+  19              	NOTICE: This file has been modified by Nordic Semiconductor ASA.
+  20              	
+  21              	*/
+  22              	
+  23              	    .syntax unified
+  24              	    .arch armv7e-m
+  25              	
+  26              	#ifdef __STARTUP_CONFIG
+  27              	#include "startup_config.h"
+  28              	#ifndef __STARTUP_CONFIG_STACK_ALIGNEMENT
+  29              	#define __STARTUP_CONFIG_STACK_ALIGNEMENT 3
+  30              	#endif
+  31              	#endif
+  32              	
+  33              	    .section .stack
+  34              	#if defined(__STARTUP_CONFIG)
+  35              	    .align __STARTUP_CONFIG_STACK_ALIGNEMENT
+  36              	    .equ    Stack_Size, __STARTUP_CONFIG_STACK_SIZE
+  37              	#elif defined(__STACK_SIZE)
+  38              	    .align 3
+  39              	    .equ    Stack_Size, __STACK_SIZE
+  40              	#else
+  41              	    .align 3
+  42              	    .equ    Stack_Size, 8192
+  43              	#endif
+  44              	    .globl __StackTop
+  45              	    .globl __StackLimit
+  46              	__StackLimit:
+  47 0000 00000000 	    .space Stack_Size
+  47      00000000 
+  47      00000000 
+  47      00000000 
+  47      00000000 
+  48              	    .size __StackLimit, . - __StackLimit
+  49              	__StackTop:
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccxpZfc8.s 			page 2
+
+
+  50              	    .size __StackTop, . - __StackTop
+  51              	
+  52              	    .section .heap
+  53              	    .align 3
+  54              	#if defined(__STARTUP_CONFIG)
+  55              	    .equ Heap_Size, __STARTUP_CONFIG_HEAP_SIZE
+  56              	#elif defined(__HEAP_SIZE)
+  57              	    .equ Heap_Size, __HEAP_SIZE
+  58              	#else
+  59              	    .equ Heap_Size, 8192
+  60              	#endif
+  61              	    .globl __HeapBase
+  62              	    .globl __HeapLimit
+  63              	__HeapBase:
+  64              	    .if Heap_Size
+  65 0000 00000000 	    .space Heap_Size
+  65      00000000 
+  65      00000000 
+  65      00000000 
+  65      00000000 
+  66              	    .endif
+  67              	    .size __HeapBase, . - __HeapBase
+  68              	__HeapLimit:
+  69              	    .size __HeapLimit, . - __HeapLimit
+  70              	
+  71              	    .section .isr_vector
+  72              	    .align 2
+  73              	    .globl __isr_vector
+  74              	__isr_vector:
+  75 0000 00000000 	    .long   __StackTop                  /* Top of Stack */
+  76 0004 00000000 	    .long   Reset_Handler
+  77 0008 00000000 	    .long   NMI_Handler
+  78 000c 00000000 	    .long   HardFault_Handler
+  79 0010 00000000 	    .long   MemoryManagement_Handler
+  80 0014 00000000 	    .long   BusFault_Handler
+  81 0018 00000000 	    .long   UsageFault_Handler
+  82 001c 00000000 	    .long   0                           /*Reserved */
+  83 0020 00000000 	    .long   0                           /*Reserved */
+  84 0024 00000000 	    .long   0                           /*Reserved */
+  85 0028 00000000 	    .long   0                           /*Reserved */
+  86 002c 00000000 	    .long   SVC_Handler
+  87 0030 00000000 	    .long   DebugMon_Handler
+  88 0034 00000000 	    .long   0                           /*Reserved */
+  89 0038 00000000 	    .long   PendSV_Handler
+  90 003c 00000000 	    .long   SysTick_Handler
+  91              	
+  92              	  /* External Interrupts */
+  93 0040 00000000 	    .long   POWER_CLOCK_IRQHandler
+  94 0044 00000000 	    .long   RADIO_IRQHandler
+  95 0048 00000000 	    .long   UARTE0_UART0_IRQHandler
+  96 004c 00000000 	    .long   SPIM0_SPIS0_TWIM0_TWIS0_SPI0_TWI0_IRQHandler
+  97 0050 00000000 	    .long   SPIM1_SPIS1_TWIM1_TWIS1_SPI1_TWI1_IRQHandler
+  98 0054 00000000 	    .long   NFCT_IRQHandler
+  99 0058 00000000 	    .long   GPIOTE_IRQHandler
+ 100 005c 00000000 	    .long   SAADC_IRQHandler
+ 101 0060 00000000 	    .long   TIMER0_IRQHandler
+ 102 0064 00000000 	    .long   TIMER1_IRQHandler
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccxpZfc8.s 			page 3
+
+
+ 103 0068 00000000 	    .long   TIMER2_IRQHandler
+ 104 006c 00000000 	    .long   RTC0_IRQHandler
+ 105 0070 00000000 	    .long   TEMP_IRQHandler
+ 106 0074 00000000 	    .long   RNG_IRQHandler
+ 107 0078 00000000 	    .long   ECB_IRQHandler
+ 108 007c 00000000 	    .long   CCM_AAR_IRQHandler
+ 109 0080 00000000 	    .long   WDT_IRQHandler
+ 110 0084 00000000 	    .long   RTC1_IRQHandler
+ 111 0088 00000000 	    .long   QDEC_IRQHandler
+ 112 008c 00000000 	    .long   COMP_LPCOMP_IRQHandler
+ 113 0090 00000000 	    .long   SWI0_EGU0_IRQHandler
+ 114 0094 00000000 	    .long   SWI1_EGU1_IRQHandler
+ 115 0098 00000000 	    .long   SWI2_EGU2_IRQHandler
+ 116 009c 00000000 	    .long   SWI3_EGU3_IRQHandler
+ 117 00a0 00000000 	    .long   SWI4_EGU4_IRQHandler
+ 118 00a4 00000000 	    .long   SWI5_EGU5_IRQHandler
+ 119 00a8 00000000 	    .long   TIMER3_IRQHandler
+ 120 00ac 00000000 	    .long   TIMER4_IRQHandler
+ 121 00b0 00000000 	    .long   PWM0_IRQHandler
+ 122 00b4 00000000 	    .long   PDM_IRQHandler
+ 123 00b8 00000000 	    .long   0                           /*Reserved */
+ 124 00bc 00000000 	    .long   0                           /*Reserved */
+ 125 00c0 00000000 	    .long   MWU_IRQHandler
+ 126 00c4 00000000 	    .long   PWM1_IRQHandler
+ 127 00c8 00000000 	    .long   PWM2_IRQHandler
+ 128 00cc 00000000 	    .long   SPIM2_SPIS2_SPI2_IRQHandler
+ 129 00d0 00000000 	    .long   RTC2_IRQHandler
+ 130 00d4 00000000 	    .long   I2S_IRQHandler
+ 131 00d8 00000000 	    .long   FPU_IRQHandler
+ 132 00dc 00000000 	    .long   0                           /*Reserved */
+ 133 00e0 00000000 	    .long   0                           /*Reserved */
+ 134 00e4 00000000 	    .long   0                           /*Reserved */
+ 135 00e8 00000000 	    .long   0                           /*Reserved */
+ 136 00ec 00000000 	    .long   0                           /*Reserved */
+ 137 00f0 00000000 	    .long   0                           /*Reserved */
+ 138 00f4 00000000 	    .long   0                           /*Reserved */
+ 139 00f8 00000000 	    .long   0                           /*Reserved */
+ 140 00fc 00000000 	    .long   0                           /*Reserved */
+ 141 0100 00000000 	    .long   0                           /*Reserved */
+ 142 0104 00000000 	    .long   0                           /*Reserved */
+ 143 0108 00000000 	    .long   0                           /*Reserved */
+ 144 010c 00000000 	    .long   0                           /*Reserved */
+ 145 0110 00000000 	    .long   0                           /*Reserved */
+ 146 0114 00000000 	    .long   0                           /*Reserved */
+ 147 0118 00000000 	    .long   0                           /*Reserved */
+ 148 011c 00000000 	    .long   0                           /*Reserved */
+ 149 0120 00000000 	    .long   0                           /*Reserved */
+ 150 0124 00000000 	    .long   0                           /*Reserved */
+ 151 0128 00000000 	    .long   0                           /*Reserved */
+ 152 012c 00000000 	    .long   0                           /*Reserved */
+ 153 0130 00000000 	    .long   0                           /*Reserved */
+ 154 0134 00000000 	    .long   0                           /*Reserved */
+ 155 0138 00000000 	    .long   0                           /*Reserved */
+ 156 013c 00000000 	    .long   0                           /*Reserved */
+ 157 0140 00000000 	    .long   0                           /*Reserved */
+ 158 0144 00000000 	    .long   0                           /*Reserved */
+ 159 0148 00000000 	    .long   0                           /*Reserved */
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccxpZfc8.s 			page 4
+
+
+ 160 014c 00000000 	    .long   0                           /*Reserved */
+ 161 0150 00000000 	    .long   0                           /*Reserved */
+ 162 0154 00000000 	    .long   0                           /*Reserved */
+ 163 0158 00000000 	    .long   0                           /*Reserved */
+ 164 015c 00000000 	    .long   0                           /*Reserved */
+ 165 0160 00000000 	    .long   0                           /*Reserved */
+ 166 0164 00000000 	    .long   0                           /*Reserved */
+ 167 0168 00000000 	    .long   0                           /*Reserved */
+ 168 016c 00000000 	    .long   0                           /*Reserved */
+ 169 0170 00000000 	    .long   0                           /*Reserved */
+ 170 0174 00000000 	    .long   0                           /*Reserved */
+ 171 0178 00000000 	    .long   0                           /*Reserved */
+ 172 017c 00000000 	    .long   0                           /*Reserved */
+ 173 0180 00000000 	    .long   0                           /*Reserved */
+ 174 0184 00000000 	    .long   0                           /*Reserved */
+ 175 0188 00000000 	    .long   0                           /*Reserved */
+ 176 018c 00000000 	    .long   0                           /*Reserved */
+ 177 0190 00000000 	    .long   0                           /*Reserved */
+ 178 0194 00000000 	    .long   0                           /*Reserved */
+ 179 0198 00000000 	    .long   0                           /*Reserved */
+ 180 019c 00000000 	    .long   0                           /*Reserved */
+ 181 01a0 00000000 	    .long   0                           /*Reserved */
+ 182 01a4 00000000 	    .long   0                           /*Reserved */
+ 183 01a8 00000000 	    .long   0                           /*Reserved */
+ 184 01ac 00000000 	    .long   0                           /*Reserved */
+ 185 01b0 00000000 	    .long   0                           /*Reserved */
+ 186 01b4 00000000 	    .long   0                           /*Reserved */
+ 187 01b8 00000000 	    .long   0                           /*Reserved */
+ 188 01bc 00000000 	    .long   0                           /*Reserved */
+ 189 01c0 00000000 	    .long   0                           /*Reserved */
+ 190 01c4 00000000 	    .long   0                           /*Reserved */
+ 191 01c8 00000000 	    .long   0                           /*Reserved */
+ 192 01cc 00000000 	    .long   0                           /*Reserved */
+ 193 01d0 00000000 	    .long   0                           /*Reserved */
+ 194 01d4 00000000 	    .long   0                           /*Reserved */
+ 195 01d8 00000000 	    .long   0                           /*Reserved */
+ 196 01dc 00000000 	    .long   0                           /*Reserved */
+ 197 01e0 00000000 	    .long   0                           /*Reserved */
+ 198 01e4 00000000 	    .long   0                           /*Reserved */
+ 199 01e8 00000000 	    .long   0                           /*Reserved */
+ 200 01ec 00000000 	    .long   0                           /*Reserved */
+ 201 01f0 00000000 	    .long   0                           /*Reserved */
+ 202 01f4 00000000 	    .long   0                           /*Reserved */
+ 203 01f8 00000000 	    .long   0                           /*Reserved */
+ 204 01fc 00000000 	    .long   0                           /*Reserved */
+ 205              	
+ 206              	    .size __isr_vector, . - __isr_vector
+ 207              	
+ 208              	/* Reset Handler */
+ 209              	
+ 210              	
+ 211              	    .text
+ 212              	    .thumb
+ 213              	    .thumb_func
+ 214              	    .align 1
+ 215              	    .globl Reset_Handler
+ 216              	    .type Reset_Handler, %function
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccxpZfc8.s 			page 5
+
+
+ 217              	Reset_Handler:
+ 218              	
+ 219              	
+ 220              	/* Loop to copy data from read only memory to RAM.
+ 221              	 * The ranges of copy from/to are specified by following symbols:
+ 222              	 *      __etext: LMA of start of the section to copy from. Usually end of text
+ 223              	 *      __data_start__: VMA of start of the section to copy to.
+ 224              	 *      __bss_start__: VMA of end of the section to copy to. Normally __data_end__ is used, but by 
+ 225              	 *                    the user can add their own initialized data section before BSS section with t
+ 226              	 *
+ 227              	 * All addresses must be aligned to 4 bytes boundary.
+ 228              	 */
+ 229 0000 0649     	    ldr r1, =__etext
+ 230 0002 074A     	    ldr r2, =__data_start__
+ 231 0004 074B     	    ldr r3, =__bss_start__
+ 232              	
+ 233 0006 9B1A     	    subs r3, r3, r2
+ 234 0008 03DD     	    ble .L_loop1_done
+ 235              	
+ 236              	.L_loop1:
+ 237 000a 043B     	    subs r3, r3, #4
+ 238 000c C858     	    ldr r0, [r1,r3]
+ 239 000e D050     	    str r0, [r2,r3]
+ 240 0010 FBDC     	    bgt .L_loop1
+ 241              	
+ 242              	.L_loop1_done:
+ 243              	
+ 244              	/* This part of work usually is done in C library startup code. Otherwise,
+ 245              	 * define __STARTUP_CLEAR_BSS to enable it in this startup. This section
+ 246              	 * clears the RAM where BSS data is located.
+ 247              	 *
+ 248              	 * The BSS section is specified by following symbols
+ 249              	 *    __bss_start__: start of the BSS section.
+ 250              	 *    __bss_end__: end of the BSS section.
+ 251              	 *
+ 252              	 * All addresses must be aligned to 4 bytes boundary.
+ 253              	 */
+ 254              	#ifdef __STARTUP_CLEAR_BSS
+ 255              	    ldr r1, =__bss_start__
+ 256              	    ldr r2, =__bss_end__
+ 257              	
+ 258              	    movs r0, 0
+ 259              	
+ 260              	    subs r2, r2, r1
+ 261              	    ble .L_loop3_done
+ 262              	
+ 263              	.L_loop3:
+ 264              	    subs r2, r2, #4
+ 265              	    str r0, [r1, r2]
+ 266              	    bgt .L_loop3
+ 267              	
+ 268              	.L_loop3_done:
+ 269              	#endif /* __STARTUP_CLEAR_BSS */
+ 270              	
+ 271              	/* Execute SystemInit function. */
+ 272 0012 FFF7FEFF 	    bl SystemInit
+ 273              	
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccxpZfc8.s 			page 6
+
+
+ 274              	/* Call _start function provided by libraries.
+ 275              	 * If those libraries are not accessible, define __START as your entry point.
+ 276              	 */
+ 277              	#ifndef __START
+ 278              	#define __START _start
+ 279              	#endif
+ 280 0016 FFF7FEFF 	    bl __START
+ 281              	
+ 282 001a 00000000 	    .pool
+ 282      00000000 
+ 282      00000000 
+ 282      0000
+ 283              	    .size   Reset_Handler,.-Reset_Handler
+ 284              	
+ 285              	    .section ".text"
+ 286              	
+ 287              	
+ 288              	/* Dummy Exception Handlers (infinite loops which can be modified) */
+ 289              	
+ 290              	    .weak   NMI_Handler
+ 291              	    .type   NMI_Handler, %function
+ 292              	NMI_Handler:
+ 293 0028 FEE7     	    b       .
+ 294              	    .size   NMI_Handler, . - NMI_Handler
+ 295              	
+ 296              	
+ 297              	    .weak   HardFault_Handler
+ 298              	    .type   HardFault_Handler, %function
+ 299              	HardFault_Handler:
+ 300 002a FEE7     	    b       .
+ 301              	    .size   HardFault_Handler, . - HardFault_Handler
+ 302              	
+ 303              	
+ 304              	    .weak   MemoryManagement_Handler
+ 305              	    .type   MemoryManagement_Handler, %function
+ 306              	MemoryManagement_Handler:
+ 307 002c FEE7     	    b       .
+ 308              	    .size   MemoryManagement_Handler, . - MemoryManagement_Handler
+ 309              	
+ 310              	
+ 311              	    .weak   BusFault_Handler
+ 312              	    .type   BusFault_Handler, %function
+ 313              	BusFault_Handler:
+ 314 002e FEE7     	    b       .
+ 315              	    .size   BusFault_Handler, . - BusFault_Handler
+ 316              	
+ 317              	
+ 318              	    .weak   UsageFault_Handler
+ 319              	    .type   UsageFault_Handler, %function
+ 320              	UsageFault_Handler:
+ 321 0030 FEE7     	    b       .
+ 322              	    .size   UsageFault_Handler, . - UsageFault_Handler
+ 323              	
+ 324              	
+ 325              	    .weak   SVC_Handler
+ 326              	    .type   SVC_Handler, %function
+ 327              	SVC_Handler:
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccxpZfc8.s 			page 7
+
+
+ 328 0032 FEE7     	    b       .
+ 329              	    .size   SVC_Handler, . - SVC_Handler
+ 330              	
+ 331              	
+ 332              	    .weak   DebugMon_Handler
+ 333              	    .type   DebugMon_Handler, %function
+ 334              	DebugMon_Handler:
+ 335 0034 FEE7     	    b       .
+ 336              	    .size   DebugMon_Handler, . - DebugMon_Handler
+ 337              	
+ 338              	
+ 339              	    .weak   PendSV_Handler
+ 340              	    .type   PendSV_Handler, %function
+ 341              	PendSV_Handler:
+ 342 0036 FEE7     	    b       .
+ 343              	    .size   PendSV_Handler, . - PendSV_Handler
+ 344              	
+ 345              	
+ 346              	    .weak   SysTick_Handler
+ 347              	    .type   SysTick_Handler, %function
+ 348              	SysTick_Handler:
+ 349 0038 FEE7     	    b       .
+ 350              	    .size   SysTick_Handler, . - SysTick_Handler
+ 351              	
+ 352              	
+ 353              	/* IRQ Handlers */
+ 354              	
+ 355              	    .globl  Default_Handler
+ 356              	    .type   Default_Handler, %function
+ 357              	Default_Handler:
+ 358 003a FEE7     	    b       .
+ 359              	    .size   Default_Handler, . - Default_Handler
+ 360              	
+ 361              	    .macro  IRQ handler
+ 362              	    .weak   \handler
+ 363              	    .set    \handler, Default_Handler
+ 364              	    .endm
+ 365              	
+ 366              	    IRQ  POWER_CLOCK_IRQHandler
+ 366              	>  .weak POWER_CLOCK_IRQHandler
+ 366              	>  .set POWER_CLOCK_IRQHandler,Default_Handler
+ 367              	    IRQ  RADIO_IRQHandler
+ 367              	>  .weak RADIO_IRQHandler
+ 367              	>  .set RADIO_IRQHandler,Default_Handler
+ 368              	    IRQ  UARTE0_UART0_IRQHandler
+ 368              	>  .weak UARTE0_UART0_IRQHandler
+ 368              	>  .set UARTE0_UART0_IRQHandler,Default_Handler
+ 369              	    IRQ  SPIM0_SPIS0_TWIM0_TWIS0_SPI0_TWI0_IRQHandler
+ 369              	>  .weak SPIM0_SPIS0_TWIM0_TWIS0_SPI0_TWI0_IRQHandler
+ 369              	>  .set SPIM0_SPIS0_TWIM0_TWIS0_SPI0_TWI0_IRQHandler,Default_Handler
+ 370              	    IRQ  SPIM1_SPIS1_TWIM1_TWIS1_SPI1_TWI1_IRQHandler
+ 370              	>  .weak SPIM1_SPIS1_TWIM1_TWIS1_SPI1_TWI1_IRQHandler
+ 370              	>  .set SPIM1_SPIS1_TWIM1_TWIS1_SPI1_TWI1_IRQHandler,Default_Handler
+ 371              	    IRQ  NFCT_IRQHandler
+ 371              	>  .weak NFCT_IRQHandler
+ 371              	>  .set NFCT_IRQHandler,Default_Handler
+ 372              	    IRQ  GPIOTE_IRQHandler
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccxpZfc8.s 			page 8
+
+
+ 372              	>  .weak GPIOTE_IRQHandler
+ 372              	>  .set GPIOTE_IRQHandler,Default_Handler
+ 373              	    IRQ  SAADC_IRQHandler
+ 373              	>  .weak SAADC_IRQHandler
+ 373              	>  .set SAADC_IRQHandler,Default_Handler
+ 374              	    IRQ  TIMER0_IRQHandler
+ 374              	>  .weak TIMER0_IRQHandler
+ 374              	>  .set TIMER0_IRQHandler,Default_Handler
+ 375              	    IRQ  TIMER1_IRQHandler
+ 375              	>  .weak TIMER1_IRQHandler
+ 375              	>  .set TIMER1_IRQHandler,Default_Handler
+ 376              	    IRQ  TIMER2_IRQHandler
+ 376              	>  .weak TIMER2_IRQHandler
+ 376              	>  .set TIMER2_IRQHandler,Default_Handler
+ 377              	    IRQ  RTC0_IRQHandler
+ 377              	>  .weak RTC0_IRQHandler
+ 377              	>  .set RTC0_IRQHandler,Default_Handler
+ 378              	    IRQ  TEMP_IRQHandler
+ 378              	>  .weak TEMP_IRQHandler
+ 378              	>  .set TEMP_IRQHandler,Default_Handler
+ 379              	    IRQ  RNG_IRQHandler
+ 379              	>  .weak RNG_IRQHandler
+ 379              	>  .set RNG_IRQHandler,Default_Handler
+ 380              	    IRQ  ECB_IRQHandler
+ 380              	>  .weak ECB_IRQHandler
+ 380              	>  .set ECB_IRQHandler,Default_Handler
+ 381              	    IRQ  CCM_AAR_IRQHandler
+ 381              	>  .weak CCM_AAR_IRQHandler
+ 381              	>  .set CCM_AAR_IRQHandler,Default_Handler
+ 382              	    IRQ  WDT_IRQHandler
+ 382              	>  .weak WDT_IRQHandler
+ 382              	>  .set WDT_IRQHandler,Default_Handler
+ 383              	    IRQ  RTC1_IRQHandler
+ 383              	>  .weak RTC1_IRQHandler
+ 383              	>  .set RTC1_IRQHandler,Default_Handler
+ 384              	    IRQ  QDEC_IRQHandler
+ 384              	>  .weak QDEC_IRQHandler
+ 384              	>  .set QDEC_IRQHandler,Default_Handler
+ 385              	    IRQ  COMP_LPCOMP_IRQHandler
+ 385              	>  .weak COMP_LPCOMP_IRQHandler
+ 385              	>  .set COMP_LPCOMP_IRQHandler,Default_Handler
+ 386              	    IRQ  SWI0_EGU0_IRQHandler
+ 386              	>  .weak SWI0_EGU0_IRQHandler
+ 386              	>  .set SWI0_EGU0_IRQHandler,Default_Handler
+ 387              	    IRQ  SWI1_EGU1_IRQHandler
+ 387              	>  .weak SWI1_EGU1_IRQHandler
+ 387              	>  .set SWI1_EGU1_IRQHandler,Default_Handler
+ 388              	    IRQ  SWI2_EGU2_IRQHandler
+ 388              	>  .weak SWI2_EGU2_IRQHandler
+ 388              	>  .set SWI2_EGU2_IRQHandler,Default_Handler
+ 389              	    IRQ  SWI3_EGU3_IRQHandler
+ 389              	>  .weak SWI3_EGU3_IRQHandler
+ 389              	>  .set SWI3_EGU3_IRQHandler,Default_Handler
+ 390              	    IRQ  SWI4_EGU4_IRQHandler
+ 390              	>  .weak SWI4_EGU4_IRQHandler
+ 390              	>  .set SWI4_EGU4_IRQHandler,Default_Handler
+ 391              	    IRQ  SWI5_EGU5_IRQHandler
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccxpZfc8.s 			page 9
+
+
+ 391              	>  .weak SWI5_EGU5_IRQHandler
+ 391              	>  .set SWI5_EGU5_IRQHandler,Default_Handler
+ 392              	    IRQ  TIMER3_IRQHandler
+ 392              	>  .weak TIMER3_IRQHandler
+ 392              	>  .set TIMER3_IRQHandler,Default_Handler
+ 393              	    IRQ  TIMER4_IRQHandler
+ 393              	>  .weak TIMER4_IRQHandler
+ 393              	>  .set TIMER4_IRQHandler,Default_Handler
+ 394              	    IRQ  PWM0_IRQHandler
+ 394              	>  .weak PWM0_IRQHandler
+ 394              	>  .set PWM0_IRQHandler,Default_Handler
+ 395              	    IRQ  PDM_IRQHandler
+ 395              	>  .weak PDM_IRQHandler
+ 395              	>  .set PDM_IRQHandler,Default_Handler
+ 396              	    IRQ  MWU_IRQHandler
+ 396              	>  .weak MWU_IRQHandler
+ 396              	>  .set MWU_IRQHandler,Default_Handler
+ 397              	    IRQ  PWM1_IRQHandler
+ 397              	>  .weak PWM1_IRQHandler
+ 397              	>  .set PWM1_IRQHandler,Default_Handler
+ 398              	    IRQ  PWM2_IRQHandler
+ 398              	>  .weak PWM2_IRQHandler
+ 398              	>  .set PWM2_IRQHandler,Default_Handler
+ 399              	    IRQ  SPIM2_SPIS2_SPI2_IRQHandler
+ 399              	>  .weak SPIM2_SPIS2_SPI2_IRQHandler
+ 399              	>  .set SPIM2_SPIS2_SPI2_IRQHandler,Default_Handler
+ 400              	    IRQ  RTC2_IRQHandler
+ 400              	>  .weak RTC2_IRQHandler
+ 400              	>  .set RTC2_IRQHandler,Default_Handler
+ 401              	    IRQ  I2S_IRQHandler
+ 401              	>  .weak I2S_IRQHandler
+ 401              	>  .set I2S_IRQHandler,Default_Handler
+ 402              	    IRQ  FPU_IRQHandler
+ 402              	>  .weak FPU_IRQHandler
+ 402              	>  .set FPU_IRQHandler,Default_Handler
+ 403              	
+ 404              	  .end
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccxpZfc8.s 			page 10
+
+
+DEFINED SYMBOLS
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:38     .stack:00000000 $d
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:39     *ABS*:00004000 Stack_Size
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:49     .stack:00004000 __StackTop
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:46     .stack:00000000 __StackLimit
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:53     .heap:00000000 $d
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:57     *ABS*:00004000 Heap_Size
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:63     .heap:00000000 __HeapBase
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:68     .heap:00004000 __HeapLimit
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:72     .isr_vector:00000000 $d
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:74     .isr_vector:00000000 __isr_vector
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:217    .text:00000000 Reset_Handler
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:292    .text:00000028 NMI_Handler
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:299    .text:0000002a HardFault_Handler
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:306    .text:0000002c MemoryManagement_Handler
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:313    .text:0000002e BusFault_Handler
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:320    .text:00000030 UsageFault_Handler
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:327    .text:00000032 SVC_Handler
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:334    .text:00000034 DebugMon_Handler
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:341    .text:00000036 PendSV_Handler
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:348    .text:00000038 SysTick_Handler
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:357    .text:0000003a POWER_CLOCK_IRQHandler
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:357    .text:0000003a RADIO_IRQHandler
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:357    .text:0000003a UARTE0_UART0_IRQHandler
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:357    .text:0000003a SPIM0_SPIS0_TWIM0_TWIS0_SPI0_TWI0_IRQHandler
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:357    .text:0000003a SPIM1_SPIS1_TWIM1_TWIS1_SPI1_TWI1_IRQHandler
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:357    .text:0000003a NFCT_IRQHandler
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:357    .text:0000003a GPIOTE_IRQHandler
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:357    .text:0000003a SAADC_IRQHandler
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:357    .text:0000003a TIMER0_IRQHandler
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:357    .text:0000003a TIMER1_IRQHandler
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:357    .text:0000003a TIMER2_IRQHandler
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:357    .text:0000003a RTC0_IRQHandler
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:357    .text:0000003a TEMP_IRQHandler
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:357    .text:0000003a RNG_IRQHandler
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:357    .text:0000003a ECB_IRQHandler
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:357    .text:0000003a CCM_AAR_IRQHandler
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:357    .text:0000003a WDT_IRQHandler
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:357    .text:0000003a RTC1_IRQHandler
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:357    .text:0000003a QDEC_IRQHandler
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:357    .text:0000003a COMP_LPCOMP_IRQHandler
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:357    .text:0000003a SWI0_EGU0_IRQHandler
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:357    .text:0000003a SWI1_EGU1_IRQHandler
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:357    .text:0000003a SWI2_EGU2_IRQHandler
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:357    .text:0000003a SWI3_EGU3_IRQHandler
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:357    .text:0000003a SWI4_EGU4_IRQHandler
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:357    .text:0000003a SWI5_EGU5_IRQHandler
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:357    .text:0000003a TIMER3_IRQHandler
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:357    .text:0000003a TIMER4_IRQHandler
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:357    .text:0000003a PWM0_IRQHandler
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:357    .text:0000003a PDM_IRQHandler
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:357    .text:0000003a MWU_IRQHandler
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:357    .text:0000003a PWM1_IRQHandler
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:357    .text:0000003a PWM2_IRQHandler
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:357    .text:0000003a SPIM2_SPIS2_SPI2_IRQHandler
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:357    .text:0000003a RTC2_IRQHandler
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:357    .text:0000003a I2S_IRQHandler
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccxpZfc8.s 			page 11
+
+
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:357    .text:0000003a FPU_IRQHandler
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:214    .text:00000000 $t
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:282    .text:0000001a $d
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:282    .text:0000001c $d
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:293    .text:00000028 $t
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:357    .text:0000003a Default_Handler
+
+UNDEFINED SYMBOLS
+__etext
+__data_start__
+__bss_start__
+SystemInit
+_start

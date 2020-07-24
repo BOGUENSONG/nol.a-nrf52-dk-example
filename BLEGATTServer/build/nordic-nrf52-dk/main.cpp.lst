@@ -1,0 +1,385 @@
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccab47PA.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"main.cpp"
+  14              		.text
+  15              		.section	.text._ZN11MyCallbacks7onWriteEP17BLECharacteristic,"axG",%progbits,_ZN11MyCallbacks7onWr
+  16              		.align	1
+  17              		.weak	_ZN11MyCallbacks7onWriteEP17BLECharacteristic
+  18              		.syntax unified
+  19              		.thumb
+  20              		.thumb_func
+  21              		.fpu fpv4-sp-d16
+  22              		.type	_ZN11MyCallbacks7onWriteEP17BLECharacteristic, %function
+  23              	_ZN11MyCallbacks7onWriteEP17BLECharacteristic:
+  24              		@ args = 0, pretend = 0, frame = 24
+  25              		@ frame_needed = 0, uses_anonymous_args = 0
+  26 0000 10B5     		push	{r4, lr}
+  27 0002 86B0     		sub	sp, sp, #24
+  28 0004 6846     		mov	r0, sp
+  29 0006 FFF7FEFF 		bl	_ZN17BLECharacteristic8getValueB5cxx11Ev
+  30 000a 019B     		ldr	r3, [sp, #4]
+  31 000c 3BB9     		cbnz	r3, .L5
+  32              	.L2:
+  33 000e 0098     		ldr	r0, [sp]
+  34 0010 02AB     		add	r3, sp, #8
+  35 0012 9842     		cmp	r0, r3
+  36 0014 01D0     		beq	.L1
+  37 0016 FFF7FEFF 		bl	_ZdlPv
+  38              	.L1:
+  39 001a 06B0     		add	sp, sp, #24
+  40              		@ sp needed
+  41 001c 10BD     		pop	{r4, pc}
+  42              	.L5:
+  43 001e 054C     		ldr	r4, .L6
+  44 0020 2046     		mov	r0, r4
+  45 0022 FFF7FEFF 		bl	puts
+  46 0026 0098     		ldr	r0, [sp]
+  47 0028 FFF7FEFF 		bl	puts
+  48 002c 2046     		mov	r0, r4
+  49 002e FFF7FEFF 		bl	puts
+  50 0032 ECE7     		b	.L2
+  51              	.L7:
+  52              		.align	2
+  53              	.L6:
+  54 0034 00000000 		.word	.LC0
+  55              		.size	_ZN11MyCallbacks7onWriteEP17BLECharacteristic, .-_ZN11MyCallbacks7onWriteEP17BLECharacterist
+  56              		.section	.text._ZN11MyCallbacksD2Ev,"axG",%progbits,_ZN11MyCallbacksD5Ev,comdat
+  57              		.align	1
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccab47PA.s 			page 2
+
+
+  58              		.weak	_ZN11MyCallbacksD2Ev
+  59              		.syntax unified
+  60              		.thumb
+  61              		.thumb_func
+  62              		.fpu fpv4-sp-d16
+  63              		.type	_ZN11MyCallbacksD2Ev, %function
+  64              	_ZN11MyCallbacksD2Ev:
+  65              		@ args = 0, pretend = 0, frame = 0
+  66              		@ frame_needed = 0, uses_anonymous_args = 0
+  67 0000 10B5     		push	{r4, lr}
+  68 0002 0446     		mov	r4, r0
+  69 0004 024B     		ldr	r3, .L10
+  70 0006 0360     		str	r3, [r0]
+  71 0008 FFF7FEFF 		bl	_ZN26BLECharacteristicCallbacksD2Ev
+  72 000c 2046     		mov	r0, r4
+  73 000e 10BD     		pop	{r4, pc}
+  74              	.L11:
+  75              		.align	2
+  76              	.L10:
+  77 0010 08000000 		.word	_ZTV11MyCallbacks+8
+  78              		.size	_ZN11MyCallbacksD2Ev, .-_ZN11MyCallbacksD2Ev
+  79              		.weak	_ZN11MyCallbacksD1Ev
+  80              		.thumb_set _ZN11MyCallbacksD1Ev,_ZN11MyCallbacksD2Ev
+  81              		.section	.text._ZN11MyCallbacksD0Ev,"axG",%progbits,_ZN11MyCallbacksD5Ev,comdat
+  82              		.align	1
+  83              		.weak	_ZN11MyCallbacksD0Ev
+  84              		.syntax unified
+  85              		.thumb
+  86              		.thumb_func
+  87              		.fpu fpv4-sp-d16
+  88              		.type	_ZN11MyCallbacksD0Ev, %function
+  89              	_ZN11MyCallbacksD0Ev:
+  90              		@ args = 0, pretend = 0, frame = 0
+  91              		@ frame_needed = 0, uses_anonymous_args = 0
+  92 0000 10B5     		push	{r4, lr}
+  93 0002 0446     		mov	r4, r0
+  94 0004 044B     		ldr	r3, .L14
+  95 0006 0360     		str	r3, [r0]
+  96 0008 FFF7FEFF 		bl	_ZN26BLECharacteristicCallbacksD2Ev
+  97 000c 0421     		movs	r1, #4
+  98 000e 2046     		mov	r0, r4
+  99 0010 FFF7FEFF 		bl	_ZdlPvj
+ 100 0014 2046     		mov	r0, r4
+ 101 0016 10BD     		pop	{r4, pc}
+ 102              	.L15:
+ 103              		.align	2
+ 104              	.L14:
+ 105 0018 08000000 		.word	_ZTV11MyCallbacks+8
+ 106              		.size	_ZN11MyCallbacksD0Ev, .-_ZN11MyCallbacksD0Ev
+ 107              		.section	.text._Z5setupv,"ax",%progbits
+ 108              		.align	1
+ 109              		.global	_Z5setupv
+ 110              		.syntax unified
+ 111              		.thumb
+ 112              		.thumb_func
+ 113              		.fpu fpv4-sp-d16
+ 114              		.type	_Z5setupv, %function
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccab47PA.s 			page 3
+
+
+ 115              	_Z5setupv:
+ 116              		@ args = 0, pretend = 0, frame = 24
+ 117              		@ frame_needed = 0, uses_anonymous_args = 0
+ 118 0000 70B5     		push	{r4, r5, r6, lr}
+ 119 0002 86B0     		sub	sp, sp, #24
+ 120 0004 2A4B     		ldr	r3, .L19
+ 121 0006 1868     		ldr	r0, [r3]
+ 122 0008 0368     		ldr	r3, [r0]
+ 123 000a 5B6A     		ldr	r3, [r3, #36]
+ 124 000c 0322     		movs	r2, #3
+ 125 000e 4FF4E131 		mov	r1, #115200
+ 126 0012 9847     		blx	r3
+ 127 0014 2748     		ldr	r0, .L19+4
+ 128 0016 FFF7FEFF 		bl	puts
+ 129 001a 02AC     		add	r4, sp, #8
+ 130 001c 0094     		str	r4, [sp]
+ 131 001e 264A     		ldr	r2, .L19+8
+ 132 0020 2346     		mov	r3, r4
+ 133 0022 07CA     		ldm	r2, {r0, r1, r2}
+ 134 0024 03C3     		stmia	r3!, {r0, r1}
+ 135 0026 23F8022B 		strh	r2, [r3], #2	@ movhi
+ 136 002a 120C     		lsrs	r2, r2, #16
+ 137 002c 1A70     		strb	r2, [r3]
+ 138 002e 0B23     		movs	r3, #11
+ 139 0030 0193     		str	r3, [sp, #4]
+ 140 0032 0023     		movs	r3, #0
+ 141 0034 8DF81330 		strb	r3, [sp, #19]
+ 142 0038 6846     		mov	r0, sp
+ 143 003a FFF7FEFF 		bl	_ZN9BLEDevice4initENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+ 144 003e 0098     		ldr	r0, [sp]
+ 145 0040 A042     		cmp	r0, r4
+ 146 0042 01D0     		beq	.L17
+ 147 0044 FFF7FEFF 		bl	_ZdlPv
+ 148              	.L17:
+ 149 0048 FFF7FEFF 		bl	_ZN9BLEDevice12createServerEv
+ 150 004c 0446     		mov	r4, r0
+ 151 004e 0146     		mov	r1, r0
+ 152 0050 1A48     		ldr	r0, .L19+12
+ 153 0052 FFF7FEFF 		bl	printf
+ 154 0056 1A4D     		ldr	r5, .L19+16
+ 155 0058 2946     		mov	r1, r5
+ 156 005a 2046     		mov	r0, r4
+ 157 005c FFF7FEFF 		bl	_ZN9BLEServer13createServiceEPKc
+ 158 0060 0646     		mov	r6, r0
+ 159 0062 1848     		ldr	r0, .L19+20
+ 160 0064 FFF7FEFF 		bl	puts
+ 161 0068 0322     		movs	r2, #3
+ 162 006a 1749     		ldr	r1, .L19+24
+ 163 006c 3046     		mov	r0, r6
+ 164 006e FFF7FEFF 		bl	_ZN10BLEService20createCharacteristicEPKcm
+ 165 0072 1649     		ldr	r1, .L19+28
+ 166 0074 FFF7FEFF 		bl	_ZN17BLECharacteristic12setCallbacksEP26BLECharacteristicCallbacks
+ 167 0078 1548     		ldr	r0, .L19+32
+ 168 007a FFF7FEFF 		bl	puts
+ 169 007e 3046     		mov	r0, r6
+ 170 0080 FFF7FEFF 		bl	_ZN10BLEService5startEv
+ 171 0084 1348     		ldr	r0, .L19+36
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccab47PA.s 			page 4
+
+
+ 172 0086 FFF7FEFF 		bl	puts
+ 173 008a 2046     		mov	r0, r4
+ 174 008c FFF7FEFF 		bl	_ZN9BLEServer14getAdvertisingEv
+ 175 0090 0446     		mov	r4, r0
+ 176 0092 2946     		mov	r1, r5
+ 177 0094 FFF7FEFF 		bl	_ZN14BLEAdvertising14addServiceUUIDEPKc
+ 178 0098 0F49     		ldr	r1, .L19+40
+ 179 009a 2046     		mov	r0, r4
+ 180 009c FFF7FEFF 		bl	_ZN14BLEAdvertising20setMinIntervalMicrosEm
+ 181 00a0 2046     		mov	r0, r4
+ 182 00a2 FFF7FEFF 		bl	_ZN14BLEAdvertising5startEv
+ 183 00a6 0D48     		ldr	r0, .L19+44
+ 184 00a8 FFF7FEFF 		bl	puts
+ 185 00ac 06B0     		add	sp, sp, #24
+ 186              		@ sp needed
+ 187 00ae 70BD     		pop	{r4, r5, r6, pc}
+ 188              	.L20:
+ 189              		.align	2
+ 190              	.L19:
+ 191 00b0 00000000 		.word	Serial
+ 192 00b4 00000000 		.word	.LC1
+ 193 00b8 24000000 		.word	.LC2
+ 194 00bc 30000000 		.word	.LC3
+ 195 00c0 48000000 		.word	.LC4
+ 196 00c4 70000000 		.word	.LC5
+ 197 00c8 84000000 		.word	.LC6
+ 198 00cc 00000000 		.word	.LANCHOR0
+ 199 00d0 AC000000 		.word	.LC7
+ 200 00d4 C8000000 		.word	.LC8
+ 201 00d8 40420F00 		.word	1000000
+ 202 00dc E0000000 		.word	.LC9
+ 203              		.size	_Z5setupv, .-_Z5setupv
+ 204              		.section	.text._GLOBAL__sub_I_myCallbacks,"ax",%progbits
+ 205              		.align	1
+ 206              		.syntax unified
+ 207              		.thumb
+ 208              		.thumb_func
+ 209              		.fpu fpv4-sp-d16
+ 210              		.type	_GLOBAL__sub_I_myCallbacks, %function
+ 211              	_GLOBAL__sub_I_myCallbacks:
+ 212              		@ args = 0, pretend = 0, frame = 0
+ 213              		@ frame_needed = 0, uses_anonymous_args = 0
+ 214 0000 08B5     		push	{r3, lr}
+ 215 0002 034A     		ldr	r2, .L23
+ 216 0004 0349     		ldr	r1, .L23+4
+ 217 0006 0448     		ldr	r0, .L23+8
+ 218 0008 FFF7FEFF 		bl	__aeabi_atexit
+ 219 000c 08BD     		pop	{r3, pc}
+ 220              	.L24:
+ 221 000e 00BF     		.align	2
+ 222              	.L23:
+ 223 0010 00000000 		.word	__dso_handle
+ 224 0014 00000000 		.word	_ZN11MyCallbacksD1Ev
+ 225 0018 00000000 		.word	.LANCHOR0
+ 226              		.size	_GLOBAL__sub_I_myCallbacks, .-_GLOBAL__sub_I_myCallbacks
+ 227              		.section	.init_array,"aw",%init_array
+ 228              		.align	2
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccab47PA.s 			page 5
+
+
+ 229 0000 00000000 		.word	_GLOBAL__sub_I_myCallbacks(target1)
+ 230              		.weak	_ZTV11MyCallbacks
+ 231              		.section	.rodata._ZTV11MyCallbacks,"aG",%progbits,_ZTV11MyCallbacks,comdat
+ 232              		.align	2
+ 233              		.type	_ZTV11MyCallbacks, %object
+ 234              		.size	_ZTV11MyCallbacks, 24
+ 235              	_ZTV11MyCallbacks:
+ 236 0000 00000000 		.word	0
+ 237 0004 00000000 		.word	0
+ 238 0008 00000000 		.word	_ZN11MyCallbacksD1Ev
+ 239 000c 00000000 		.word	_ZN11MyCallbacksD0Ev
+ 240 0010 00000000 		.word	_ZN26BLECharacteristicCallbacks6onReadEP17BLECharacteristic
+ 241 0014 00000000 		.word	_ZN11MyCallbacks7onWriteEP17BLECharacteristic
+ 242              		.global	myCallbacks
+ 243              		.section	.data.myCallbacks,"aw",%progbits
+ 244              		.align	2
+ 245              		.set	.LANCHOR0,. + 0
+ 246              		.type	myCallbacks, %object
+ 247              		.size	myCallbacks, 4
+ 248              	myCallbacks:
+ 249 0000 08000000 		.word	_ZTV11MyCallbacks+8
+ 250              		.section	.rodata._Z5setupv.str1.4,"aMS",%progbits,1
+ 251              		.align	2
+ 252              	.LC1:
+ 253 0000 0A232323 		.ascii	"\012### [nRF52-DK] BLE GATT Server ###\000"
+ 253      205B6E52 
+ 253      4635322D 
+ 253      444B5D20 
+ 253      424C4520 
+ 254              	.LC2:
+ 255 0024 4D79206E 		.ascii	"My nRF52-DK\000"
+ 255      52463532 
+ 255      2D444B00 
+ 256              	.LC3:
+ 257 0030 2D205365 		.ascii	"- Server created: %p\012\000"
+ 257      72766572 
+ 257      20637265 
+ 257      61746564 
+ 257      3A202570 
+ 258 0046 0000     		.space	2
+ 259              	.LC4:
+ 260 0048 66363466 		.ascii	"f64f0000-7fdf-4b2c-ad31-e65ca15bef6b\000"
+ 260      30303030 
+ 260      2D376664 
+ 260      662D3462 
+ 260      32632D61 
+ 261 006d 000000   		.space	3
+ 262              	.LC5:
+ 263 0070 2D205365 		.ascii	"- Service created\000"
+ 263      72766963 
+ 263      65206372 
+ 263      65617465 
+ 263      6400
+ 264 0082 0000     		.space	2
+ 265              	.LC6:
+ 266 0084 66363466 		.ascii	"f64f0100-7fdf-4b2c-ad31-e65ca15bef6b\000"
+ 266      30313030 
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccab47PA.s 			page 6
+
+
+ 266      2D376664 
+ 266      662D3462 
+ 266      32632D61 
+ 267 00a9 000000   		.space	3
+ 268              	.LC7:
+ 269 00ac 2D204368 		.ascii	"- Characteristic created\000"
+ 269      61726163 
+ 269      74657269 
+ 269      73746963 
+ 269      20637265 
+ 270 00c5 000000   		.space	3
+ 271              	.LC8:
+ 272 00c8 2D204368 		.ascii	"- Characteristic added\000"
+ 272      61726163 
+ 272      74657269 
+ 272      73746963 
+ 272      20616464 
+ 273 00df 00       		.space	1
+ 274              	.LC9:
+ 275 00e0 2D204164 		.ascii	"- Advertising started...\000"
+ 275      76657274 
+ 275      6973696E 
+ 275      67207374 
+ 275      61727465 
+ 276              		.section	.rodata._ZN11MyCallbacks7onWriteEP17BLECharacteristic.str1.4,"aMS",%progbits,1
+ 277              		.align	2
+ 278              	.LC0:
+ 279 0000 2A2A2A2A 		.ascii	"*******\000"
+ 279      2A2A2A00 
+ 280              		.hidden	__dso_handle
+ 281              		.ident	"GCC: (GNU Tools for Arm Embedded Processors 7-2018-q2-update) 7.3.1 20180622 (release) [AR
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccab47PA.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.cpp
+C:\Users\Stark\AppData\Local\Temp\ccab47PA.s:16     .text._ZN11MyCallbacks7onWriteEP17BLECharacteristic:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccab47PA.s:23     .text._ZN11MyCallbacks7onWriteEP17BLECharacteristic:00000000 _ZN11MyCallbacks7onWriteEP17BLECharacteristic
+C:\Users\Stark\AppData\Local\Temp\ccab47PA.s:54     .text._ZN11MyCallbacks7onWriteEP17BLECharacteristic:00000034 $d
+C:\Users\Stark\AppData\Local\Temp\ccab47PA.s:57     .text._ZN11MyCallbacksD2Ev:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccab47PA.s:64     .text._ZN11MyCallbacksD2Ev:00000000 _ZN11MyCallbacksD2Ev
+C:\Users\Stark\AppData\Local\Temp\ccab47PA.s:77     .text._ZN11MyCallbacksD2Ev:00000010 $d
+C:\Users\Stark\AppData\Local\Temp\ccab47PA.s:235    .rodata._ZTV11MyCallbacks:00000000 _ZTV11MyCallbacks
+C:\Users\Stark\AppData\Local\Temp\ccab47PA.s:64     .text._ZN11MyCallbacksD2Ev:00000000 _ZN11MyCallbacksD1Ev
+C:\Users\Stark\AppData\Local\Temp\ccab47PA.s:82     .text._ZN11MyCallbacksD0Ev:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccab47PA.s:89     .text._ZN11MyCallbacksD0Ev:00000000 _ZN11MyCallbacksD0Ev
+C:\Users\Stark\AppData\Local\Temp\ccab47PA.s:105    .text._ZN11MyCallbacksD0Ev:00000018 $d
+C:\Users\Stark\AppData\Local\Temp\ccab47PA.s:108    .text._Z5setupv:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccab47PA.s:115    .text._Z5setupv:00000000 _Z5setupv
+C:\Users\Stark\AppData\Local\Temp\ccab47PA.s:191    .text._Z5setupv:000000b0 $d
+C:\Users\Stark\AppData\Local\Temp\ccab47PA.s:205    .text._GLOBAL__sub_I_myCallbacks:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccab47PA.s:211    .text._GLOBAL__sub_I_myCallbacks:00000000 _GLOBAL__sub_I_myCallbacks
+C:\Users\Stark\AppData\Local\Temp\ccab47PA.s:223    .text._GLOBAL__sub_I_myCallbacks:00000010 $d
+C:\Users\Stark\AppData\Local\Temp\ccab47PA.s:228    .init_array:00000000 $d
+C:\Users\Stark\AppData\Local\Temp\ccab47PA.s:232    .rodata._ZTV11MyCallbacks:00000000 $d
+C:\Users\Stark\AppData\Local\Temp\ccab47PA.s:248    .data.myCallbacks:00000000 myCallbacks
+C:\Users\Stark\AppData\Local\Temp\ccab47PA.s:244    .data.myCallbacks:00000000 $d
+C:\Users\Stark\AppData\Local\Temp\ccab47PA.s:251    .rodata._Z5setupv.str1.4:00000000 $d
+C:\Users\Stark\AppData\Local\Temp\ccab47PA.s:277    .rodata._ZN11MyCallbacks7onWriteEP17BLECharacteristic.str1.4:00000000 $d
+                           .group:00000000 _ZN11MyCallbacksD5Ev
+
+UNDEFINED SYMBOLS
+_ZN17BLECharacteristic8getValueB5cxx11Ev
+_ZdlPv
+puts
+_ZN26BLECharacteristicCallbacksD2Ev
+_ZdlPvj
+_ZN9BLEDevice4initENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+_ZN9BLEDevice12createServerEv
+printf
+_ZN9BLEServer13createServiceEPKc
+_ZN10BLEService20createCharacteristicEPKcm
+_ZN17BLECharacteristic12setCallbacksEP26BLECharacteristicCallbacks
+_ZN10BLEService5startEv
+_ZN9BLEServer14getAdvertisingEv
+_ZN14BLEAdvertising14addServiceUUIDEPKc
+_ZN14BLEAdvertising20setMinIntervalMicrosEm
+_ZN14BLEAdvertising5startEv
+Serial
+__aeabi_atexit
+__dso_handle
+_ZN26BLECharacteristicCallbacks6onReadEP17BLECharacteristic

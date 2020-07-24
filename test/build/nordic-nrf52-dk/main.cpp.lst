@@ -1,0 +1,1147 @@
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"main.cpp"
+  14              		.text
+  15              		.section	.text._ZN11MyCallbacks6onReadEP17BLECharacteristic,"axG",%progbits,_ZN11MyCallbacks6onRea
+  16              		.align	1
+  17              		.weak	_ZN11MyCallbacks6onReadEP17BLECharacteristic
+  18              		.syntax unified
+  19              		.thumb
+  20              		.thumb_func
+  21              		.fpu fpv4-sp-d16
+  22              		.type	_ZN11MyCallbacks6onReadEP17BLECharacteristic, %function
+  23              	_ZN11MyCallbacks6onReadEP17BLECharacteristic:
+  24              		@ args = 0, pretend = 0, frame = 0
+  25              		@ frame_needed = 0, uses_anonymous_args = 0
+  26 0000 08B5     		push	{r3, lr}
+  27 0002 0248     		ldr	r0, .L3
+  28 0004 FFF7FEFF 		bl	puts
+  29 0008 08BD     		pop	{r3, pc}
+  30              	.L4:
+  31 000a 00BF     		.align	2
+  32              	.L3:
+  33 000c 00000000 		.word	.LC0
+  34              		.size	_ZN11MyCallbacks6onReadEP17BLECharacteristic, .-_ZN11MyCallbacks6onReadEP17BLECharacteristic
+  35              		.section	.text._ZN11MyCallbacks7onWriteEP17BLECharacteristic,"axG",%progbits,_ZN11MyCallbacks7onWr
+  36              		.align	1
+  37              		.weak	_ZN11MyCallbacks7onWriteEP17BLECharacteristic
+  38              		.syntax unified
+  39              		.thumb
+  40              		.thumb_func
+  41              		.fpu fpv4-sp-d16
+  42              		.type	_ZN11MyCallbacks7onWriteEP17BLECharacteristic, %function
+  43              	_ZN11MyCallbacks7onWriteEP17BLECharacteristic:
+  44              		@ args = 0, pretend = 0, frame = 24
+  45              		@ frame_needed = 0, uses_anonymous_args = 0
+  46 0000 10B5     		push	{r4, lr}
+  47 0002 86B0     		sub	sp, sp, #24
+  48 0004 6846     		mov	r0, sp
+  49 0006 FFF7FEFF 		bl	_ZN17BLECharacteristic8getValueB5cxx11Ev
+  50 000a 0C48     		ldr	r0, .L10
+  51 000c FFF7FEFF 		bl	puts
+  52 0010 019B     		ldr	r3, [sp, #4]
+  53 0012 3BB9     		cbnz	r3, .L9
+  54              	.L6:
+  55 0014 0098     		ldr	r0, [sp]
+  56 0016 02AB     		add	r3, sp, #8
+  57 0018 9842     		cmp	r0, r3
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s 			page 2
+
+
+  58 001a 01D0     		beq	.L5
+  59 001c FFF7FEFF 		bl	_ZdlPv
+  60              	.L5:
+  61 0020 06B0     		add	sp, sp, #24
+  62              		@ sp needed
+  63 0022 10BD     		pop	{r4, pc}
+  64              	.L9:
+  65 0024 064C     		ldr	r4, .L10+4
+  66 0026 2046     		mov	r0, r4
+  67 0028 FFF7FEFF 		bl	puts
+  68 002c 0098     		ldr	r0, [sp]
+  69 002e FFF7FEFF 		bl	puts
+  70 0032 2046     		mov	r0, r4
+  71 0034 FFF7FEFF 		bl	puts
+  72 0038 ECE7     		b	.L6
+  73              	.L11:
+  74 003a 00BF     		.align	2
+  75              	.L10:
+  76 003c 00000000 		.word	.LC1
+  77 0040 14000000 		.word	.LC2
+  78              		.size	_ZN11MyCallbacks7onWriteEP17BLECharacteristic, .-_ZN11MyCallbacks7onWriteEP17BLECharacterist
+  79              		.section	.text._ZN11MyCallbacksD2Ev,"axG",%progbits,_ZN11MyCallbacksD5Ev,comdat
+  80              		.align	1
+  81              		.weak	_ZN11MyCallbacksD2Ev
+  82              		.syntax unified
+  83              		.thumb
+  84              		.thumb_func
+  85              		.fpu fpv4-sp-d16
+  86              		.type	_ZN11MyCallbacksD2Ev, %function
+  87              	_ZN11MyCallbacksD2Ev:
+  88              		@ args = 0, pretend = 0, frame = 0
+  89              		@ frame_needed = 0, uses_anonymous_args = 0
+  90 0000 10B5     		push	{r4, lr}
+  91 0002 0446     		mov	r4, r0
+  92 0004 024B     		ldr	r3, .L14
+  93 0006 0360     		str	r3, [r0]
+  94 0008 FFF7FEFF 		bl	_ZN26BLECharacteristicCallbacksD2Ev
+  95 000c 2046     		mov	r0, r4
+  96 000e 10BD     		pop	{r4, pc}
+  97              	.L15:
+  98              		.align	2
+  99              	.L14:
+ 100 0010 08000000 		.word	_ZTV11MyCallbacks+8
+ 101              		.size	_ZN11MyCallbacksD2Ev, .-_ZN11MyCallbacksD2Ev
+ 102              		.weak	_ZN11MyCallbacksD1Ev
+ 103              		.thumb_set _ZN11MyCallbacksD1Ev,_ZN11MyCallbacksD2Ev
+ 104              		.section	.text._ZN11MyCallbacksD0Ev,"axG",%progbits,_ZN11MyCallbacksD5Ev,comdat
+ 105              		.align	1
+ 106              		.weak	_ZN11MyCallbacksD0Ev
+ 107              		.syntax unified
+ 108              		.thumb
+ 109              		.thumb_func
+ 110              		.fpu fpv4-sp-d16
+ 111              		.type	_ZN11MyCallbacksD0Ev, %function
+ 112              	_ZN11MyCallbacksD0Ev:
+ 113              		@ args = 0, pretend = 0, frame = 0
+ 114              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s 			page 3
+
+
+ 115 0000 10B5     		push	{r4, lr}
+ 116 0002 0446     		mov	r4, r0
+ 117 0004 044B     		ldr	r3, .L18
+ 118 0006 0360     		str	r3, [r0]
+ 119 0008 FFF7FEFF 		bl	_ZN26BLECharacteristicCallbacksD2Ev
+ 120 000c 0421     		movs	r1, #4
+ 121 000e 2046     		mov	r0, r4
+ 122 0010 FFF7FEFF 		bl	_ZdlPvj
+ 123 0014 2046     		mov	r0, r4
+ 124 0016 10BD     		pop	{r4, pc}
+ 125              	.L19:
+ 126              		.align	2
+ 127              	.L18:
+ 128 0018 08000000 		.word	_ZTV11MyCallbacks+8
+ 129              		.size	_ZN11MyCallbacksD0Ev, .-_ZN11MyCallbacksD0Ev
+ 130              		.section	.text._ZL19eventButton4Pressedv,"ax",%progbits
+ 131              		.align	1
+ 132              		.syntax unified
+ 133              		.thumb
+ 134              		.thumb_func
+ 135              		.fpu fpv4-sp-d16
+ 136              		.type	_ZL19eventButton4Pressedv, %function
+ 137              	_ZL19eventButton4Pressedv:
+ 138              		@ args = 0, pretend = 0, frame = 0
+ 139              		@ frame_needed = 0, uses_anonymous_args = 0
+ 140 0000 08B5     		push	{r3, lr}
+ 141 0002 FFF7FEFF 		bl	reboot
+ 142 0006 08BD     		pop	{r3, pc}
+ 143              		.size	_ZL19eventButton4Pressedv, .-_ZL19eventButton4Pressedv
+ 144              		.section	.text._ZL10receivemsgR10SerialPort,"ax",%progbits
+ 145              		.align	1
+ 146              		.syntax unified
+ 147              		.thumb
+ 148              		.thumb_func
+ 149              		.fpu fpv4-sp-d16
+ 150              		.type	_ZL10receivemsgR10SerialPort, %function
+ 151              	_ZL10receivemsgR10SerialPort:
+ 152              		@ args = 0, pretend = 0, frame = 0
+ 153              		@ frame_needed = 0, uses_anonymous_args = 0
+ 154 0000 38B5     		push	{r3, r4, r5, lr}
+ 155 0002 0446     		mov	r4, r0
+ 156 0004 0021     		movs	r1, #0
+ 157 0006 0A48     		ldr	r0, .L26
+ 158 0008 FFF7FEFF 		bl	_ZN15System_nRf52_DK9ledToggleEh
+ 159 000c 094D     		ldr	r5, .L26+4
+ 160              	.L24:
+ 161 000e 2368     		ldr	r3, [r4]
+ 162 0010 1B69     		ldr	r3, [r3, #16]
+ 163 0012 2046     		mov	r0, r4
+ 164 0014 9847     		blx	r3
+ 165 0016 0028     		cmp	r0, #0
+ 166 0018 08DD     		ble	.L22
+ 167 001a 2368     		ldr	r3, [r4]
+ 168 001c 5B69     		ldr	r3, [r3, #20]
+ 169 001e 2046     		mov	r0, r4
+ 170 0020 9847     		blx	r3
+ 171 0022 C1B2     		uxtb	r1, r0
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s 			page 4
+
+
+ 172 0024 2846     		mov	r0, r5
+ 173 0026 FFF7FEFF 		bl	printf
+ 174 002a F0E7     		b	.L24
+ 175              	.L22:
+ 176 002c 38BD     		pop	{r3, r4, r5, pc}
+ 177              	.L27:
+ 178 002e 00BF     		.align	2
+ 179              	.L26:
+ 180 0030 00000000 		.word	System
+ 181 0034 00000000 		.word	.LC3
+ 182              		.size	_ZL10receivemsgR10SerialPort, .-_ZL10receivemsgR10SerialPort
+ 183              		.section	.text._ZL18eventButtonPressedh,"ax",%progbits
+ 184              		.align	1
+ 185              		.syntax unified
+ 186              		.thumb
+ 187              		.thumb_func
+ 188              		.fpu fpv4-sp-d16
+ 189              		.type	_ZL18eventButtonPressedh, %function
+ 190              	_ZL18eventButtonPressedh:
+ 191              		@ args = 0, pretend = 0, frame = 0
+ 192              		@ frame_needed = 0, uses_anonymous_args = 0
+ 193 0000 70B5     		push	{r4, r5, r6, lr}
+ 194 0002 0546     		mov	r5, r0
+ 195 0004 0146     		mov	r1, r0
+ 196 0006 0748     		ldr	r0, .L30
+ 197 0008 FFF7FEFF 		bl	_ZN15System_nRf52_DK9ledToggleEh
+ 198 000c 064B     		ldr	r3, .L30+4
+ 199 000e 1C68     		ldr	r4, [r3]
+ 200 0010 2368     		ldr	r3, [r4]
+ 201 0012 5E6B     		ldr	r6, [r3, #52]
+ 202 0014 FFF7FEFF 		bl	micros
+ 203 0018 2B46     		mov	r3, r5
+ 204 001a 0246     		mov	r2, r0
+ 205 001c 0349     		ldr	r1, .L30+8
+ 206 001e 2046     		mov	r0, r4
+ 207 0020 B047     		blx	r6
+ 208 0022 70BD     		pop	{r4, r5, r6, pc}
+ 209              	.L31:
+ 210              		.align	2
+ 211              	.L30:
+ 212 0024 00000000 		.word	System
+ 213 0028 00000000 		.word	Serial
+ 214 002c 00000000 		.word	.LC4
+ 215              		.size	_ZL18eventButtonPressedh, .-_ZL18eventButtonPressedh
+ 216              		.section	.text._ZL19eventButton3Pressedv,"ax",%progbits
+ 217              		.align	1
+ 218              		.syntax unified
+ 219              		.thumb
+ 220              		.thumb_func
+ 221              		.fpu fpv4-sp-d16
+ 222              		.type	_ZL19eventButton3Pressedv, %function
+ 223              	_ZL19eventButton3Pressedv:
+ 224              		@ args = 0, pretend = 0, frame = 0
+ 225              		@ frame_needed = 0, uses_anonymous_args = 0
+ 226 0000 08B5     		push	{r3, lr}
+ 227 0002 0220     		movs	r0, #2
+ 228 0004 FFF7FEFF 		bl	_ZL18eventButtonPressedh
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s 			page 5
+
+
+ 229 0008 08BD     		pop	{r3, pc}
+ 230              		.size	_ZL19eventButton3Pressedv, .-_ZL19eventButton3Pressedv
+ 231              		.section	.text._Z10int_tobytei,"ax",%progbits
+ 232              		.align	1
+ 233              		.global	_Z10int_tobytei
+ 234              		.syntax unified
+ 235              		.thumb
+ 236              		.thumb_func
+ 237              		.fpu fpv4-sp-d16
+ 238              		.type	_Z10int_tobytei, %function
+ 239              	_Z10int_tobytei:
+ 240              		@ args = 0, pretend = 0, frame = 8
+ 241              		@ frame_needed = 0, uses_anonymous_args = 0
+ 242 0000 00B5     		push	{lr}
+ 243 0002 83B0     		sub	sp, sp, #12
+ 244 0004 0190     		str	r0, [sp, #4]
+ 245 0006 0146     		mov	r1, r0
+ 246 0008 0648     		ldr	r0, .L36
+ 247 000a FFF7FEFF 		bl	printf
+ 248 000e 0648     		ldr	r0, .L36+4
+ 249 0010 9DF80430 		ldrb	r3, [sp, #4]	@ zero_extendqisi2
+ 250 0014 0370     		strb	r3, [r0]
+ 251 0016 9DF80530 		ldrb	r3, [sp, #5]	@ zero_extendqisi2
+ 252 001a 4370     		strb	r3, [r0, #1]
+ 253 001c 03B0     		add	sp, sp, #12
+ 254              		@ sp needed
+ 255 001e 5DF804FB 		ldr	pc, [sp], #4
+ 256              	.L37:
+ 257 0022 00BF     		.align	2
+ 258              	.L36:
+ 259 0024 00000000 		.word	.LC5
+ 260 0028 00000000 		.word	.LANCHOR0
+ 261              		.size	_Z10int_tobytei, .-_Z10int_tobytei
+ 262              		.section	.text._Z4snaph,"ax",%progbits
+ 263              		.align	1
+ 264              		.global	_Z4snaph
+ 265              		.syntax unified
+ 266              		.thumb
+ 267              		.thumb_func
+ 268              		.fpu fpv4-sp-d16
+ 269              		.type	_Z4snaph, %function
+ 270              	_Z4snaph:
+ 271              		@ args = 0, pretend = 0, frame = 0
+ 272              		@ frame_needed = 0, uses_anonymous_args = 0
+ 273              		@ link register save eliminated.
+ 274 0000 054B     		ldr	r3, .L39
+ 275 0002 0022     		movs	r2, #0
+ 276 0004 1A70     		strb	r2, [r3]
+ 277 0006 0121     		movs	r1, #1
+ 278 0008 5970     		strb	r1, [r3, #1]
+ 279 000a 9A70     		strb	r2, [r3, #2]
+ 280 000c D870     		strb	r0, [r3, #3]
+ 281 000e 0844     		add	r0, r0, r1
+ 282 0010 1871     		strb	r0, [r3, #4]
+ 283 0012 1846     		mov	r0, r3
+ 284 0014 7047     		bx	lr
+ 285              	.L40:
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s 			page 6
+
+
+ 286 0016 00BF     		.align	2
+ 287              	.L39:
+ 288 0018 00000000 		.word	.LANCHOR1
+ 289              		.size	_Z4snaph, .-_Z4snaph
+ 290              		.section	.text._ZL19eventButton1Pressedv,"ax",%progbits
+ 291              		.align	1
+ 292              		.syntax unified
+ 293              		.thumb
+ 294              		.thumb_func
+ 295              		.fpu fpv4-sp-d16
+ 296              		.type	_ZL19eventButton1Pressedv, %function
+ 297              	_ZL19eventButton1Pressedv:
+ 298              		@ args = 0, pretend = 0, frame = 0
+ 299              		@ frame_needed = 0, uses_anonymous_args = 0
+ 300 0000 10B5     		push	{r4, lr}
+ 301 0002 0020     		movs	r0, #0
+ 302 0004 FFF7FEFF 		bl	_ZL18eventButtonPressedh
+ 303 0008 0948     		ldr	r0, .L43
+ 304 000a FFF7FEFF 		bl	puts
+ 305 000e 0120     		movs	r0, #1
+ 306 0010 FFF7FEFF 		bl	_Z4snaph
+ 307 0014 074B     		ldr	r3, .L43+4
+ 308 0016 1B68     		ldr	r3, [r3]
+ 309 0018 1A68     		ldr	r2, [r3]
+ 310 001a 5468     		ldr	r4, [r2, #4]
+ 311 001c 0522     		movs	r2, #5
+ 312 001e 0146     		mov	r1, r0
+ 313 0020 1846     		mov	r0, r3
+ 314 0022 A047     		blx	r4
+ 315 0024 0146     		mov	r1, r0
+ 316 0026 0448     		ldr	r0, .L43+8
+ 317 0028 FFF7FEFF 		bl	printf
+ 318 002c 10BD     		pop	{r4, pc}
+ 319              	.L44:
+ 320 002e 00BF     		.align	2
+ 321              	.L43:
+ 322 0030 00000000 		.word	.LC6
+ 323 0034 00000000 		.word	Serial2
+ 324 0038 20000000 		.word	.LC7
+ 325              		.size	_ZL19eventButton1Pressedv, .-_ZL19eventButton1Pressedv
+ 326              		.section	.text._Z6setRTCthhhhh,"ax",%progbits
+ 327              		.align	1
+ 328              		.global	_Z6setRTCthhhhh
+ 329              		.syntax unified
+ 330              		.thumb
+ 331              		.thumb_func
+ 332              		.fpu fpv4-sp-d16
+ 333              		.type	_Z6setRTCthhhhh, %function
+ 334              	_Z6setRTCthhhhh:
+ 335              		@ args = 8, pretend = 0, frame = 0
+ 336              		@ frame_needed = 0, uses_anonymous_args = 0
+ 337 0000 70B5     		push	{r4, r5, r6, lr}
+ 338 0002 0E46     		mov	r6, r1
+ 339 0004 1546     		mov	r5, r2
+ 340 0006 1C46     		mov	r4, r3
+ 341 0008 FFF7FEFF 		bl	_Z10int_tobytei
+ 342 000c 104B     		ldr	r3, .L49
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s 			page 7
+
+
+ 343 000e 0422     		movs	r2, #4
+ 344 0010 1A70     		strb	r2, [r3]
+ 345 0012 0722     		movs	r2, #7
+ 346 0014 5A70     		strb	r2, [r3, #1]
+ 347 0016 0022     		movs	r2, #0
+ 348 0018 9A70     		strb	r2, [r3, #2]
+ 349 001a 0178     		ldrb	r1, [r0]	@ zero_extendqisi2
+ 350 001c D970     		strb	r1, [r3, #3]
+ 351 001e 4178     		ldrb	r1, [r0, #1]	@ zero_extendqisi2
+ 352 0020 1971     		strb	r1, [r3, #4]
+ 353 0022 5E71     		strb	r6, [r3, #5]
+ 354 0024 9D71     		strb	r5, [r3, #6]
+ 355 0026 DC71     		strb	r4, [r3, #7]
+ 356 0028 9DF81010 		ldrb	r1, [sp, #16]	@ zero_extendqisi2
+ 357 002c 1972     		strb	r1, [r3, #8]
+ 358 002e 9DF81410 		ldrb	r1, [sp, #20]	@ zero_extendqisi2
+ 359 0032 5972     		strb	r1, [r3, #9]
+ 360 0034 9A72     		strb	r2, [r3, #10]
+ 361 0036 1A46     		mov	r2, r3
+ 362 0038 03F10A01 		add	r1, r3, #10
+ 363 003c 1846     		mov	r0, r3
+ 364              	.L46:
+ 365 003e 12F8013B 		ldrb	r3, [r2], #1	@ zero_extendqisi2
+ 366 0042 847A     		ldrb	r4, [r0, #10]	@ zero_extendqisi2
+ 367 0044 2344     		add	r3, r3, r4
+ 368 0046 8372     		strb	r3, [r0, #10]
+ 369 0048 8A42     		cmp	r2, r1
+ 370 004a F8D1     		bne	.L46
+ 371 004c 0048     		ldr	r0, .L49
+ 372 004e 70BD     		pop	{r4, r5, r6, pc}
+ 373              	.L50:
+ 374              		.align	2
+ 375              	.L49:
+ 376 0050 00000000 		.word	.LANCHOR2
+ 377              		.size	_Z6setRTCthhhhh, .-_Z6setRTCthhhhh
+ 378              		.section	.text._ZL19eventButton2Pressedv,"ax",%progbits
+ 379              		.align	1
+ 380              		.syntax unified
+ 381              		.thumb
+ 382              		.thumb_func
+ 383              		.fpu fpv4-sp-d16
+ 384              		.type	_ZL19eventButton2Pressedv, %function
+ 385              	_ZL19eventButton2Pressedv:
+ 386              		@ args = 0, pretend = 0, frame = 0
+ 387              		@ frame_needed = 0, uses_anonymous_args = 0
+ 388 0000 10B5     		push	{r4, lr}
+ 389 0002 82B0     		sub	sp, sp, #8
+ 390 0004 0120     		movs	r0, #1
+ 391 0006 FFF7FEFF 		bl	_ZL18eventButtonPressedh
+ 392 000a 0C23     		movs	r3, #12
+ 393 000c 0193     		str	r3, [sp, #4]
+ 394 000e 0A23     		movs	r3, #10
+ 395 0010 0093     		str	r3, [sp]
+ 396 0012 0B23     		movs	r3, #11
+ 397 0014 0E22     		movs	r2, #14
+ 398 0016 0721     		movs	r1, #7
+ 399 0018 40F2E470 		movw	r0, #2020
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s 			page 8
+
+
+ 400 001c FFF7FEFF 		bl	_Z6setRTCthhhhh
+ 401 0020 064B     		ldr	r3, .L53
+ 402 0022 1B68     		ldr	r3, [r3]
+ 403 0024 1A68     		ldr	r2, [r3]
+ 404 0026 5468     		ldr	r4, [r2, #4]
+ 405 0028 0B22     		movs	r2, #11
+ 406 002a 0146     		mov	r1, r0
+ 407 002c 1846     		mov	r0, r3
+ 408 002e A047     		blx	r4
+ 409 0030 0146     		mov	r1, r0
+ 410 0032 0348     		ldr	r0, .L53+4
+ 411 0034 FFF7FEFF 		bl	printf
+ 412 0038 02B0     		add	sp, sp, #8
+ 413              		@ sp needed
+ 414 003a 10BD     		pop	{r4, pc}
+ 415              	.L54:
+ 416              		.align	2
+ 417              	.L53:
+ 418 003c 00000000 		.word	Serial2
+ 419 0040 20000000 		.word	.LC7
+ 420              		.size	_ZL19eventButton2Pressedv, .-_ZL19eventButton2Pressedv
+ 421              		.section	.text._Z8getImagemthPc,"ax",%progbits
+ 422              		.align	1
+ 423              		.global	_Z8getImagemthPc
+ 424              		.syntax unified
+ 425              		.thumb
+ 426              		.thumb_func
+ 427              		.fpu fpv4-sp-d16
+ 428              		.type	_Z8getImagemthPc, %function
+ 429              	_Z8getImagemthPc:
+ 430              		@ args = 0, pretend = 0, frame = 0
+ 431              		@ frame_needed = 0, uses_anonymous_args = 0
+ 432              		@ link register save eliminated.
+ 433 0000 0020     		movs	r0, #0
+ 434 0002 7047     		bx	lr
+ 435              		.size	_Z8getImagemthPc, .-_Z8getImagemthPc
+ 436              		.section	.text._ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20
+ 437              		.align	1
+ 438              		.weak	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_i
+ 439              		.syntax unified
+ 440              		.thumb
+ 441              		.thumb_func
+ 442              		.fpu fpv4-sp-d16
+ 443              		.type	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_i
+ 444              	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator
+ 445              		@ args = 0, pretend = 0, frame = 8
+ 446              		@ frame_needed = 0, uses_anonymous_args = 0
+ 447 0000 70B5     		push	{r4, r5, r6, lr}
+ 448 0002 82B0     		sub	sp, sp, #8
+ 449 0004 0546     		mov	r5, r0
+ 450 0006 69B1     		cbz	r1, .L64
+ 451 0008 0E46     		mov	r6, r1
+ 452 000a 541A     		subs	r4, r2, r1
+ 453 000c 0194     		str	r4, [sp, #4]
+ 454 000e 0F2C     		cmp	r4, #15
+ 455 0010 0FD8     		bhi	.L65
+ 456              	.L59:
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s 			page 9
+
+
+ 457 0012 2868     		ldr	r0, [r5]
+ 458 0014 012C     		cmp	r4, #1
+ 459 0016 14D0     		beq	.L66
+ 460 0018 ACB1     		cbz	r4, .L61
+ 461 001a 2246     		mov	r2, r4
+ 462 001c 3146     		mov	r1, r6
+ 463 001e FFF7FEFF 		bl	memcpy
+ 464 0022 10E0     		b	.L61
+ 465              	.L64:
+ 466 0024 12B9     		cbnz	r2, .L67
+ 467 0026 0023     		movs	r3, #0
+ 468 0028 0193     		str	r3, [sp, #4]
+ 469 002a 0CE0     		b	.L61
+ 470              	.L67:
+ 471 002c 0948     		ldr	r0, .L68
+ 472 002e FFF7FEFF 		bl	_ZSt19__throw_logic_errorPKc
+ 473              	.L65:
+ 474 0032 0022     		movs	r2, #0
+ 475 0034 01A9     		add	r1, sp, #4
+ 476 0036 FFF7FEFF 		bl	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_createERjj
+ 477 003a 2860     		str	r0, [r5]
+ 478 003c 019B     		ldr	r3, [sp, #4]
+ 479 003e AB60     		str	r3, [r5, #8]
+ 480 0040 E7E7     		b	.L59
+ 481              	.L66:
+ 482 0042 3378     		ldrb	r3, [r6]	@ zero_extendqisi2
+ 483 0044 0370     		strb	r3, [r0]
+ 484              	.L61:
+ 485 0046 019B     		ldr	r3, [sp, #4]
+ 486 0048 6B60     		str	r3, [r5, #4]
+ 487 004a 2A68     		ldr	r2, [r5]
+ 488 004c 0021     		movs	r1, #0
+ 489 004e D154     		strb	r1, [r2, r3]
+ 490 0050 02B0     		add	sp, sp, #8
+ 491              		@ sp needed
+ 492 0052 70BD     		pop	{r4, r5, r6, pc}
+ 493              	.L69:
+ 494              		.align	2
+ 495              	.L68:
+ 496 0054 00000000 		.word	.LC8
+ 497              		.size	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_i
+ 498              		.section	.text._Z5setupv,"ax",%progbits
+ 499              		.align	1
+ 500              		.global	_Z5setupv
+ 501              		.syntax unified
+ 502              		.thumb
+ 503              		.thumb_func
+ 504              		.fpu fpv4-sp-d16
+ 505              		.type	_Z5setupv, %function
+ 506              	_Z5setupv:
+ 507              		@ args = 0, pretend = 0, frame = 120
+ 508              		@ frame_needed = 0, uses_anonymous_args = 0
+ 509 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 510 0004 9EB0     		sub	sp, sp, #120
+ 511 0006 0021     		movs	r1, #0
+ 512 0008 6648     		ldr	r0, .L77
+ 513 000a FFF7FEFF 		bl	_ZN15System_nRf52_DK5ledOnEh
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s 			page 10
+
+
+ 514 000e 664B     		ldr	r3, .L77+4
+ 515 0010 1D68     		ldr	r5, [r3]
+ 516 0012 2B68     		ldr	r3, [r5]
+ 517 0014 5B6A     		ldr	r3, [r3, #36]
+ 518 0016 0322     		movs	r2, #3
+ 519 0018 4FF4E131 		mov	r1, #115200
+ 520 001c 2846     		mov	r0, r5
+ 521 001e 9847     		blx	r3
+ 522 0020 624B     		ldr	r3, .L77+8
+ 523 0022 1C68     		ldr	r4, [r3]
+ 524 0024 2368     		ldr	r3, [r4]
+ 525 0026 5B6A     		ldr	r3, [r3, #36]
+ 526 0028 0322     		movs	r2, #3
+ 527 002a 4FF4E131 		mov	r1, #115200
+ 528 002e 2046     		mov	r0, r4
+ 529 0030 9847     		blx	r3
+ 530 0032 2B68     		ldr	r3, [r5]
+ 531 0034 5B6B     		ldr	r3, [r3, #52]
+ 532 0036 5E49     		ldr	r1, .L77+12
+ 533 0038 2846     		mov	r0, r5
+ 534 003a 9847     		blx	r3
+ 535 003c 08AD     		add	r5, sp, #32
+ 536 003e 0695     		str	r5, [sp, #24]
+ 537 0040 5C49     		ldr	r1, .L77+16
+ 538 0042 4FF00003 		mov	r3, #0
+ 539 0046 0A46     		mov	r2, r1
+ 540 0048 0B39     		subs	r1, r1, #11
+ 541 004a 06A8     		add	r0, sp, #24
+ 542 004c FFF7FEFF 		bl	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iter
+ 543 0050 06A8     		add	r0, sp, #24
+ 544 0052 FFF7FEFF 		bl	_ZN9BLEDevice4initENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+ 545 0056 0698     		ldr	r0, [sp, #24]
+ 546 0058 A842     		cmp	r0, r5
+ 547 005a 01D0     		beq	.L71
+ 548 005c FFF7FEFF 		bl	_ZdlPv
+ 549              	.L71:
+ 550 0060 FFF7FEFF 		bl	_ZN9BLEDevice12createServerEv
+ 551 0064 0546     		mov	r5, r0
+ 552 0066 0146     		mov	r1, r0
+ 553 0068 5348     		ldr	r0, .L77+20
+ 554 006a FFF7FEFF 		bl	printf
+ 555 006e 5349     		ldr	r1, .L77+24
+ 556 0070 2846     		mov	r0, r5
+ 557 0072 FFF7FEFF 		bl	_ZN9BLEServer13createServiceEPKc
+ 558 0076 0646     		mov	r6, r0
+ 559 0078 5148     		ldr	r0, .L77+28
+ 560 007a FFF7FEFF 		bl	puts
+ 561 007e 2122     		movs	r2, #33
+ 562 0080 5049     		ldr	r1, .L77+32
+ 563 0082 3046     		mov	r0, r6
+ 564 0084 FFF7FEFF 		bl	_ZN10BLEService20createCharacteristicEPKcm
+ 565 0088 0746     		mov	r7, r0
+ 566 008a 0DF13808 		add	r8, sp, #56
+ 567 008e CDF83080 		str	r8, [sp, #48]
+ 568 0092 4D49     		ldr	r1, .L77+36
+ 569 0094 4FF00003 		mov	r3, #0
+ 570 0098 0A46     		mov	r2, r1
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s 			page 11
+
+
+ 571 009a 0A39     		subs	r1, r1, #10
+ 572 009c 0CA8     		add	r0, sp, #48
+ 573 009e FFF7FEFF 		bl	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iter
+ 574 00a2 0CA9     		add	r1, sp, #48
+ 575 00a4 3846     		mov	r0, r7
+ 576 00a6 FFF7FEFF 		bl	_ZN17BLECharacteristic8setValueENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+ 577 00aa 0C98     		ldr	r0, [sp, #48]
+ 578 00ac 4045     		cmp	r0, r8
+ 579 00ae 01D0     		beq	.L72
+ 580 00b0 FFF7FEFF 		bl	_ZdlPv
+ 581              	.L72:
+ 582 00b4 4549     		ldr	r1, .L77+40
+ 583 00b6 3846     		mov	r0, r7
+ 584 00b8 FFF7FEFF 		bl	_ZN17BLECharacteristic12setCallbacksEP26BLECharacteristicCallbacks
+ 585 00bc 4448     		ldr	r0, .L77+44
+ 586 00be FFF7FEFF 		bl	puts
+ 587 00c2 3046     		mov	r0, r6
+ 588 00c4 FFF7FEFF 		bl	_ZN10BLEService5startEv
+ 589 00c8 4248     		ldr	r0, .L77+48
+ 590 00ca FFF7FEFF 		bl	puts
+ 591 00ce 02AB     		add	r3, sp, #8
+ 592 00d0 0093     		str	r3, [sp]
+ 593 00d2 0023     		movs	r3, #0
+ 594 00d4 0193     		str	r3, [sp, #4]
+ 595 00d6 8DF80830 		strb	r3, [sp, #8]
+ 596 00da 14AE     		add	r6, sp, #80
+ 597 00dc 1296     		str	r6, [sp, #72]
+ 598 00de 3E49     		ldr	r1, .L77+52
+ 599 00e0 0A46     		mov	r2, r1
+ 600 00e2 0C39     		subs	r1, r1, #12
+ 601 00e4 12A8     		add	r0, sp, #72
+ 602 00e6 FFF7FEFF 		bl	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iter
+ 603 00ea 12A9     		add	r1, sp, #72
+ 604 00ec 6846     		mov	r0, sp
+ 605 00ee FFF7FEFF 		bl	_ZN20BLEAdvertisementData7setNameENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+ 606 00f2 1298     		ldr	r0, [sp, #72]
+ 607 00f4 B042     		cmp	r0, r6
+ 608 00f6 01D0     		beq	.L73
+ 609 00f8 FFF7FEFF 		bl	_ZdlPv
+ 610              	.L73:
+ 611 00fc 1AAE     		add	r6, sp, #104
+ 612 00fe 1896     		str	r6, [sp, #96]
+ 613 0100 3649     		ldr	r1, .L77+56
+ 614 0102 4FF00003 		mov	r3, #0
+ 615 0106 0A46     		mov	r2, r1
+ 616 0108 0939     		subs	r1, r1, #9
+ 617 010a 18A8     		add	r0, sp, #96
+ 618 010c FFF7FEFF 		bl	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iter
+ 619 0110 18A9     		add	r1, sp, #96
+ 620 0112 6846     		mov	r0, sp
+ 621 0114 FFF7FEFF 		bl	_ZN20BLEAdvertisementData19setManufacturerDataENSt7__cxx1112basic_stringIcSt11char_traitsIcESaI
+ 622 0118 1898     		ldr	r0, [sp, #96]
+ 623 011a B042     		cmp	r0, r6
+ 624 011c 01D0     		beq	.L74
+ 625 011e FFF7FEFF 		bl	_ZdlPv
+ 626              	.L74:
+ 627 0122 2846     		mov	r0, r5
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s 			page 12
+
+
+ 628 0124 FFF7FEFF 		bl	_ZN9BLEServer14getAdvertisingEv
+ 629 0128 0546     		mov	r5, r0
+ 630 012a 2449     		ldr	r1, .L77+24
+ 631 012c FFF7FEFF 		bl	_ZN14BLEAdvertising14addServiceUUIDEPKc
+ 632 0130 2B49     		ldr	r1, .L77+60
+ 633 0132 2846     		mov	r0, r5
+ 634 0134 FFF7FEFF 		bl	_ZN14BLEAdvertising20setMinIntervalMicrosEm
+ 635 0138 6946     		mov	r1, sp
+ 636 013a 2846     		mov	r0, r5
+ 637 013c FFF7FEFF 		bl	_ZN14BLEAdvertising20setAdvertisementDataER20BLEAdvertisementData
+ 638 0140 2846     		mov	r0, r5
+ 639 0142 FFF7FEFF 		bl	_ZN14BLEAdvertising5startEv
+ 640 0146 2748     		ldr	r0, .L77+64
+ 641 0148 FFF7FEFF 		bl	puts
+ 642 014c 2368     		ldr	r3, [r4]
+ 643 014e DB6A     		ldr	r3, [r3, #44]
+ 644 0150 2046     		mov	r0, r4
+ 645 0152 9847     		blx	r3
+ 646 0154 0022     		movs	r2, #0
+ 647 0156 2449     		ldr	r1, .L77+68
+ 648 0158 2046     		mov	r0, r4
+ 649 015a FFF7FEFF 		bl	_ZN10SerialPort9onReceiveEPFvRS_Eb
+ 650 015e 114C     		ldr	r4, .L77
+ 651 0160 224A     		ldr	r2, .L77+72
+ 652 0162 0021     		movs	r1, #0
+ 653 0164 2046     		mov	r0, r4
+ 654 0166 FFF7FEFF 		bl	_ZN15System_nRf52_DK15onButtonPressedEhPFvvE
+ 655 016a 214A     		ldr	r2, .L77+76
+ 656 016c 0121     		movs	r1, #1
+ 657 016e 2046     		mov	r0, r4
+ 658 0170 FFF7FEFF 		bl	_ZN15System_nRf52_DK15onButtonPressedEhPFvvE
+ 659 0174 1F4A     		ldr	r2, .L77+80
+ 660 0176 0221     		movs	r1, #2
+ 661 0178 2046     		mov	r0, r4
+ 662 017a FFF7FEFF 		bl	_ZN15System_nRf52_DK15onButtonPressedEhPFvvE
+ 663 017e 1E4A     		ldr	r2, .L77+84
+ 664 0180 0321     		movs	r1, #3
+ 665 0182 2046     		mov	r0, r4
+ 666 0184 FFF7FEFF 		bl	_ZN15System_nRf52_DK15onButtonPressedEhPFvvE
+ 667 0188 0021     		movs	r1, #0
+ 668 018a 0320     		movs	r0, #3
+ 669 018c FFF7FEFF 		bl	pinMode
+ 670 0190 0098     		ldr	r0, [sp]
+ 671 0192 02AB     		add	r3, sp, #8
+ 672 0194 9842     		cmp	r0, r3
+ 673 0196 01D0     		beq	.L70
+ 674 0198 FFF7FEFF 		bl	_ZdlPv
+ 675              	.L70:
+ 676 019c 1EB0     		add	sp, sp, #120
+ 677              		@ sp needed
+ 678 019e BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 679              	.L78:
+ 680 01a2 00BF     		.align	2
+ 681              	.L77:
+ 682 01a4 00000000 		.word	System
+ 683 01a8 00000000 		.word	Serial
+ 684 01ac 00000000 		.word	Serial2
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s 			page 13
+
+
+ 685 01b0 00000000 		.word	.LC9
+ 686 01b4 0B000000 		.word	.LC10+11
+ 687 01b8 3C000000 		.word	.LC11
+ 688 01bc 54000000 		.word	.LC12
+ 689 01c0 7C000000 		.word	.LC13
+ 690 01c4 90000000 		.word	.LC14
+ 691 01c8 0A000000 		.word	.LC15+10
+ 692 01cc 00000000 		.word	.LANCHOR3
+ 693 01d0 C4000000 		.word	.LC16
+ 694 01d4 E0000000 		.word	.LC17
+ 695 01d8 0C000000 		.word	.LC18+12
+ 696 01dc 09000000 		.word	.LC19+9
+ 697 01e0 40420F00 		.word	1000000
+ 698 01e4 14010000 		.word	.LC20
+ 699 01e8 00000000 		.word	_ZL10receivemsgR10SerialPort
+ 700 01ec 00000000 		.word	_ZL19eventButton1Pressedv
+ 701 01f0 00000000 		.word	_ZL19eventButton2Pressedv
+ 702 01f4 00000000 		.word	_ZL19eventButton3Pressedv
+ 703 01f8 00000000 		.word	_ZL19eventButton4Pressedv
+ 704              		.size	_Z5setupv, .-_Z5setupv
+ 705              		.section	.text._GLOBAL__sub_I_tPrint,"ax",%progbits
+ 706              		.align	1
+ 707              		.syntax unified
+ 708              		.thumb
+ 709              		.thumb_func
+ 710              		.fpu fpv4-sp-d16
+ 711              		.type	_GLOBAL__sub_I_tPrint, %function
+ 712              	_GLOBAL__sub_I_tPrint:
+ 713              		@ args = 0, pretend = 0, frame = 0
+ 714              		@ frame_needed = 0, uses_anonymous_args = 0
+ 715 0000 70B5     		push	{r4, r5, r6, lr}
+ 716 0002 0D4D     		ldr	r5, .L81
+ 717 0004 2846     		mov	r0, r5
+ 718 0006 FFF7FEFF 		bl	_ZN5TimerC1Ev
+ 719 000a 0C4C     		ldr	r4, .L81+4
+ 720 000c 0C4E     		ldr	r6, .L81+8
+ 721 000e 2246     		mov	r2, r4
+ 722 0010 3146     		mov	r1, r6
+ 723 0012 2846     		mov	r0, r5
+ 724 0014 FFF7FEFF 		bl	__aeabi_atexit
+ 725 0018 0A4D     		ldr	r5, .L81+12
+ 726 001a 2846     		mov	r0, r5
+ 727 001c FFF7FEFF 		bl	_ZN5TimerC1Ev
+ 728 0020 2246     		mov	r2, r4
+ 729 0022 3146     		mov	r1, r6
+ 730 0024 2846     		mov	r0, r5
+ 731 0026 FFF7FEFF 		bl	__aeabi_atexit
+ 732 002a 2246     		mov	r2, r4
+ 733 002c 0649     		ldr	r1, .L81+16
+ 734 002e 0748     		ldr	r0, .L81+20
+ 735 0030 FFF7FEFF 		bl	__aeabi_atexit
+ 736 0034 70BD     		pop	{r4, r5, r6, pc}
+ 737              	.L82:
+ 738 0036 00BF     		.align	2
+ 739              	.L81:
+ 740 0038 00000000 		.word	.LANCHOR4
+ 741 003c 00000000 		.word	__dso_handle
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s 			page 14
+
+
+ 742 0040 00000000 		.word	_ZN5TimerD1Ev
+ 743 0044 00000000 		.word	.LANCHOR5
+ 744 0048 00000000 		.word	_ZN11MyCallbacksD1Ev
+ 745 004c 00000000 		.word	.LANCHOR3
+ 746              		.size	_GLOBAL__sub_I_tPrint, .-_GLOBAL__sub_I_tPrint
+ 747              		.section	.init_array,"aw",%init_array
+ 748              		.align	2
+ 749 0000 00000000 		.word	_GLOBAL__sub_I_tPrint(target1)
+ 750              		.weak	_ZTV11MyCallbacks
+ 751              		.section	.rodata._ZTV11MyCallbacks,"aG",%progbits,_ZTV11MyCallbacks,comdat
+ 752              		.align	2
+ 753              		.type	_ZTV11MyCallbacks, %object
+ 754              		.size	_ZTV11MyCallbacks, 24
+ 755              	_ZTV11MyCallbacks:
+ 756 0000 00000000 		.word	0
+ 757 0004 00000000 		.word	0
+ 758 0008 00000000 		.word	_ZN11MyCallbacksD1Ev
+ 759 000c 00000000 		.word	_ZN11MyCallbacksD0Ev
+ 760 0010 00000000 		.word	_ZN11MyCallbacks6onReadEP17BLECharacteristic
+ 761 0014 00000000 		.word	_ZN11MyCallbacks7onWriteEP17BLECharacteristic
+ 762              		.global	myCallbacks
+ 763              		.global	countNoInit
+ 764              		.global	tPrint2
+ 765              		.global	tPrint
+ 766              		.section	.bss._ZZ10int_tobyteiE4temp,"aw",%nobits
+ 767              		.align	2
+ 768              		.set	.LANCHOR0,. + 0
+ 769              		.type	_ZZ10int_tobyteiE4temp, %object
+ 770              		.size	_ZZ10int_tobyteiE4temp, 2
+ 771              	_ZZ10int_tobyteiE4temp:
+ 772 0000 0000     		.space	2
+ 773              		.section	.bss._ZZ4snaphE3abc,"aw",%nobits
+ 774              		.align	2
+ 775              		.set	.LANCHOR1,. + 0
+ 776              		.type	_ZZ4snaphE3abc, %object
+ 777              		.size	_ZZ4snaphE3abc, 5
+ 778              	_ZZ4snaphE3abc:
+ 779 0000 00000000 		.space	5
+ 779      00
+ 780              		.section	.bss._ZZ6setRTCthhhhhE6rtcmsg,"aw",%nobits
+ 781              		.align	2
+ 782              		.set	.LANCHOR2,. + 0
+ 783              		.type	_ZZ6setRTCthhhhhE6rtcmsg, %object
+ 784              		.size	_ZZ6setRTCthhhhhE6rtcmsg, 11
+ 785              	_ZZ6setRTCthhhhhE6rtcmsg:
+ 786 0000 00000000 		.space	11
+ 786      00000000 
+ 786      000000
+ 787              		.section	.bss.tPrint,"aw",%nobits
+ 788              		.align	2
+ 789              		.set	.LANCHOR4,. + 0
+ 790              		.type	tPrint, %object
+ 791              		.size	tPrint, 28
+ 792              	tPrint:
+ 793 0000 00000000 		.space	28
+ 793      00000000 
+ 793      00000000 
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s 			page 15
+
+
+ 793      00000000 
+ 793      00000000 
+ 794              		.section	.bss.tPrint2,"aw",%nobits
+ 795              		.align	2
+ 796              		.set	.LANCHOR5,. + 0
+ 797              		.type	tPrint2, %object
+ 798              		.size	tPrint2, 28
+ 799              	tPrint2:
+ 800 0000 00000000 		.space	28
+ 800      00000000 
+ 800      00000000 
+ 800      00000000 
+ 800      00000000 
+ 801              		.section	.data.myCallbacks,"aw",%progbits
+ 802              		.align	2
+ 803              		.set	.LANCHOR3,. + 0
+ 804              		.type	myCallbacks, %object
+ 805              		.size	myCallbacks, 4
+ 806              	myCallbacks:
+ 807 0000 08000000 		.word	_ZTV11MyCallbacks+8
+ 808              		.section	.noinit,"aw",%progbits
+ 809              		.type	countNoInit, %object
+ 810              		.size	countNoInit, 1
+ 811              	countNoInit:
+ 812 0000 00       		.space	1
+ 813              		.section	.rodata._Z10int_tobytei.str1.4,"aMS",%progbits,1
+ 814              		.align	2
+ 815              	.LC5:
+ 816 0000 76616C75 		.ascii	"value = 0x%x, byte list = \000"
+ 816      65203D20 
+ 816      30782578 
+ 816      2C206279 
+ 816      7465206C 
+ 817              		.section	.rodata._Z5setupv.str1.4,"aMS",%progbits,1
+ 818              		.align	2
+ 819              	.LC9:
+ 820 0000 0A2A2A2A 		.ascii	"\012*** [nRF52-DK] Serial & BLE GATT server ***\012"
+ 820      205B6E52 
+ 820      4635322D 
+ 820      444B5D20 
+ 820      53657269 
+ 821 002d 00       		.ascii	"\000"
+ 822 002e 0000     		.space	2
+ 823              	.LC10:
+ 824 0030 4D79206E 		.ascii	"My nRF52-DK\000"
+ 824      52463532 
+ 824      2D444B00 
+ 825              	.LC11:
+ 826 003c 2D205365 		.ascii	"- Server created: %p\012\000"
+ 826      72766572 
+ 826      20637265 
+ 826      61746564 
+ 826      3A202570 
+ 827 0052 0000     		.space	2
+ 828              	.LC12:
+ 829 0054 66363466 		.ascii	"f64f0000-7fdf-4b2c-ad31-e65ca15bef6b\000"
+ 829      30303030 
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s 			page 16
+
+
+ 829      2D376664 
+ 829      662D3462 
+ 829      32632D61 
+ 830 0079 000000   		.space	3
+ 831              	.LC13:
+ 832 007c 2D205365 		.ascii	"- Service created\000"
+ 832      72766963 
+ 832      65206372 
+ 832      65617465 
+ 832      6400
+ 833 008e 0000     		.space	2
+ 834              	.LC14:
+ 835 0090 66363466 		.ascii	"f64f0100-7fdf-4b2c-ad31-e65ca15bef6b\000"
+ 835      30313030 
+ 835      2D376664 
+ 835      662D3462 
+ 835      32632D61 
+ 836 00b5 000000   		.space	3
+ 837              	.LC15:
+ 838 00b8 74657374 		.ascii	"test200724\000"
+ 838      32303037 
+ 838      323400
+ 839 00c3 00       		.space	1
+ 840              	.LC16:
+ 841 00c4 2D204368 		.ascii	"- Characteristic created\000"
+ 841      61726163 
+ 841      74657269 
+ 841      73746963 
+ 841      20637265 
+ 842 00dd 000000   		.space	3
+ 843              	.LC17:
+ 844 00e0 2D204368 		.ascii	"- Characteristic added\000"
+ 844      61726163 
+ 844      74657269 
+ 844      73746963 
+ 844      20616464 
+ 845 00f7 00       		.space	1
+ 846              	.LC18:
+ 847 00f8 436F786C 		.ascii	"Coxlab, Inc.\000"
+ 847      61622C20 
+ 847      496E632E 
+ 847      00
+ 848 0105 000000   		.space	3
+ 849              	.LC19:
+ 850 0108 31323334 		.ascii	"123456789\000"
+ 850      35363738 
+ 850      3900
+ 851 0112 0000     		.space	2
+ 852              	.LC20:
+ 853 0114 2D204164 		.ascii	"- Advertising started...\000"
+ 853      76657274 
+ 853      6973696E 
+ 853      67207374 
+ 853      61727465 
+ 854              		.section	.rodata._ZL10receivemsgR10SerialPort.str1.4,"aMS",%progbits,1
+ 855              		.align	2
+ 856              	.LC3:
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s 			page 17
+
+
+ 857 0000 5B307825 		.ascii	"[0x%x]\015\012\000"
+ 857      785D0D0A 
+ 857      00
+ 858              		.section	.rodata._ZL18eventButtonPressedh.str1.4,"aMS",%progbits,1
+ 859              		.align	2
+ 860              	.LC4:
+ 861 0000 5B256C75 		.ascii	"[%lu usec] User button [%u] pressed\012\000"
+ 861      20757365 
+ 861      635D2055 
+ 861      73657220 
+ 861      62757474 
+ 862              		.section	.rodata._ZL19eventButton1Pressedv.str1.4,"aMS",%progbits,1
+ 863              		.align	2
+ 864              	.LC6:
+ 865 0000 62757474 		.ascii	"button 1 selected. send Snap\015\000"
+ 865      6F6E2031 
+ 865      2073656C 
+ 865      65637465 
+ 865      642E2073 
+ 866 001e 0000     		.space	2
+ 867              	.LC7:
+ 868 0020 73656E64 		.ascii	"send ok [%d]\015\012\000"
+ 868      206F6B20 
+ 868      5B25645D 
+ 868      0D0A00
+ 869              		.section	.rodata._ZN11MyCallbacks6onReadEP17BLECharacteristic.str1.4,"aMS",%progbits,1
+ 870              		.align	2
+ 871              	.LC0:
+ 872 0000 72656164 		.ascii	"read request on!\015\000"
+ 872      20726571 
+ 872      75657374 
+ 872      206F6E21 
+ 872      0D00
+ 873              		.section	.rodata._ZN11MyCallbacks7onWriteEP17BLECharacteristic.str1.4,"aMS",%progbits,1
+ 874              		.align	2
+ 875              	.LC1:
+ 876 0000 77726974 		.ascii	"write request on!\015\000"
+ 876      65207265 
+ 876      71756573 
+ 876      74206F6E 
+ 876      210D00
+ 877 0013 00       		.space	1
+ 878              	.LC2:
+ 879 0014 2A2A2A2A 		.ascii	"*******\000"
+ 879      2A2A2A00 
+ 880              		.section	.rodata._ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St
+ 881              		.align	2
+ 882              	.LC8:
+ 883 0000 62617369 		.ascii	"basic_string::_M_construct null not valid\000"
+ 883      635F7374 
+ 883      72696E67 
+ 883      3A3A5F4D 
+ 883      5F636F6E 
+ 884              		.hidden	__dso_handle
+ 885              		.ident	"GCC: (GNU Tools for Arm Embedded Processors 7-2018-q2-update) 7.3.1 20180622 (release) [AR
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s 			page 18
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.cpp
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:16     .text._ZN11MyCallbacks6onReadEP17BLECharacteristic:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:23     .text._ZN11MyCallbacks6onReadEP17BLECharacteristic:00000000 _ZN11MyCallbacks6onReadEP17BLECharacteristic
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:33     .text._ZN11MyCallbacks6onReadEP17BLECharacteristic:0000000c $d
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:36     .text._ZN11MyCallbacks7onWriteEP17BLECharacteristic:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:43     .text._ZN11MyCallbacks7onWriteEP17BLECharacteristic:00000000 _ZN11MyCallbacks7onWriteEP17BLECharacteristic
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:76     .text._ZN11MyCallbacks7onWriteEP17BLECharacteristic:0000003c $d
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:80     .text._ZN11MyCallbacksD2Ev:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:87     .text._ZN11MyCallbacksD2Ev:00000000 _ZN11MyCallbacksD2Ev
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:100    .text._ZN11MyCallbacksD2Ev:00000010 $d
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:755    .rodata._ZTV11MyCallbacks:00000000 _ZTV11MyCallbacks
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:87     .text._ZN11MyCallbacksD2Ev:00000000 _ZN11MyCallbacksD1Ev
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:105    .text._ZN11MyCallbacksD0Ev:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:112    .text._ZN11MyCallbacksD0Ev:00000000 _ZN11MyCallbacksD0Ev
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:128    .text._ZN11MyCallbacksD0Ev:00000018 $d
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:131    .text._ZL19eventButton4Pressedv:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:137    .text._ZL19eventButton4Pressedv:00000000 _ZL19eventButton4Pressedv
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:145    .text._ZL10receivemsgR10SerialPort:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:151    .text._ZL10receivemsgR10SerialPort:00000000 _ZL10receivemsgR10SerialPort
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:180    .text._ZL10receivemsgR10SerialPort:00000030 $d
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:184    .text._ZL18eventButtonPressedh:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:190    .text._ZL18eventButtonPressedh:00000000 _ZL18eventButtonPressedh
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:212    .text._ZL18eventButtonPressedh:00000024 $d
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:217    .text._ZL19eventButton3Pressedv:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:223    .text._ZL19eventButton3Pressedv:00000000 _ZL19eventButton3Pressedv
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:232    .text._Z10int_tobytei:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:239    .text._Z10int_tobytei:00000000 _Z10int_tobytei
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:259    .text._Z10int_tobytei:00000024 $d
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:263    .text._Z4snaph:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:270    .text._Z4snaph:00000000 _Z4snaph
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:288    .text._Z4snaph:00000018 $d
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:291    .text._ZL19eventButton1Pressedv:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:297    .text._ZL19eventButton1Pressedv:00000000 _ZL19eventButton1Pressedv
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:322    .text._ZL19eventButton1Pressedv:00000030 $d
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:327    .text._Z6setRTCthhhhh:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:334    .text._Z6setRTCthhhhh:00000000 _Z6setRTCthhhhh
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:376    .text._Z6setRTCthhhhh:00000050 $d
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:379    .text._ZL19eventButton2Pressedv:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:385    .text._ZL19eventButton2Pressedv:00000000 _ZL19eventButton2Pressedv
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:418    .text._ZL19eventButton2Pressedv:0000003c $d
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:422    .text._Z8getImagemthPc:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:429    .text._Z8getImagemthPc:00000000 _Z8getImagemthPc
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:437    .text._ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tag:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:444    .text._ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tag:00000000 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tag
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:496    .text._ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tag:00000054 $d
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:499    .text._Z5setupv:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:506    .text._Z5setupv:00000000 _Z5setupv
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:682    .text._Z5setupv:000001a4 $d
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:706    .text._GLOBAL__sub_I_tPrint:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:712    .text._GLOBAL__sub_I_tPrint:00000000 _GLOBAL__sub_I_tPrint
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:740    .text._GLOBAL__sub_I_tPrint:00000038 $d
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:748    .init_array:00000000 $d
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:752    .rodata._ZTV11MyCallbacks:00000000 $d
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:806    .data.myCallbacks:00000000 myCallbacks
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:811    .noinit:00000000 countNoInit
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:799    .bss.tPrint2:00000000 tPrint2
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s 			page 19
+
+
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:792    .bss.tPrint:00000000 tPrint
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:767    .bss._ZZ10int_tobyteiE4temp:00000000 $d
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:771    .bss._ZZ10int_tobyteiE4temp:00000000 _ZZ10int_tobyteiE4temp
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:774    .bss._ZZ4snaphE3abc:00000000 $d
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:778    .bss._ZZ4snaphE3abc:00000000 _ZZ4snaphE3abc
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:781    .bss._ZZ6setRTCthhhhhE6rtcmsg:00000000 $d
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:785    .bss._ZZ6setRTCthhhhhE6rtcmsg:00000000 _ZZ6setRTCthhhhhE6rtcmsg
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:788    .bss.tPrint:00000000 $d
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:795    .bss.tPrint2:00000000 $d
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:802    .data.myCallbacks:00000000 $d
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:812    .noinit:00000000 $d
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:814    .rodata._Z10int_tobytei.str1.4:00000000 $d
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:818    .rodata._Z5setupv.str1.4:00000000 $d
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:823    .rodata._Z5setupv.str1.4:00000030 .LC10
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:837    .rodata._Z5setupv.str1.4:000000b8 .LC15
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:846    .rodata._Z5setupv.str1.4:000000f8 .LC18
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:849    .rodata._Z5setupv.str1.4:00000108 .LC19
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:855    .rodata._ZL10receivemsgR10SerialPort.str1.4:00000000 $d
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:859    .rodata._ZL18eventButtonPressedh.str1.4:00000000 $d
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:863    .rodata._ZL19eventButton1Pressedv.str1.4:00000000 $d
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:870    .rodata._ZN11MyCallbacks6onReadEP17BLECharacteristic.str1.4:00000000 $d
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:874    .rodata._ZN11MyCallbacks7onWriteEP17BLECharacteristic.str1.4:00000000 $d
+C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s:881    .rodata._ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tag.str1.4:00000000 $d
+                           .group:00000000 _ZN11MyCallbacksD5Ev
+
+UNDEFINED SYMBOLS
+puts
+_ZN17BLECharacteristic8getValueB5cxx11Ev
+_ZdlPv
+_ZN26BLECharacteristicCallbacksD2Ev
+_ZdlPvj
+reboot
+_ZN15System_nRf52_DK9ledToggleEh
+printf
+System
+micros
+Serial
+Serial2
+memcpy
+_ZSt19__throw_logic_errorPKc
+_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_createERjj
+_ZN15System_nRf52_DK5ledOnEh
+_ZN9BLEDevice4initENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+_ZN9BLEDevice12createServerEv
+_ZN9BLEServer13createServiceEPKc
+_ZN10BLEService20createCharacteristicEPKcm
+_ZN17BLECharacteristic8setValueENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+_ZN17BLECharacteristic12setCallbacksEP26BLECharacteristicCallbacks
+_ZN10BLEService5startEv
+_ZN20BLEAdvertisementData7setNameENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+_ZN20BLEAdvertisementData19setManufacturerDataENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+_ZN9BLEServer14getAdvertisingEv
+_ZN14BLEAdvertising14addServiceUUIDEPKc
+_ZN14BLEAdvertising20setMinIntervalMicrosEm
+_ZN14BLEAdvertising20setAdvertisementDataER20BLEAdvertisementData
+_ZN14BLEAdvertising5startEv
+_ZN10SerialPort9onReceiveEPFvRS_Eb
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccDiAuUs.s 			page 20
+
+
+_ZN15System_nRf52_DK15onButtonPressedEhPFvvE
+pinMode
+_ZN5TimerC1Ev
+__aeabi_atexit
+__dso_handle
+_ZN5TimerD1Ev

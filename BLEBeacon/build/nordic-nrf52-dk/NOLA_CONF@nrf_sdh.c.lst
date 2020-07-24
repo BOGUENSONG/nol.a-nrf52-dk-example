@@ -1,0 +1,697 @@
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"NOLA_CONF@nrf_sdh.c"
+  14              		.text
+  15              		.section	.text.sd_softdevice_enable,"ax",%progbits
+  16              		.align	1
+  17              		.syntax unified
+  18              		.thumb
+  19              		.thumb_func
+  20              		.fpu fpv4-sp-d16
+  21              		.type	sd_softdevice_enable, %function
+  22              	sd_softdevice_enable:
+  23              		@ Naked Function: prologue and epilogue provided by programmer.
+  24              		@ args = 0, pretend = 0, frame = 0
+  25              		@ frame_needed = 0, uses_anonymous_args = 0
+  26              		.syntax unified
+  27              	@ 322 "c:\users\stark\.atom\nola-sdk\nordic-nrf52-dk\nrf_sdm.h" 1
+  28 0000 10DF     		svc #16
+  29 0002 7047     	bx r14
+  30              	@ 0 "" 2
+  31              		.thumb
+  32              		.syntax unified
+  33              		.size	sd_softdevice_enable, .-sd_softdevice_enable
+  34              		.section	.text.sd_softdevice_disable,"ax",%progbits
+  35              		.align	1
+  36              		.syntax unified
+  37              		.thumb
+  38              		.thumb_func
+  39              		.fpu fpv4-sp-d16
+  40              		.type	sd_softdevice_disable, %function
+  41              	sd_softdevice_disable:
+  42              		@ Naked Function: prologue and epilogue provided by programmer.
+  43              		@ args = 0, pretend = 0, frame = 0
+  44              		@ frame_needed = 0, uses_anonymous_args = 0
+  45              		.syntax unified
+  46              	@ 338 "c:\users\stark\.atom\nola-sdk\nordic-nrf52-dk\nrf_sdm.h" 1
+  47 0000 11DF     		svc #17
+  48 0002 7047     	bx r14
+  49              	@ 0 "" 2
+  50              		.thumb
+  51              		.syntax unified
+  52              		.size	sd_softdevice_disable, .-sd_softdevice_disable
+  53              		.section	.text.softdevice_evt_irq_disable,"ax",%progbits
+  54              		.align	1
+  55              		.syntax unified
+  56              		.thumb
+  57              		.thumb_func
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s 			page 2
+
+
+  58              		.fpu fpv4-sp-d16
+  59              		.type	softdevice_evt_irq_disable, %function
+  60              	softdevice_evt_irq_disable:
+  61              		@ args = 0, pretend = 0, frame = 0
+  62              		@ frame_needed = 0, uses_anonymous_args = 0
+  63              		@ link register save eliminated.
+  64 0000 074B     		ldr	r3, .L7
+  65 0002 9B68     		ldr	r3, [r3, #8]
+  66 0004 2BB9     		cbnz	r3, .L6
+  67 0006 074B     		ldr	r3, .L7+4
+  68 0008 4FF48002 		mov	r2, #4194304
+  69 000c C3F88020 		str	r2, [r3, #128]
+  70 0010 7047     		bx	lr
+  71              	.L6:
+  72 0012 034A     		ldr	r2, .L7
+  73 0014 1368     		ldr	r3, [r2]
+  74 0016 23F48003 		bic	r3, r3, #4194304
+  75 001a 1360     		str	r3, [r2]
+  76 001c 7047     		bx	lr
+  77              	.L8:
+  78 001e 00BF     		.align	2
+  79              	.L7:
+  80 0020 00000000 		.word	nrf_nvic_state
+  81 0024 00E100E0 		.word	-536813312
+  82              		.size	softdevice_evt_irq_disable, .-softdevice_evt_irq_disable
+  83              		.section	.text.sdh_request_observer_notify,"ax",%progbits
+  84              		.align	1
+  85              		.syntax unified
+  86              		.thumb
+  87              		.thumb_func
+  88              		.fpu fpv4-sp-d16
+  89              		.type	sdh_request_observer_notify, %function
+  90              	sdh_request_observer_notify:
+  91              		@ args = 0, pretend = 0, frame = 8
+  92              		@ frame_needed = 0, uses_anonymous_args = 0
+  93 0000 10B5     		push	{r4, lr}
+  94 0002 82B0     		sub	sp, sp, #8
+  95 0004 0446     		mov	r4, r0
+  96 0006 0C49     		ldr	r1, .L16
+  97 0008 6846     		mov	r0, sp
+  98 000a FFF7FEFF 		bl	nrf_section_iter_init
+  99 000e 019B     		ldr	r3, [sp, #4]
+ 100 0010 63B1     		cbz	r3, .L12
+ 101              	.L11:
+ 102 0012 1A68     		ldr	r2, [r3]
+ 103 0014 5968     		ldr	r1, [r3, #4]
+ 104 0016 2046     		mov	r0, r4
+ 105 0018 9047     		blx	r2
+ 106 001a 48B1     		cbz	r0, .L13
+ 107 001c 6846     		mov	r0, sp
+ 108 001e FFF7FEFF 		bl	nrf_section_iter_next
+ 109 0022 019B     		ldr	r3, [sp, #4]
+ 110 0024 002B     		cmp	r3, #0
+ 111 0026 F4D1     		bne	.L11
+ 112 0028 0020     		movs	r0, #0
+ 113 002a 02E0     		b	.L9
+ 114              	.L12:
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s 			page 3
+
+
+ 115 002c 0020     		movs	r0, #0
+ 116 002e 00E0     		b	.L9
+ 117              	.L13:
+ 118 0030 1120     		movs	r0, #17
+ 119              	.L9:
+ 120 0032 02B0     		add	sp, sp, #8
+ 121              		@ sp needed
+ 122 0034 10BD     		pop	{r4, pc}
+ 123              	.L17:
+ 124 0036 00BF     		.align	2
+ 125              	.L16:
+ 126 0038 00000000 		.word	.LANCHOR0
+ 127              		.size	sdh_request_observer_notify, .-sdh_request_observer_notify
+ 128              		.section	.text.sdh_state_observer_notify,"ax",%progbits
+ 129              		.align	1
+ 130              		.syntax unified
+ 131              		.thumb
+ 132              		.thumb_func
+ 133              		.fpu fpv4-sp-d16
+ 134              		.type	sdh_state_observer_notify, %function
+ 135              	sdh_state_observer_notify:
+ 136              		@ args = 0, pretend = 0, frame = 8
+ 137              		@ frame_needed = 0, uses_anonymous_args = 0
+ 138 0000 10B5     		push	{r4, lr}
+ 139 0002 82B0     		sub	sp, sp, #8
+ 140 0004 0446     		mov	r4, r0
+ 141 0006 0949     		ldr	r1, .L23
+ 142 0008 6846     		mov	r0, sp
+ 143 000a FFF7FEFF 		bl	nrf_section_iter_init
+ 144 000e 019B     		ldr	r3, [sp, #4]
+ 145 0010 4BB1     		cbz	r3, .L18
+ 146              	.L20:
+ 147 0012 1A68     		ldr	r2, [r3]
+ 148 0014 5968     		ldr	r1, [r3, #4]
+ 149 0016 2046     		mov	r0, r4
+ 150 0018 9047     		blx	r2
+ 151 001a 6846     		mov	r0, sp
+ 152 001c FFF7FEFF 		bl	nrf_section_iter_next
+ 153 0020 019B     		ldr	r3, [sp, #4]
+ 154 0022 002B     		cmp	r3, #0
+ 155 0024 F5D1     		bne	.L20
+ 156              	.L18:
+ 157 0026 02B0     		add	sp, sp, #8
+ 158              		@ sp needed
+ 159 0028 10BD     		pop	{r4, pc}
+ 160              	.L24:
+ 161 002a 00BF     		.align	2
+ 162              	.L23:
+ 163 002c 00000000 		.word	.LANCHOR1
+ 164              		.size	sdh_state_observer_notify, .-sdh_state_observer_notify
+ 165              		.section	.text.softdevices_evt_irq_enable,"ax",%progbits
+ 166              		.align	1
+ 167              		.syntax unified
+ 168              		.thumb
+ 169              		.thumb_func
+ 170              		.fpu fpv4-sp-d16
+ 171              		.type	softdevices_evt_irq_enable, %function
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s 			page 4
+
+
+ 172              	softdevices_evt_irq_enable:
+ 173              		@ args = 0, pretend = 0, frame = 0
+ 174              		@ frame_needed = 0, uses_anonymous_args = 0
+ 175 0000 08B5     		push	{r3, lr}
+ 176 0002 0E4B     		ldr	r3, .L30
+ 177 0004 93F81633 		ldrb	r3, [r3, #790]	@ zero_extendqisi2
+ 178 0008 5A09     		lsrs	r2, r3, #5
+ 179 000a EC23     		movs	r3, #236
+ 180 000c 1341     		asrs	r3, r3, r2
+ 181 000e 13F0010F 		tst	r3, #1
+ 182 0012 0DD0     		beq	.L26
+ 183 0014 0A4B     		ldr	r3, .L30+4
+ 184 0016 9B68     		ldr	r3, [r3, #8]
+ 185 0018 2BB1     		cbz	r3, .L27
+ 186 001a 094A     		ldr	r2, .L30+4
+ 187 001c 1368     		ldr	r3, [r2]
+ 188 001e 43F48003 		orr	r3, r3, #4194304
+ 189 0022 1360     		str	r3, [r2]
+ 190 0024 08E0     		b	.L25
+ 191              	.L27:
+ 192 0026 054B     		ldr	r3, .L30
+ 193 0028 4FF48002 		mov	r2, #4194304
+ 194 002c 1A60     		str	r2, [r3]
+ 195 002e 03E0     		b	.L25
+ 196              	.L26:
+ 197 0030 42F20200 		movw	r0, #8194
+ 198 0034 FFF7FEFF 		bl	app_error_handler_bare
+ 199              	.L25:
+ 200 0038 08BD     		pop	{r3, pc}
+ 201              	.L31:
+ 202 003a 00BF     		.align	2
+ 203              	.L30:
+ 204 003c 00E100E0 		.word	-536813312
+ 205 0040 00000000 		.word	nrf_nvic_state
+ 206              		.size	softdevices_evt_irq_enable, .-softdevices_evt_irq_enable
+ 207              		.section	.text.nrf_sdh_enable_request,"ax",%progbits
+ 208              		.align	1
+ 209              		.global	nrf_sdh_enable_request
+ 210              		.syntax unified
+ 211              		.thumb
+ 212              		.thumb_func
+ 213              		.fpu fpv4-sp-d16
+ 214              		.type	nrf_sdh_enable_request, %function
+ 215              	nrf_sdh_enable_request:
+ 216              		@ args = 0, pretend = 0, frame = 8
+ 217              		@ frame_needed = 0, uses_anonymous_args = 0
+ 218 0000 10B5     		push	{r4, lr}
+ 219 0002 82B0     		sub	sp, sp, #8
+ 220 0004 1B4B     		ldr	r3, .L37
+ 221 0006 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 222 0008 6BBB     		cbnz	r3, .L34
+ 223 000a 1B4B     		ldr	r3, .L37+4
+ 224 000c 0122     		movs	r2, #1
+ 225 000e 1A70     		strb	r2, [r3]
+ 226 0010 0020     		movs	r0, #0
+ 227 0012 FFF7FEFF 		bl	sdh_request_observer_notify
+ 228 0016 1128     		cmp	r0, #17
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s 			page 5
+
+
+ 229 0018 29D0     		beq	.L35
+ 230 001a 0020     		movs	r0, #0
+ 231 001c FFF7FEFF 		bl	sdh_state_observer_notify
+ 232 0020 164B     		ldr	r3, .L37+8
+ 233 0022 1B68     		ldr	r3, [r3]
+ 234 0024 0193     		str	r3, [sp, #4]
+ 235 0026 02A8     		add	r0, sp, #8
+ 236 0028 0023     		movs	r3, #0
+ 237 002a 00F8053D 		strb	r3, [r0, #-5]!
+ 238 002e FFF7FEFF 		bl	app_util_critical_region_enter
+ 239 0032 1349     		ldr	r1, .L37+12
+ 240 0034 01A8     		add	r0, sp, #4
+ 241 0036 FFF7FEFF 		bl	sd_softdevice_enable
+ 242 003a 0446     		mov	r4, r0
+ 243 003c B0FA80F0 		clz	r0, r0
+ 244 0040 4009     		lsrs	r0, r0, #5
+ 245 0042 0C4B     		ldr	r3, .L37
+ 246 0044 1870     		strb	r0, [r3]
+ 247 0046 9DF80300 		ldrb	r0, [sp, #3]	@ zero_extendqisi2
+ 248 004a FFF7FEFF 		bl	app_util_critical_region_exit
+ 249 004e 5CB9     		cbnz	r4, .L32
+ 250 0050 0023     		movs	r3, #0
+ 251 0052 094A     		ldr	r2, .L37+4
+ 252 0054 1370     		strb	r3, [r2]
+ 253 0056 0B4A     		ldr	r2, .L37+16
+ 254 0058 1370     		strb	r3, [r2]
+ 255 005a FFF7FEFF 		bl	softdevices_evt_irq_enable
+ 256 005e 0120     		movs	r0, #1
+ 257 0060 FFF7FEFF 		bl	sdh_state_observer_notify
+ 258 0064 00E0     		b	.L32
+ 259              	.L34:
+ 260 0066 0824     		movs	r4, #8
+ 261              	.L32:
+ 262 0068 2046     		mov	r0, r4
+ 263 006a 02B0     		add	sp, sp, #8
+ 264              		@ sp needed
+ 265 006c 10BD     		pop	{r4, pc}
+ 266              	.L35:
+ 267 006e 0024     		movs	r4, #0
+ 268 0070 FAE7     		b	.L32
+ 269              	.L38:
+ 270 0072 00BF     		.align	2
+ 271              	.L37:
+ 272 0074 00000000 		.word	.LANCHOR2
+ 273 0078 00000000 		.word	.LANCHOR3
+ 274 007c 00000000 		.word	.LANCHOR4
+ 275 0080 00000000 		.word	app_error_fault_handler
+ 276 0084 00000000 		.word	.LANCHOR5
+ 277              		.size	nrf_sdh_enable_request, .-nrf_sdh_enable_request
+ 278              		.section	.text.nrf_sdh_disable_request,"ax",%progbits
+ 279              		.align	1
+ 280              		.global	nrf_sdh_disable_request
+ 281              		.syntax unified
+ 282              		.thumb
+ 283              		.thumb_func
+ 284              		.fpu fpv4-sp-d16
+ 285              		.type	nrf_sdh_disable_request, %function
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s 			page 6
+
+
+ 286              	nrf_sdh_disable_request:
+ 287              		@ args = 0, pretend = 0, frame = 8
+ 288              		@ frame_needed = 0, uses_anonymous_args = 0
+ 289 0000 30B5     		push	{r4, r5, lr}
+ 290 0002 83B0     		sub	sp, sp, #12
+ 291 0004 154B     		ldr	r3, .L44
+ 292 0006 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 293 0008 0BB3     		cbz	r3, .L41
+ 294 000a 0120     		movs	r0, #1
+ 295 000c 144B     		ldr	r3, .L44+4
+ 296 000e 1870     		strb	r0, [r3]
+ 297 0010 FFF7FEFF 		bl	sdh_request_observer_notify
+ 298 0014 1128     		cmp	r0, #17
+ 299 0016 1ED0     		beq	.L42
+ 300 0018 0220     		movs	r0, #2
+ 301 001a FFF7FEFF 		bl	sdh_state_observer_notify
+ 302 001e 0025     		movs	r5, #0
+ 303 0020 02A8     		add	r0, sp, #8
+ 304 0022 00F8015D 		strb	r5, [r0, #-1]!
+ 305 0026 FFF7FEFF 		bl	app_util_critical_region_enter
+ 306 002a FFF7FEFF 		bl	sd_softdevice_disable
+ 307 002e 0446     		mov	r4, r0
+ 308 0030 0A4B     		ldr	r3, .L44
+ 309 0032 1D70     		strb	r5, [r3]
+ 310 0034 9DF80700 		ldrb	r0, [sp, #7]	@ zero_extendqisi2
+ 311 0038 FFF7FEFF 		bl	app_util_critical_region_exit
+ 312 003c 44B9     		cbnz	r4, .L39
+ 313 003e 084B     		ldr	r3, .L44+4
+ 314 0040 1D70     		strb	r5, [r3]
+ 315 0042 FFF7FEFF 		bl	softdevice_evt_irq_disable
+ 316 0046 0320     		movs	r0, #3
+ 317 0048 FFF7FEFF 		bl	sdh_state_observer_notify
+ 318 004c 00E0     		b	.L39
+ 319              	.L41:
+ 320 004e 0824     		movs	r4, #8
+ 321              	.L39:
+ 322 0050 2046     		mov	r0, r4
+ 323 0052 03B0     		add	sp, sp, #12
+ 324              		@ sp needed
+ 325 0054 30BD     		pop	{r4, r5, pc}
+ 326              	.L42:
+ 327 0056 0024     		movs	r4, #0
+ 328 0058 FAE7     		b	.L39
+ 329              	.L45:
+ 330 005a 00BF     		.align	2
+ 331              	.L44:
+ 332 005c 00000000 		.word	.LANCHOR2
+ 333 0060 00000000 		.word	.LANCHOR3
+ 334              		.size	nrf_sdh_disable_request, .-nrf_sdh_disable_request
+ 335              		.section	.text.nrf_sdh_request_continue,"ax",%progbits
+ 336              		.align	1
+ 337              		.global	nrf_sdh_request_continue
+ 338              		.syntax unified
+ 339              		.thumb
+ 340              		.thumb_func
+ 341              		.fpu fpv4-sp-d16
+ 342              		.type	nrf_sdh_request_continue, %function
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s 			page 7
+
+
+ 343              	nrf_sdh_request_continue:
+ 344              		@ args = 0, pretend = 0, frame = 0
+ 345              		@ frame_needed = 0, uses_anonymous_args = 0
+ 346 0000 08B5     		push	{r3, lr}
+ 347 0002 074B     		ldr	r3, .L52
+ 348 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 349 0006 43B1     		cbz	r3, .L49
+ 350 0008 064B     		ldr	r3, .L52+4
+ 351 000a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 352 000c 13B9     		cbnz	r3, .L51
+ 353 000e FFF7FEFF 		bl	nrf_sdh_enable_request
+ 354              	.L46:
+ 355 0012 08BD     		pop	{r3, pc}
+ 356              	.L51:
+ 357 0014 FFF7FEFF 		bl	nrf_sdh_disable_request
+ 358 0018 FBE7     		b	.L46
+ 359              	.L49:
+ 360 001a 0820     		movs	r0, #8
+ 361 001c F9E7     		b	.L46
+ 362              	.L53:
+ 363 001e 00BF     		.align	2
+ 364              	.L52:
+ 365 0020 00000000 		.word	.LANCHOR3
+ 366 0024 00000000 		.word	.LANCHOR2
+ 367              		.size	nrf_sdh_request_continue, .-nrf_sdh_request_continue
+ 368              		.section	.text.nrf_sdh_is_enabled,"ax",%progbits
+ 369              		.align	1
+ 370              		.global	nrf_sdh_is_enabled
+ 371              		.syntax unified
+ 372              		.thumb
+ 373              		.thumb_func
+ 374              		.fpu fpv4-sp-d16
+ 375              		.type	nrf_sdh_is_enabled, %function
+ 376              	nrf_sdh_is_enabled:
+ 377              		@ args = 0, pretend = 0, frame = 0
+ 378              		@ frame_needed = 0, uses_anonymous_args = 0
+ 379              		@ link register save eliminated.
+ 380 0000 014B     		ldr	r3, .L55
+ 381 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 382 0004 7047     		bx	lr
+ 383              	.L56:
+ 384 0006 00BF     		.align	2
+ 385              	.L55:
+ 386 0008 00000000 		.word	.LANCHOR2
+ 387              		.size	nrf_sdh_is_enabled, .-nrf_sdh_is_enabled
+ 388              		.section	.text.nrf_sdh_suspend,"ax",%progbits
+ 389              		.align	1
+ 390              		.global	nrf_sdh_suspend
+ 391              		.syntax unified
+ 392              		.thumb
+ 393              		.thumb_func
+ 394              		.fpu fpv4-sp-d16
+ 395              		.type	nrf_sdh_suspend, %function
+ 396              	nrf_sdh_suspend:
+ 397              		@ args = 0, pretend = 0, frame = 0
+ 398              		@ frame_needed = 0, uses_anonymous_args = 0
+ 399 0000 08B5     		push	{r3, lr}
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s 			page 8
+
+
+ 400 0002 054B     		ldr	r3, .L61
+ 401 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 402 0006 03B9     		cbnz	r3, .L60
+ 403              	.L57:
+ 404 0008 08BD     		pop	{r3, pc}
+ 405              	.L60:
+ 406 000a FFF7FEFF 		bl	softdevice_evt_irq_disable
+ 407 000e 034B     		ldr	r3, .L61+4
+ 408 0010 0122     		movs	r2, #1
+ 409 0012 1A70     		strb	r2, [r3]
+ 410 0014 F8E7     		b	.L57
+ 411              	.L62:
+ 412 0016 00BF     		.align	2
+ 413              	.L61:
+ 414 0018 00000000 		.word	.LANCHOR2
+ 415 001c 00000000 		.word	.LANCHOR5
+ 416              		.size	nrf_sdh_suspend, .-nrf_sdh_suspend
+ 417              		.section	.text.nrf_sdh_resume,"ax",%progbits
+ 418              		.align	1
+ 419              		.global	nrf_sdh_resume
+ 420              		.syntax unified
+ 421              		.thumb
+ 422              		.thumb_func
+ 423              		.fpu fpv4-sp-d16
+ 424              		.type	nrf_sdh_resume, %function
+ 425              	nrf_sdh_resume:
+ 426              		@ args = 0, pretend = 0, frame = 0
+ 427              		@ frame_needed = 0, uses_anonymous_args = 0
+ 428 0000 08B5     		push	{r3, lr}
+ 429 0002 094B     		ldr	r3, .L67
+ 430 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 431 0006 13B1     		cbz	r3, .L63
+ 432 0008 084B     		ldr	r3, .L67+4
+ 433 000a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 434 000c 03B9     		cbnz	r3, .L66
+ 435              	.L63:
+ 436 000e 08BD     		pop	{r3, pc}
+ 437              	.L66:
+ 438 0010 074B     		ldr	r3, .L67+8
+ 439 0012 4FF48002 		mov	r2, #4194304
+ 440 0016 C3F80021 		str	r2, [r3, #256]
+ 441 001a FFF7FEFF 		bl	softdevices_evt_irq_enable
+ 442 001e 024B     		ldr	r3, .L67
+ 443 0020 0022     		movs	r2, #0
+ 444 0022 1A70     		strb	r2, [r3]
+ 445 0024 F3E7     		b	.L63
+ 446              	.L68:
+ 447 0026 00BF     		.align	2
+ 448              	.L67:
+ 449 0028 00000000 		.word	.LANCHOR5
+ 450 002c 00000000 		.word	.LANCHOR2
+ 451 0030 00E100E0 		.word	-536813312
+ 452              		.size	nrf_sdh_resume, .-nrf_sdh_resume
+ 453              		.section	.text.nrf_sdh_is_suspended,"ax",%progbits
+ 454              		.align	1
+ 455              		.global	nrf_sdh_is_suspended
+ 456              		.syntax unified
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s 			page 9
+
+
+ 457              		.thumb
+ 458              		.thumb_func
+ 459              		.fpu fpv4-sp-d16
+ 460              		.type	nrf_sdh_is_suspended, %function
+ 461              	nrf_sdh_is_suspended:
+ 462              		@ args = 0, pretend = 0, frame = 0
+ 463              		@ frame_needed = 0, uses_anonymous_args = 0
+ 464              		@ link register save eliminated.
+ 465 0000 044B     		ldr	r3, .L72
+ 466 0002 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 467 0004 23B1     		cbz	r3, .L71
+ 468 0006 044B     		ldr	r3, .L72+4
+ 469 0008 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 470              	.L70:
+ 471 000a 00F00100 		and	r0, r0, #1
+ 472 000e 7047     		bx	lr
+ 473              	.L71:
+ 474 0010 0120     		movs	r0, #1
+ 475 0012 FAE7     		b	.L70
+ 476              	.L73:
+ 477              		.align	2
+ 478              	.L72:
+ 479 0014 00000000 		.word	.LANCHOR2
+ 480 0018 00000000 		.word	.LANCHOR5
+ 481              		.size	nrf_sdh_is_suspended, .-nrf_sdh_is_suspended
+ 482              		.section	.text.nrf_sdh_evts_poll,"ax",%progbits
+ 483              		.align	1
+ 484              		.global	nrf_sdh_evts_poll
+ 485              		.syntax unified
+ 486              		.thumb
+ 487              		.thumb_func
+ 488              		.fpu fpv4-sp-d16
+ 489              		.type	nrf_sdh_evts_poll, %function
+ 490              	nrf_sdh_evts_poll:
+ 491              		@ args = 0, pretend = 0, frame = 8
+ 492              		@ frame_needed = 0, uses_anonymous_args = 0
+ 493 0000 00B5     		push	{lr}
+ 494 0002 83B0     		sub	sp, sp, #12
+ 495 0004 0849     		ldr	r1, .L79
+ 496 0006 6846     		mov	r0, sp
+ 497 0008 FFF7FEFF 		bl	nrf_section_iter_init
+ 498 000c 019B     		ldr	r3, [sp, #4]
+ 499 000e 43B1     		cbz	r3, .L74
+ 500              	.L76:
+ 501 0010 1A68     		ldr	r2, [r3]
+ 502 0012 5868     		ldr	r0, [r3, #4]
+ 503 0014 9047     		blx	r2
+ 504 0016 6846     		mov	r0, sp
+ 505 0018 FFF7FEFF 		bl	nrf_section_iter_next
+ 506 001c 019B     		ldr	r3, [sp, #4]
+ 507 001e 002B     		cmp	r3, #0
+ 508 0020 F6D1     		bne	.L76
+ 509              	.L74:
+ 510 0022 03B0     		add	sp, sp, #12
+ 511              		@ sp needed
+ 512 0024 5DF804FB 		ldr	pc, [sp], #4
+ 513              	.L80:
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s 			page 10
+
+
+ 514              		.align	2
+ 515              	.L79:
+ 516 0028 00000000 		.word	.LANCHOR6
+ 517              		.size	nrf_sdh_evts_poll, .-nrf_sdh_evts_poll
+ 518              		.section	.text.SWI2_EGU2_IRQHandler,"ax",%progbits
+ 519              		.align	1
+ 520              		.global	SWI2_EGU2_IRQHandler
+ 521              		.syntax unified
+ 522              		.thumb
+ 523              		.thumb_func
+ 524              		.fpu fpv4-sp-d16
+ 525              		.type	SWI2_EGU2_IRQHandler, %function
+ 526              	SWI2_EGU2_IRQHandler:
+ 527              		@ args = 0, pretend = 0, frame = 0
+ 528              		@ frame_needed = 0, uses_anonymous_args = 0
+ 529 0000 08B5     		push	{r3, lr}
+ 530 0002 FFF7FEFF 		bl	nrf_sdh_evts_poll
+ 531 0006 08BD     		pop	{r3, pc}
+ 532              		.size	SWI2_EGU2_IRQHandler, .-SWI2_EGU2_IRQHandler
+ 533              		.section	.rodata
+ 534              		.align	2
+ 535              		.set	.LANCHOR4,. + 0
+ 536              	.LC0:
+ 537 0000 01       		.byte	1
+ 538 0001 00       		.byte	0
+ 539 0002 00       		.byte	0
+ 540 0003 07       		.byte	7
+ 541              		.section	.bss.m_nrf_sdh_continue,"aw",%nobits
+ 542              		.set	.LANCHOR3,. + 0
+ 543              		.type	m_nrf_sdh_continue, %object
+ 544              		.size	m_nrf_sdh_continue, 1
+ 545              	m_nrf_sdh_continue:
+ 546 0000 00       		.space	1
+ 547              		.section	.bss.m_nrf_sdh_enabled,"aw",%nobits
+ 548              		.set	.LANCHOR2,. + 0
+ 549              		.type	m_nrf_sdh_enabled, %object
+ 550              		.size	m_nrf_sdh_enabled, 1
+ 551              	m_nrf_sdh_enabled:
+ 552 0000 00       		.space	1
+ 553              		.section	.bss.m_nrf_sdh_suspended,"aw",%nobits
+ 554              		.set	.LANCHOR5,. + 0
+ 555              		.type	m_nrf_sdh_suspended, %object
+ 556              		.size	m_nrf_sdh_suspended, 1
+ 557              	m_nrf_sdh_suspended:
+ 558 0000 00       		.space	1
+ 559              		.section	.rodata.sdh_req_observers,"a",%progbits
+ 560              		.align	2
+ 561              		.set	.LANCHOR0,. + 0
+ 562              		.type	sdh_req_observers, %object
+ 563              		.size	sdh_req_observers, 12
+ 564              	sdh_req_observers:
+ 565 0000 00000000 		.word	__start_sdh_req_observers
+ 566 0004 00000000 		.word	__stop_sdh_req_observers
+ 567 0008 08000000 		.word	8
+ 568              		.section	.rodata.sdh_stack_observers,"a",%progbits
+ 569              		.align	2
+ 570              		.set	.LANCHOR6,. + 0
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s 			page 11
+
+
+ 571              		.type	sdh_stack_observers, %object
+ 572              		.size	sdh_stack_observers, 12
+ 573              	sdh_stack_observers:
+ 574 0000 00000000 		.word	__start_sdh_stack_observers
+ 575 0004 00000000 		.word	__stop_sdh_stack_observers
+ 576 0008 08000000 		.word	8
+ 577              		.section	.rodata.sdh_state_observers,"a",%progbits
+ 578              		.align	2
+ 579              		.set	.LANCHOR1,. + 0
+ 580              		.type	sdh_state_observers, %object
+ 581              		.size	sdh_state_observers, 12
+ 582              	sdh_state_observers:
+ 583 0000 00000000 		.word	__start_sdh_state_observers
+ 584 0004 00000000 		.word	__stop_sdh_state_observers
+ 585 0008 08000000 		.word	8
+ 586              		.ident	"GCC: (GNU Tools for Arm Embedded Processors 7-2018-q2-update) 7.3.1 20180622 (release) [AR
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s 			page 12
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 NOLA_CONF@nrf_sdh.c
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:16     .text.sd_softdevice_enable:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:22     .text.sd_softdevice_enable:00000000 sd_softdevice_enable
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:35     .text.sd_softdevice_disable:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:41     .text.sd_softdevice_disable:00000000 sd_softdevice_disable
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:54     .text.softdevice_evt_irq_disable:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:60     .text.softdevice_evt_irq_disable:00000000 softdevice_evt_irq_disable
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:80     .text.softdevice_evt_irq_disable:00000020 $d
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:84     .text.sdh_request_observer_notify:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:90     .text.sdh_request_observer_notify:00000000 sdh_request_observer_notify
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:126    .text.sdh_request_observer_notify:00000038 $d
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:129    .text.sdh_state_observer_notify:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:135    .text.sdh_state_observer_notify:00000000 sdh_state_observer_notify
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:163    .text.sdh_state_observer_notify:0000002c $d
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:166    .text.softdevices_evt_irq_enable:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:172    .text.softdevices_evt_irq_enable:00000000 softdevices_evt_irq_enable
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:204    .text.softdevices_evt_irq_enable:0000003c $d
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:208    .text.nrf_sdh_enable_request:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:215    .text.nrf_sdh_enable_request:00000000 nrf_sdh_enable_request
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:272    .text.nrf_sdh_enable_request:00000074 $d
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:279    .text.nrf_sdh_disable_request:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:286    .text.nrf_sdh_disable_request:00000000 nrf_sdh_disable_request
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:332    .text.nrf_sdh_disable_request:0000005c $d
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:336    .text.nrf_sdh_request_continue:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:343    .text.nrf_sdh_request_continue:00000000 nrf_sdh_request_continue
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:365    .text.nrf_sdh_request_continue:00000020 $d
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:369    .text.nrf_sdh_is_enabled:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:376    .text.nrf_sdh_is_enabled:00000000 nrf_sdh_is_enabled
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:386    .text.nrf_sdh_is_enabled:00000008 $d
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:389    .text.nrf_sdh_suspend:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:396    .text.nrf_sdh_suspend:00000000 nrf_sdh_suspend
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:414    .text.nrf_sdh_suspend:00000018 $d
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:418    .text.nrf_sdh_resume:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:425    .text.nrf_sdh_resume:00000000 nrf_sdh_resume
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:449    .text.nrf_sdh_resume:00000028 $d
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:454    .text.nrf_sdh_is_suspended:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:461    .text.nrf_sdh_is_suspended:00000000 nrf_sdh_is_suspended
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:479    .text.nrf_sdh_is_suspended:00000014 $d
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:483    .text.nrf_sdh_evts_poll:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:490    .text.nrf_sdh_evts_poll:00000000 nrf_sdh_evts_poll
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:516    .text.nrf_sdh_evts_poll:00000028 $d
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:519    .text.SWI2_EGU2_IRQHandler:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:526    .text.SWI2_EGU2_IRQHandler:00000000 SWI2_EGU2_IRQHandler
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:534    .rodata:00000000 $d
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:545    .bss.m_nrf_sdh_continue:00000000 m_nrf_sdh_continue
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:546    .bss.m_nrf_sdh_continue:00000000 $d
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:551    .bss.m_nrf_sdh_enabled:00000000 m_nrf_sdh_enabled
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:552    .bss.m_nrf_sdh_enabled:00000000 $d
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:557    .bss.m_nrf_sdh_suspended:00000000 m_nrf_sdh_suspended
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:558    .bss.m_nrf_sdh_suspended:00000000 $d
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:560    .rodata.sdh_req_observers:00000000 $d
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:564    .rodata.sdh_req_observers:00000000 sdh_req_observers
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:569    .rodata.sdh_stack_observers:00000000 $d
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:573    .rodata.sdh_stack_observers:00000000 sdh_stack_observers
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:578    .rodata.sdh_state_observers:00000000 $d
+C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s:582    .rodata.sdh_state_observers:00000000 sdh_state_observers
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccsvt0e4.s 			page 13
+
+
+
+UNDEFINED SYMBOLS
+nrf_nvic_state
+nrf_section_iter_init
+nrf_section_iter_next
+app_error_handler_bare
+app_util_critical_region_enter
+app_util_critical_region_exit
+app_error_fault_handler
+__start_sdh_req_observers
+__stop_sdh_req_observers
+__start_sdh_stack_observers
+__stop_sdh_stack_observers
+__start_sdh_state_observers
+__stop_sdh_state_observers

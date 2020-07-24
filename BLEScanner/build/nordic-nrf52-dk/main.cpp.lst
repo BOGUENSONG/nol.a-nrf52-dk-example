@@ -1,0 +1,854 @@
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"main.cpp"
+  14              		.text
+  15              		.section	.text._ZN26MyAdvertisedDeviceListenerD2Ev,"axG",%progbits,_ZN26MyAdvertisedDeviceListener
+  16              		.align	1
+  17              		.weak	_ZN26MyAdvertisedDeviceListenerD2Ev
+  18              		.syntax unified
+  19              		.thumb
+  20              		.thumb_func
+  21              		.fpu fpv4-sp-d16
+  22              		.type	_ZN26MyAdvertisedDeviceListenerD2Ev, %function
+  23              	_ZN26MyAdvertisedDeviceListenerD2Ev:
+  24              		@ args = 0, pretend = 0, frame = 0
+  25              		@ frame_needed = 0, uses_anonymous_args = 0
+  26              		@ link register save eliminated.
+  27 0000 7047     		bx	lr
+  28              		.size	_ZN26MyAdvertisedDeviceListenerD2Ev, .-_ZN26MyAdvertisedDeviceListenerD2Ev
+  29              		.weak	_ZN26MyAdvertisedDeviceListenerD1Ev
+  30              		.thumb_set _ZN26MyAdvertisedDeviceListenerD1Ev,_ZN26MyAdvertisedDeviceListenerD2Ev
+  31              		.section	.text._ZN26MyAdvertisedDeviceListener8onResultE19BLEAdvertisedDevice,"axG",%progbits,_ZN2
+  32              		.align	1
+  33              		.weak	_ZN26MyAdvertisedDeviceListener8onResultE19BLEAdvertisedDevice
+  34              		.syntax unified
+  35              		.thumb
+  36              		.thumb_func
+  37              		.fpu fpv4-sp-d16
+  38              		.type	_ZN26MyAdvertisedDeviceListener8onResultE19BLEAdvertisedDevice, %function
+  39              	_ZN26MyAdvertisedDeviceListener8onResultE19BLEAdvertisedDevice:
+  40              		@ args = 0, pretend = 0, frame = 40
+  41              		@ frame_needed = 0, uses_anonymous_args = 0
+  42 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+  43 0004 8CB0     		sub	sp, sp, #48
+  44 0006 8846     		mov	r8, r1
+  45 0008 0021     		movs	r1, #0
+  46 000a 02A8     		add	r0, sp, #8
+  47 000c FFF7FEFF 		bl	gettimeofday
+  48 0010 0C4B     		ldr	r3, .L5
+  49 0012 1C68     		ldr	r4, [r3]
+  50 0014 2368     		ldr	r3, [r4]
+  51 0016 5D6B     		ldr	r5, [r3, #52]
+  52 0018 029E     		ldr	r6, [sp, #8]
+  53 001a 049F     		ldr	r7, [sp, #16]
+  54 001c 4146     		mov	r1, r8
+  55 001e 06A8     		add	r0, sp, #24
+  56 0020 FFF7FEFF 		bl	_ZN19BLEAdvertisedDevice8toStringB5cxx11Ev
+  57 0024 069B     		ldr	r3, [sp, #24]
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s 			page 2
+
+
+  58 0026 0093     		str	r3, [sp]
+  59 0028 3B46     		mov	r3, r7
+  60 002a 3246     		mov	r2, r6
+  61 002c 0649     		ldr	r1, .L5+4
+  62 002e 2046     		mov	r0, r4
+  63 0030 A847     		blx	r5
+  64 0032 0698     		ldr	r0, [sp, #24]
+  65 0034 08AB     		add	r3, sp, #32
+  66 0036 9842     		cmp	r0, r3
+  67 0038 01D0     		beq	.L2
+  68 003a FFF7FEFF 		bl	_ZdlPv
+  69              	.L2:
+  70 003e 0CB0     		add	sp, sp, #48
+  71              		@ sp needed
+  72 0040 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+  73              	.L6:
+  74              		.align	2
+  75              	.L5:
+  76 0044 00000000 		.word	Serial
+  77 0048 00000000 		.word	.LC0
+  78              		.size	_ZN26MyAdvertisedDeviceListener8onResultE19BLEAdvertisedDevice, .-_ZN26MyAdvertisedDeviceLis
+  79              		.section	.text._ZN26MyAdvertisedDeviceListenerD0Ev,"axG",%progbits,_ZN26MyAdvertisedDeviceListener
+  80              		.align	1
+  81              		.weak	_ZN26MyAdvertisedDeviceListenerD0Ev
+  82              		.syntax unified
+  83              		.thumb
+  84              		.thumb_func
+  85              		.fpu fpv4-sp-d16
+  86              		.type	_ZN26MyAdvertisedDeviceListenerD0Ev, %function
+  87              	_ZN26MyAdvertisedDeviceListenerD0Ev:
+  88              		@ args = 0, pretend = 0, frame = 0
+  89              		@ frame_needed = 0, uses_anonymous_args = 0
+  90 0000 10B5     		push	{r4, lr}
+  91 0002 0446     		mov	r4, r0
+  92 0004 0421     		movs	r1, #4
+  93 0006 FFF7FEFF 		bl	_ZdlPvj
+  94 000a 2046     		mov	r0, r4
+  95 000c 10BD     		pop	{r4, pc}
+  96              		.size	_ZN26MyAdvertisedDeviceListenerD0Ev, .-_ZN26MyAdvertisedDeviceListenerD0Ev
+  97              		.section	.text._ZL13eventScanDone14BLEScanResults,"ax",%progbits
+  98              		.align	1
+  99              		.syntax unified
+ 100              		.thumb
+ 101              		.thumb_func
+ 102              		.fpu fpv4-sp-d16
+ 103              		.type	_ZL13eventScanDone14BLEScanResults, %function
+ 104              	_ZL13eventScanDone14BLEScanResults:
+ 105              		@ args = 0, pretend = 0, frame = 272
+ 106              		@ frame_needed = 0, uses_anonymous_args = 0
+ 107 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 108 0004 C7B0     		sub	sp, sp, #284
+ 109 0006 8246     		mov	r10, r0
+ 110 0008 4FF00009 		mov	r9, #0
+ 111 000c 7F4B     		ldr	r3, .L39
+ 112 000e 83F80090 		strb	r9, [r3]
+ 113 0012 7F4B     		ldr	r3, .L39+4
+ 114 0014 1C68     		ldr	r4, [r3]
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s 			page 3
+
+
+ 115 0016 2368     		ldr	r3, [r4]
+ 116 0018 5D6B     		ldr	r5, [r3, #52]
+ 117 001a FFF7FEFF 		bl	_ZN14BLEScanResults8getCountEv
+ 118 001e 0246     		mov	r2, r0
+ 119 0020 7C49     		ldr	r1, .L39+8
+ 120 0022 2046     		mov	r0, r4
+ 121 0024 A847     		blx	r5
+ 122 0026 DFF81CB2 		ldr	fp, .L39+56
+ 123 002a 88E0     		b	.L30
+ 124              	.L33:
+ 125 002c 2368     		ldr	r3, [r4]
+ 126 002e 5D6B     		ldr	r5, [r3, #52]
+ 127 0030 0AA9     		add	r1, sp, #40
+ 128 0032 3AA8     		add	r0, sp, #232
+ 129 0034 FFF7FEFF 		bl	_ZN19BLEAdvertisedDevice7getNameB5cxx11Ev
+ 130 0038 3A9A     		ldr	r2, [sp, #232]
+ 131 003a 7749     		ldr	r1, .L39+12
+ 132 003c 2046     		mov	r0, r4
+ 133 003e A847     		blx	r5
+ 134 0040 3A98     		ldr	r0, [sp, #232]
+ 135 0042 3CAB     		add	r3, sp, #240
+ 136 0044 9842     		cmp	r0, r3
+ 137 0046 00F09F80 		beq	.L12
+ 138 004a FFF7FEFF 		bl	_ZdlPv
+ 139 004e 9BE0     		b	.L12
+ 140              	.L34:
+ 141 0050 2368     		ldr	r3, [r4]
+ 142 0052 5D6B     		ldr	r5, [r3, #52]
+ 143 0054 0AA8     		add	r0, sp, #40
+ 144 0056 FFF7FEFF 		bl	_ZN19BLEAdvertisedDevice13getAppearanceEv
+ 145 005a 0246     		mov	r2, r0
+ 146 005c 6F49     		ldr	r1, .L39+16
+ 147 005e 2046     		mov	r0, r4
+ 148 0060 A847     		blx	r5
+ 149 0062 97E0     		b	.L14
+ 150              	.L35:
+ 151 0064 6E49     		ldr	r1, .L39+20
+ 152 0066 2046     		mov	r0, r4
+ 153 0068 FFF7FEFF 		bl	_ZN5Print5printEPKc
+ 154 006c 0AA9     		add	r1, sp, #40
+ 155 006e 04A8     		add	r0, sp, #16
+ 156 0070 FFF7FEFF 		bl	_ZN19BLEAdvertisedDevice19getManufacturerDataB5cxx11Ev
+ 157 0074 059B     		ldr	r3, [sp, #20]
+ 158 0076 7BB1     		cbz	r3, .L16
+ 159 0078 0025     		movs	r5, #0
+ 160 007a 2A46     		mov	r2, r5
+ 161 007c 694E     		ldr	r6, .L39+24
+ 162              	.L17:
+ 163 007e 0499     		ldr	r1, [sp, #16]
+ 164 0080 2368     		ldr	r3, [r4]
+ 165 0082 5B6B     		ldr	r3, [r3, #52]
+ 166 0084 8A5C     		ldrb	r2, [r1, r2]	@ zero_extendqisi2
+ 167 0086 3146     		mov	r1, r6
+ 168 0088 2046     		mov	r0, r4
+ 169 008a 9847     		blx	r3
+ 170 008c 0135     		adds	r5, r5, #1
+ 171 008e EDB2     		uxtb	r5, r5
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s 			page 4
+
+
+ 172 0090 2A46     		mov	r2, r5
+ 173 0092 059B     		ldr	r3, [sp, #20]
+ 174 0094 9D42     		cmp	r5, r3
+ 175 0096 F2D3     		bcc	.L17
+ 176              	.L16:
+ 177 0098 0498     		ldr	r0, [sp, #16]
+ 178 009a 06AB     		add	r3, sp, #24
+ 179 009c 9842     		cmp	r0, r3
+ 180 009e 7FD0     		beq	.L15
+ 181 00a0 FFF7FEFF 		bl	_ZdlPv
+ 182 00a4 7CE0     		b	.L15
+ 183              	.L36:
+ 184 00a6 0AA9     		add	r1, sp, #40
+ 185 00a8 04A8     		add	r0, sp, #16
+ 186 00aa FFF7FEFF 		bl	_ZN19BLEAdvertisedDevice14getServiceUUIDEv
+ 187 00ae 2368     		ldr	r3, [r4]
+ 188 00b0 5D6B     		ldr	r5, [r3, #52]
+ 189 00b2 04A9     		add	r1, sp, #16
+ 190 00b4 40A8     		add	r0, sp, #256
+ 191 00b6 FFF7FEFF 		bl	_ZN7BLEUUID8toStringB5cxx11Ev
+ 192 00ba 409A     		ldr	r2, [sp, #256]
+ 193 00bc 5A49     		ldr	r1, .L39+28
+ 194 00be 2046     		mov	r0, r4
+ 195 00c0 A847     		blx	r5
+ 196 00c2 4098     		ldr	r0, [sp, #256]
+ 197 00c4 42AB     		add	r3, sp, #264
+ 198 00c6 9842     		cmp	r0, r3
+ 199 00c8 70D0     		beq	.L19
+ 200 00ca FFF7FEFF 		bl	_ZdlPv
+ 201 00ce 6DE0     		b	.L19
+ 202              	.L37:
+ 203 00d0 0AA8     		add	r0, sp, #40
+ 204 00d2 FFF7FEFF 		bl	_ZN19BLEAdvertisedDevice10getTXPowerEv
+ 205 00d6 2368     		ldr	r3, [r4]
+ 206 00d8 5B6B     		ldr	r3, [r3, #52]
+ 207 00da 0246     		mov	r2, r0
+ 208 00dc 5349     		ldr	r1, .L39+32
+ 209 00de 2046     		mov	r0, r4
+ 210 00e0 9847     		blx	r3
+ 211 00e2 68E0     		b	.L21
+ 212              	.L38:
+ 213 00e4 0AA8     		add	r0, sp, #40
+ 214 00e6 FFF7FEFF 		bl	_ZN19BLEAdvertisedDevice7getRSSIEv
+ 215 00ea 2368     		ldr	r3, [r4]
+ 216 00ec 5B6B     		ldr	r3, [r3, #52]
+ 217 00ee 0246     		mov	r2, r0
+ 218 00f0 4F49     		ldr	r1, .L39+36
+ 219 00f2 2046     		mov	r0, r4
+ 220 00f4 9847     		blx	r3
+ 221 00f6 63E0     		b	.L22
+ 222              	.L23:
+ 223 00f8 2368     		ldr	r3, [r4]
+ 224 00fa 5B6B     		ldr	r3, [r3, #52]
+ 225 00fc 4D49     		ldr	r1, .L39+40
+ 226 00fe 2046     		mov	r0, r4
+ 227 0100 9847     		blx	r3
+ 228 0102 2D98     		ldr	r0, [sp, #180]
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s 			page 5
+
+
+ 229 0104 2FAB     		add	r3, sp, #188
+ 230 0106 9842     		cmp	r0, r3
+ 231 0108 01D0     		beq	.L25
+ 232 010a FFF7FEFF 		bl	_ZdlPv
+ 233              	.L25:
+ 234 010e 2198     		ldr	r0, [sp, #132]
+ 235 0110 23AB     		add	r3, sp, #140
+ 236 0112 9842     		cmp	r0, r3
+ 237 0114 01D0     		beq	.L26
+ 238 0116 FFF7FEFF 		bl	_ZdlPv
+ 239              	.L26:
+ 240 011a 1D98     		ldr	r0, [sp, #116]
+ 241 011c 08B1     		cbz	r0, .L27
+ 242 011e FFF7FEFF 		bl	_ZdlPv
+ 243              	.L27:
+ 244 0122 1598     		ldr	r0, [sp, #84]
+ 245 0124 17AB     		add	r3, sp, #92
+ 246 0126 9842     		cmp	r0, r3
+ 247 0128 01D0     		beq	.L28
+ 248 012a FFF7FEFF 		bl	_ZdlPv
+ 249              	.L28:
+ 250 012e 0F98     		ldr	r0, [sp, #60]
+ 251 0130 11AB     		add	r3, sp, #68
+ 252 0132 9842     		cmp	r0, r3
+ 253 0134 01D0     		beq	.L29
+ 254 0136 FFF7FEFF 		bl	_ZdlPv
+ 255              	.L29:
+ 256 013a 09F10109 		add	r9, r9, #1
+ 257              	.L30:
+ 258 013e 5046     		mov	r0, r10
+ 259 0140 FFF7FEFF 		bl	_ZN14BLEScanResults8getCountEv
+ 260 0144 4845     		cmp	r0, r9
+ 261 0146 54DD     		ble	.L10
+ 262 0148 4A46     		mov	r2, r9
+ 263 014a 5146     		mov	r1, r10
+ 264 014c 0AA8     		add	r0, sp, #40
+ 265 014e FFF7FEFF 		bl	_ZN14BLEScanResults9getDeviceEm
+ 266 0152 0AA9     		add	r1, sp, #40
+ 267 0154 02A8     		add	r0, sp, #8
+ 268 0156 FFF7FEFF 		bl	_ZN19BLEAdvertisedDevice10getAddressEv
+ 269 015a 2368     		ldr	r3, [r4]
+ 270 015c 5D6B     		ldr	r5, [r3, #52]
+ 271 015e 02A9     		add	r1, sp, #8
+ 272 0160 34A8     		add	r0, sp, #208
+ 273 0162 FFF7FEFF 		bl	_ZN10BLEAddress8toStringB5cxx11Ev
+ 274 0166 349B     		ldr	r3, [sp, #208]
+ 275 0168 4A46     		mov	r2, r9
+ 276 016a 5946     		mov	r1, fp
+ 277 016c 2046     		mov	r0, r4
+ 278 016e A847     		blx	r5
+ 279 0170 3498     		ldr	r0, [sp, #208]
+ 280 0172 36AB     		add	r3, sp, #216
+ 281 0174 9842     		cmp	r0, r3
+ 282 0176 01D0     		beq	.L11
+ 283 0178 FFF7FEFF 		bl	_ZdlPv
+ 284              	.L11:
+ 285 017c 0AA8     		add	r0, sp, #40
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s 			page 6
+
+
+ 286 017e FFF7FEFF 		bl	_ZN19BLEAdvertisedDevice8haveNameEv
+ 287 0182 0028     		cmp	r0, #0
+ 288 0184 7FF452AF 		bne	.L33
+ 289              	.L12:
+ 290 0188 0AA8     		add	r0, sp, #40
+ 291 018a FFF7FEFF 		bl	_ZN19BLEAdvertisedDevice14haveAppearanceEv
+ 292 018e 0028     		cmp	r0, #0
+ 293 0190 7FF45EAF 		bne	.L34
+ 294              	.L14:
+ 295 0194 0AA8     		add	r0, sp, #40
+ 296 0196 FFF7FEFF 		bl	_ZN19BLEAdvertisedDevice20haveManufacturerDataEv
+ 297 019a 0028     		cmp	r0, #0
+ 298 019c 7FF462AF 		bne	.L35
+ 299              	.L15:
+ 300 01a0 0AA8     		add	r0, sp, #40
+ 301 01a2 FFF7FEFF 		bl	_ZN19BLEAdvertisedDevice15haveServiceUUIDEv
+ 302 01a6 0028     		cmp	r0, #0
+ 303 01a8 7FF47DAF 		bne	.L36
+ 304              	.L19:
+ 305 01ac 0AA8     		add	r0, sp, #40
+ 306 01ae FFF7FEFF 		bl	_ZN19BLEAdvertisedDevice11haveTXPowerEv
+ 307 01b2 0028     		cmp	r0, #0
+ 308 01b4 8CD1     		bne	.L37
+ 309              	.L21:
+ 310 01b6 0AA8     		add	r0, sp, #40
+ 311 01b8 FFF7FEFF 		bl	_ZN19BLEAdvertisedDevice8haveRSSIEv
+ 312 01bc 0028     		cmp	r0, #0
+ 313 01be 91D1     		bne	.L38
+ 314              	.L22:
+ 315 01c0 2368     		ldr	r3, [r4]
+ 316 01c2 5B6B     		ldr	r3, [r3, #52]
+ 317 01c4 1C49     		ldr	r1, .L39+44
+ 318 01c6 2046     		mov	r0, r4
+ 319 01c8 9847     		blx	r3
+ 320 01ca 0025     		movs	r5, #0
+ 321 01cc DFF85480 		ldr	r8, .L39+24
+ 322              	.L24:
+ 323 01d0 EEB2     		uxtb	r6, r5
+ 324 01d2 0AA8     		add	r0, sp, #40
+ 325 01d4 FFF7FEFF 		bl	_ZN19BLEAdvertisedDevice16getPayloadLengthEv
+ 326 01d8 0135     		adds	r5, r5, #1
+ 327 01da B042     		cmp	r0, r6
+ 328 01dc 8CD9     		bls	.L23
+ 329 01de 2368     		ldr	r3, [r4]
+ 330 01e0 5F6B     		ldr	r7, [r3, #52]
+ 331 01e2 0AA8     		add	r0, sp, #40
+ 332 01e4 FFF7FEFF 		bl	_ZN19BLEAdvertisedDevice10getPayloadEv
+ 333 01e8 825D     		ldrb	r2, [r0, r6]	@ zero_extendqisi2
+ 334 01ea 4146     		mov	r1, r8
+ 335 01ec 2046     		mov	r0, r4
+ 336 01ee B847     		blx	r7
+ 337 01f0 EEE7     		b	.L24
+ 338              	.L10:
+ 339 01f2 124B     		ldr	r3, .L39+48
+ 340 01f4 1868     		ldr	r0, [r3]
+ 341 01f6 0023     		movs	r3, #0
+ 342 01f8 0093     		str	r3, [sp]
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s 			page 7
+
+
+ 343 01fa 114A     		ldr	r2, .L39+52
+ 344 01fc 0A21     		movs	r1, #10
+ 345 01fe FFF7FEFF 		bl	_ZN7BLEScan5startEmPFv14BLEScanResultsEbh
+ 346 0202 024B     		ldr	r3, .L39
+ 347 0204 1870     		strb	r0, [r3]
+ 348 0206 47B0     		add	sp, sp, #284
+ 349              		@ sp needed
+ 350 0208 BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 351              	.L40:
+ 352              		.align	2
+ 353              	.L39:
+ 354 020c 00000000 		.word	.LANCHOR0
+ 355 0210 00000000 		.word	Serial
+ 356 0214 00000000 		.word	.LC1
+ 357 0218 34000000 		.word	.LC3
+ 358 021c 40000000 		.word	.LC4
+ 359 0220 58000000 		.word	.LC5
+ 360 0224 70000000 		.word	.LC6
+ 361 0228 78000000 		.word	.LC7
+ 362 022c 8C000000 		.word	.LC8
+ 363 0230 A0000000 		.word	.LC9
+ 364 0234 B8000000 		.word	.LC11
+ 365 0238 B0000000 		.word	.LC10
+ 366 023c 00000000 		.word	.LANCHOR1
+ 367 0240 00000000 		.word	_ZL13eventScanDone14BLEScanResults
+ 368 0244 28000000 		.word	.LC2
+ 369              		.size	_ZL13eventScanDone14BLEScanResults, .-_ZL13eventScanDone14BLEScanResults
+ 370              		.section	.text._ZL18eventButtonPressedv,"ax",%progbits
+ 371              		.align	1
+ 372              		.syntax unified
+ 373              		.thumb
+ 374              		.thumb_func
+ 375              		.fpu fpv4-sp-d16
+ 376              		.type	_ZL18eventButtonPressedv, %function
+ 377              	_ZL18eventButtonPressedv:
+ 378              		@ args = 0, pretend = 0, frame = 0
+ 379              		@ frame_needed = 0, uses_anonymous_args = 0
+ 380 0000 00B5     		push	{lr}
+ 381 0002 83B0     		sub	sp, sp, #12
+ 382 0004 124B     		ldr	r3, .L48
+ 383 0006 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 384 0008 73B9     		cbnz	r3, .L46
+ 385 000a 124B     		ldr	r3, .L48+4
+ 386 000c 1868     		ldr	r0, [r3]
+ 387 000e 0023     		movs	r3, #0
+ 388 0010 0093     		str	r3, [sp]
+ 389 0012 114A     		ldr	r2, .L48+8
+ 390 0014 0A21     		movs	r1, #10
+ 391 0016 FFF7FEFF 		bl	_ZN7BLEScan5startEmPFv14BLEScanResultsEbh
+ 392 001a 0D4B     		ldr	r3, .L48
+ 393 001c 1870     		strb	r0, [r3]
+ 394 001e 90B9     		cbnz	r0, .L47
+ 395 0020 0E48     		ldr	r0, .L48+12
+ 396 0022 FFF7FEFF 		bl	puts
+ 397 0026 0BE0     		b	.L41
+ 398              	.L46:
+ 399 0028 0D49     		ldr	r1, .L48+16
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s 			page 8
+
+
+ 400 002a 0E4B     		ldr	r3, .L48+20
+ 401 002c 1868     		ldr	r0, [r3]
+ 402 002e FFF7FEFF 		bl	_ZN5Print7printlnEPKc
+ 403 0032 084B     		ldr	r3, .L48+4
+ 404 0034 1868     		ldr	r0, [r3]
+ 405 0036 FFF7FEFF 		bl	_ZN7BLEScan4stopEv
+ 406 003a 054B     		ldr	r3, .L48
+ 407 003c 0022     		movs	r2, #0
+ 408 003e 1A70     		strb	r2, [r3]
+ 409              	.L41:
+ 410 0040 03B0     		add	sp, sp, #12
+ 411              		@ sp needed
+ 412 0042 5DF804FB 		ldr	pc, [sp], #4
+ 413              	.L47:
+ 414 0046 0848     		ldr	r0, .L48+24
+ 415 0048 FFF7FEFF 		bl	puts
+ 416 004c F8E7     		b	.L41
+ 417              	.L49:
+ 418 004e 00BF     		.align	2
+ 419              	.L48:
+ 420 0050 00000000 		.word	.LANCHOR0
+ 421 0054 00000000 		.word	.LANCHOR1
+ 422 0058 00000000 		.word	_ZL13eventScanDone14BLEScanResults
+ 423 005c 28000000 		.word	.LC14
+ 424 0060 00000000 		.word	.LC12
+ 425 0064 00000000 		.word	Serial
+ 426 0068 14000000 		.word	.LC13
+ 427              		.size	_ZL18eventButtonPressedv, .-_ZL18eventButtonPressedv
+ 428              		.section	.text._Z5setupv,"ax",%progbits
+ 429              		.align	1
+ 430              		.global	_Z5setupv
+ 431              		.syntax unified
+ 432              		.thumb
+ 433              		.thumb_func
+ 434              		.fpu fpv4-sp-d16
+ 435              		.type	_Z5setupv, %function
+ 436              	_Z5setupv:
+ 437              		@ args = 0, pretend = 0, frame = 24
+ 438              		@ frame_needed = 0, uses_anonymous_args = 0
+ 439 0000 10B5     		push	{r4, lr}
+ 440 0002 88B0     		sub	sp, sp, #32
+ 441 0004 2F4B     		ldr	r3, .L58
+ 442 0006 1868     		ldr	r0, [r3]
+ 443 0008 0368     		ldr	r3, [r0]
+ 444 000a 5B6A     		ldr	r3, [r3, #36]
+ 445 000c 0322     		movs	r2, #3
+ 446 000e 4FF4E131 		mov	r1, #115200
+ 447 0012 9847     		blx	r3
+ 448 0014 2C48     		ldr	r0, .L58+4
+ 449 0016 FFF7FEFF 		bl	puts
+ 450 001a 2C4C     		ldr	r4, .L58+8
+ 451 001c 2046     		mov	r0, r4
+ 452 001e FFF7FEFF 		bl	_ZN8McuNRF5114getResetReasonEv
+ 453 0022 0146     		mov	r1, r0
+ 454 0024 2A48     		ldr	r0, .L58+12
+ 455 0026 FFF7FEFF 		bl	printf
+ 456 002a 2046     		mov	r0, r4
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s 			page 9
+
+
+ 457 002c FFF7FEFF 		bl	_ZN8McuNRF5114getResetReasonEv
+ 458 0030 10F0060F 		tst	r0, #6
+ 459 0034 2DD1     		bne	.L56
+ 460              	.L51:
+ 461 0036 274A     		ldr	r2, .L58+16
+ 462 0038 0021     		movs	r1, #0
+ 463 003a 2448     		ldr	r0, .L58+8
+ 464 003c FFF7FEFF 		bl	_ZN15System_nRf52_DK15onButtonPressedEhPFvvE
+ 465 0040 04AC     		add	r4, sp, #16
+ 466 0042 0294     		str	r4, [sp, #8]
+ 467 0044 0023     		movs	r3, #0
+ 468 0046 0393     		str	r3, [sp, #12]
+ 469 0048 8DF81030 		strb	r3, [sp, #16]
+ 470 004c 02A8     		add	r0, sp, #8
+ 471 004e FFF7FEFF 		bl	_ZN9BLEDevice4initENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+ 472 0052 0298     		ldr	r0, [sp, #8]
+ 473 0054 A042     		cmp	r0, r4
+ 474 0056 01D0     		beq	.L52
+ 475 0058 FFF7FEFF 		bl	_ZdlPv
+ 476              	.L52:
+ 477 005c FFF7FEFF 		bl	_ZN9BLEDevice7getScanEv
+ 478 0060 1D4C     		ldr	r4, .L58+20
+ 479 0062 2060     		str	r0, [r4]
+ 480 0064 0022     		movs	r2, #0
+ 481 0066 1D49     		ldr	r1, .L58+24
+ 482 0068 FFF7FEFF 		bl	_ZN7BLEScan28setAdvertisedDeviceCallbacksEP28BLEAdvertisedDeviceCallbacksb
+ 483 006c 0121     		movs	r1, #1
+ 484 006e 2068     		ldr	r0, [r4]
+ 485 0070 FFF7FEFF 		bl	_ZN7BLEScan13setActiveScanEb
+ 486 0074 2068     		ldr	r0, [r4]
+ 487 0076 0023     		movs	r3, #0
+ 488 0078 0093     		str	r3, [sp]
+ 489 007a 194A     		ldr	r2, .L58+28
+ 490 007c 0A21     		movs	r1, #10
+ 491 007e FFF7FEFF 		bl	_ZN7BLEScan5startEmPFv14BLEScanResultsEbh
+ 492 0082 184B     		ldr	r3, .L58+32
+ 493 0084 1870     		strb	r0, [r3]
+ 494 0086 C8B9     		cbnz	r0, .L57
+ 495 0088 1748     		ldr	r0, .L58+36
+ 496 008a FFF7FEFF 		bl	puts
+ 497              	.L50:
+ 498 008e 08B0     		add	sp, sp, #32
+ 499              		@ sp needed
+ 500 0090 10BD     		pop	{r4, pc}
+ 501              	.L56:
+ 502 0092 2046     		mov	r0, r4
+ 503 0094 FFF7FEFF 		bl	_ZN8McuNRF5116getLastStackDumpEv
+ 504 0098 0446     		mov	r4, r0
+ 505 009a 8368     		ldr	r3, [r0, #8]
+ 506 009c 4268     		ldr	r2, [r0, #4]
+ 507 009e 0168     		ldr	r1, [r0]
+ 508 00a0 C068     		ldr	r0, [r0, #12]
+ 509 00a2 0090     		str	r0, [sp]
+ 510 00a4 1148     		ldr	r0, .L58+40
+ 511 00a6 FFF7FEFF 		bl	printf
+ 512 00aa A369     		ldr	r3, [r4, #24]
+ 513 00ac 6269     		ldr	r2, [r4, #20]
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s 			page 10
+
+
+ 514 00ae 2169     		ldr	r1, [r4, #16]
+ 515 00b0 E069     		ldr	r0, [r4, #28]
+ 516 00b2 0090     		str	r0, [sp]
+ 517 00b4 0E48     		ldr	r0, .L58+44
+ 518 00b6 FFF7FEFF 		bl	printf
+ 519 00ba BCE7     		b	.L51
+ 520              	.L57:
+ 521 00bc 0D48     		ldr	r0, .L58+48
+ 522 00be FFF7FEFF 		bl	puts
+ 523 00c2 E4E7     		b	.L50
+ 524              	.L59:
+ 525              		.align	2
+ 526              	.L58:
+ 527 00c4 00000000 		.word	Serial
+ 528 00c8 00000000 		.word	.LC15
+ 529 00cc 00000000 		.word	System
+ 530 00d0 20000000 		.word	.LC16
+ 531 00d4 00000000 		.word	_ZL18eventButtonPressedv
+ 532 00d8 00000000 		.word	.LANCHOR1
+ 533 00dc 00000000 		.word	.LANCHOR2
+ 534 00e0 00000000 		.word	_ZL13eventScanDone14BLEScanResults
+ 535 00e4 00000000 		.word	.LANCHOR0
+ 536 00e8 28000000 		.word	.LC14
+ 537 00ec 34000000 		.word	.LC17
+ 538 00f0 6C000000 		.word	.LC18
+ 539 00f4 A8000000 		.word	.LC19
+ 540              		.size	_Z5setupv, .-_Z5setupv
+ 541              		.section	.text._GLOBAL__sub_I_pBLEScan,"ax",%progbits
+ 542              		.align	1
+ 543              		.syntax unified
+ 544              		.thumb
+ 545              		.thumb_func
+ 546              		.fpu fpv4-sp-d16
+ 547              		.type	_GLOBAL__sub_I_pBLEScan, %function
+ 548              	_GLOBAL__sub_I_pBLEScan:
+ 549              		@ args = 0, pretend = 0, frame = 0
+ 550              		@ frame_needed = 0, uses_anonymous_args = 0
+ 551 0000 08B5     		push	{r3, lr}
+ 552 0002 034A     		ldr	r2, .L62
+ 553 0004 0349     		ldr	r1, .L62+4
+ 554 0006 0448     		ldr	r0, .L62+8
+ 555 0008 FFF7FEFF 		bl	__aeabi_atexit
+ 556 000c 08BD     		pop	{r3, pc}
+ 557              	.L63:
+ 558 000e 00BF     		.align	2
+ 559              	.L62:
+ 560 0010 00000000 		.word	__dso_handle
+ 561 0014 00000000 		.word	_ZN26MyAdvertisedDeviceListenerD1Ev
+ 562 0018 00000000 		.word	.LANCHOR2
+ 563              		.size	_GLOBAL__sub_I_pBLEScan, .-_GLOBAL__sub_I_pBLEScan
+ 564              		.section	.init_array,"aw",%init_array
+ 565              		.align	2
+ 566 0000 00000000 		.word	_GLOBAL__sub_I_pBLEScan(target1)
+ 567              		.weak	_ZTV26MyAdvertisedDeviceListener
+ 568              		.section	.rodata._ZTV26MyAdvertisedDeviceListener,"aG",%progbits,_ZTV26MyAdvertisedDeviceListener,
+ 569              		.align	2
+ 570              		.type	_ZTV26MyAdvertisedDeviceListener, %object
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s 			page 11
+
+
+ 571              		.size	_ZTV26MyAdvertisedDeviceListener, 24
+ 572              	_ZTV26MyAdvertisedDeviceListener:
+ 573 0000 00000000 		.word	0
+ 574 0004 00000000 		.word	0
+ 575 0008 00000000 		.word	_ZN26MyAdvertisedDeviceListenerD1Ev
+ 576 000c 00000000 		.word	_ZN26MyAdvertisedDeviceListenerD0Ev
+ 577 0010 00000000 		.word	_ZN26MyAdvertisedDeviceListener8onResultE19BLEAdvertisedDevice
+ 578 0014 00000000 		.word	_ZN28BLEAdvertisedDeviceCallbacks8onResultEP19BLEAdvertisedDevice
+ 579              		.global	listener
+ 580              		.global	isScanning
+ 581              		.global	pBLEScan
+ 582              		.section	.bss.isScanning,"aw",%nobits
+ 583              		.set	.LANCHOR0,. + 0
+ 584              		.type	isScanning, %object
+ 585              		.size	isScanning, 1
+ 586              	isScanning:
+ 587 0000 00       		.space	1
+ 588              		.section	.bss.pBLEScan,"aw",%nobits
+ 589              		.align	2
+ 590              		.set	.LANCHOR1,. + 0
+ 591              		.type	pBLEScan, %object
+ 592              		.size	pBLEScan, 4
+ 593              	pBLEScan:
+ 594 0000 00000000 		.space	4
+ 595              		.section	.data.listener,"aw",%progbits
+ 596              		.align	2
+ 597              		.set	.LANCHOR2,. + 0
+ 598              		.type	listener, %object
+ 599              		.size	listener, 4
+ 600              	listener:
+ 601 0000 08000000 		.word	_ZTV26MyAdvertisedDeviceListener+8
+ 602              		.section	.rodata._Z5setupv.str1.4,"aMS",%progbits,1
+ 603              		.align	2
+ 604              	.LC15:
+ 605 0000 0A2A2A2A 		.ascii	"\012*** [nRF52-DK] BLE Scanner ***\000"
+ 605      205B6E52 
+ 605      4635322D 
+ 605      444B5D20 
+ 605      424C4520 
+ 606              	.LC16:
+ 607 0020 2A205265 		.ascii	"* Reset by 0x%08lx\012\000"
+ 607      73657420 
+ 607      62792030 
+ 607      78253038 
+ 607      6C780A00 
+ 608              	.LC17:
+ 609 0034 202D2052 		.ascii	" - R0: 0x%08lx, R1: 0x%08lx, R2: 0x%08lx, R3: 0x%08"
+ 609      303A2030 
+ 609      78253038 
+ 609      6C782C20 
+ 609      52313A20 
+ 610 0067 6C780A00 		.ascii	"lx\012\000"
+ 611 006b 00       		.space	1
+ 612              	.LC18:
+ 613 006c 202D2052 		.ascii	" - R12: 0x%08lx, LR: 0x%08lx, PC: 0x%08lx, PSR: 0x%"
+ 613      31323A20 
+ 613      30782530 
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s 			page 12
+
+
+ 613      386C782C 
+ 613      204C523A 
+ 614 009f 30386C78 		.ascii	"08lx\012\000"
+ 614      0A00
+ 615 00a5 000000   		.space	3
+ 616              	.LC19:
+ 617 00a8 2A204E6F 		.ascii	"* Now scanning...\000"
+ 617      77207363 
+ 617      616E6E69 
+ 617      6E672E2E 
+ 617      2E00
+ 618              		.section	.rodata._ZL13eventScanDone14BLEScanResults.str1.4,"aMS",%progbits,1
+ 619              		.align	2
+ 620              	.LC1:
+ 621 0000 2A205363 		.ascii	"* Scanning done. %lu devices found.\012\000"
+ 621      616E6E69 
+ 621      6E672064 
+ 621      6F6E652E 
+ 621      20256C75 
+ 622 0025 000000   		.space	3
+ 623              	.LC2:
+ 624 0028 2D205B25 		.ascii	"- [%u] %s\000"
+ 624      755D2025 
+ 624      7300
+ 625 0032 0000     		.space	2
+ 626              	.LC3:
+ 627 0034 2C204E61 		.ascii	", Name: %s\000"
+ 627      6D653A20 
+ 627      257300
+ 628 003f 00       		.space	1
+ 629              	.LC4:
+ 630 0040 2C204170 		.ascii	", Appearance: 0x%04X\000"
+ 630      70656172 
+ 630      616E6365 
+ 630      3A203078 
+ 630      25303458 
+ 631 0055 000000   		.space	3
+ 632              	.LC5:
+ 633 0058 2C204D61 		.ascii	", Manufacturer data:\000"
+ 633      6E756661 
+ 633      63747572 
+ 633      65722064 
+ 633      6174613A 
+ 634 006d 000000   		.space	3
+ 635              	.LC6:
+ 636 0070 20253032 		.ascii	" %02X\000"
+ 636      5800
+ 637 0076 0000     		.space	2
+ 638              	.LC7:
+ 639 0078 2C207365 		.ascii	", service UUID: %s\000"
+ 639      72766963 
+ 639      65205555 
+ 639      49443A20 
+ 639      257300
+ 640 008b 00       		.space	1
+ 641              	.LC8:
+ 642 008c 2C205458 		.ascii	", TX power:%d dBm\000"
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s 			page 13
+
+
+ 642      20706F77 
+ 642      65723A25 
+ 642      64206442 
+ 642      6D00
+ 643 009e 0000     		.space	2
+ 644              	.LC9:
+ 645 00a0 2C205253 		.ascii	", RSSI: %d dB\000"
+ 645      53493A20 
+ 645      25642064 
+ 645      4200
+ 646 00ae 0000     		.space	2
+ 647              	.LC10:
+ 648 00b0 2C205261 		.ascii	", Raw [\000"
+ 648      77205B00 
+ 649              	.LC11:
+ 650 00b8 205D0A00 		.ascii	" ]\012\000"
+ 651              		.section	.rodata._ZL18eventButtonPressedv.str1.4,"aMS",%progbits,1
+ 652              		.align	2
+ 653              	.LC12:
+ 654 0000 2A205475 		.ascii	"* Turn off scanner!\000"
+ 654      726E206F 
+ 654      66662073 
+ 654      63616E6E 
+ 654      65722100 
+ 655              	.LC13:
+ 656 0014 2A205475 		.ascii	"* Turn on scanner!\000"
+ 656      726E206F 
+ 656      6E207363 
+ 656      616E6E65 
+ 656      722100
+ 657 0027 00       		.space	1
+ 658              	.LC14:
+ 659 0028 2A205363 		.ascii	"* Scan failed.\000"
+ 659      616E2066 
+ 659      61696C65 
+ 659      642E00
+ 660              		.section	.rodata._ZN26MyAdvertisedDeviceListener8onResultE19BLEAdvertisedDevice.str1.4,"aMS",%prog
+ 661              		.align	2
+ 662              	.LC0:
+ 663 0000 5B256C75 		.ascii	"[%lu.%06lu|SCANNED] %s\012\000"
+ 663      2E253036 
+ 663      6C757C53 
+ 663      43414E4E 
+ 663      45445D20 
+ 664              		.hidden	__dso_handle
+ 665              		.ident	"GCC: (GNU Tools for Arm Embedded Processors 7-2018-q2-update) 7.3.1 20180622 (release) [AR
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s 			page 14
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.cpp
+C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s:16     .text._ZN26MyAdvertisedDeviceListenerD2Ev:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s:23     .text._ZN26MyAdvertisedDeviceListenerD2Ev:00000000 _ZN26MyAdvertisedDeviceListenerD2Ev
+C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s:23     .text._ZN26MyAdvertisedDeviceListenerD2Ev:00000000 _ZN26MyAdvertisedDeviceListenerD1Ev
+C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s:32     .text._ZN26MyAdvertisedDeviceListener8onResultE19BLEAdvertisedDevice:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s:39     .text._ZN26MyAdvertisedDeviceListener8onResultE19BLEAdvertisedDevice:00000000 _ZN26MyAdvertisedDeviceListener8onResultE19BLEAdvertisedDevice
+C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s:76     .text._ZN26MyAdvertisedDeviceListener8onResultE19BLEAdvertisedDevice:00000044 $d
+C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s:80     .text._ZN26MyAdvertisedDeviceListenerD0Ev:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s:87     .text._ZN26MyAdvertisedDeviceListenerD0Ev:00000000 _ZN26MyAdvertisedDeviceListenerD0Ev
+C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s:98     .text._ZL13eventScanDone14BLEScanResults:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s:104    .text._ZL13eventScanDone14BLEScanResults:00000000 _ZL13eventScanDone14BLEScanResults
+C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s:354    .text._ZL13eventScanDone14BLEScanResults:0000020c $d
+C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s:371    .text._ZL18eventButtonPressedv:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s:377    .text._ZL18eventButtonPressedv:00000000 _ZL18eventButtonPressedv
+C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s:420    .text._ZL18eventButtonPressedv:00000050 $d
+C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s:429    .text._Z5setupv:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s:436    .text._Z5setupv:00000000 _Z5setupv
+C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s:527    .text._Z5setupv:000000c4 $d
+C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s:542    .text._GLOBAL__sub_I_pBLEScan:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s:548    .text._GLOBAL__sub_I_pBLEScan:00000000 _GLOBAL__sub_I_pBLEScan
+C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s:560    .text._GLOBAL__sub_I_pBLEScan:00000010 $d
+C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s:565    .init_array:00000000 $d
+C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s:572    .rodata._ZTV26MyAdvertisedDeviceListener:00000000 _ZTV26MyAdvertisedDeviceListener
+C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s:569    .rodata._ZTV26MyAdvertisedDeviceListener:00000000 $d
+C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s:600    .data.listener:00000000 listener
+C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s:586    .bss.isScanning:00000000 isScanning
+C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s:593    .bss.pBLEScan:00000000 pBLEScan
+C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s:587    .bss.isScanning:00000000 $d
+C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s:589    .bss.pBLEScan:00000000 $d
+C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s:596    .data.listener:00000000 $d
+C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s:603    .rodata._Z5setupv.str1.4:00000000 $d
+C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s:619    .rodata._ZL13eventScanDone14BLEScanResults.str1.4:00000000 $d
+C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s:652    .rodata._ZL18eventButtonPressedv.str1.4:00000000 $d
+C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s:661    .rodata._ZN26MyAdvertisedDeviceListener8onResultE19BLEAdvertisedDevice.str1.4:00000000 $d
+                           .group:00000000 _ZN26MyAdvertisedDeviceListenerD5Ev
+
+UNDEFINED SYMBOLS
+gettimeofday
+_ZN19BLEAdvertisedDevice8toStringB5cxx11Ev
+_ZdlPv
+Serial
+_ZdlPvj
+_ZN14BLEScanResults8getCountEv
+_ZN19BLEAdvertisedDevice7getNameB5cxx11Ev
+_ZN19BLEAdvertisedDevice13getAppearanceEv
+_ZN5Print5printEPKc
+_ZN19BLEAdvertisedDevice19getManufacturerDataB5cxx11Ev
+_ZN19BLEAdvertisedDevice14getServiceUUIDEv
+_ZN7BLEUUID8toStringB5cxx11Ev
+_ZN19BLEAdvertisedDevice10getTXPowerEv
+_ZN19BLEAdvertisedDevice7getRSSIEv
+_ZN14BLEScanResults9getDeviceEm
+_ZN19BLEAdvertisedDevice10getAddressEv
+_ZN10BLEAddress8toStringB5cxx11Ev
+_ZN19BLEAdvertisedDevice8haveNameEv
+_ZN19BLEAdvertisedDevice14haveAppearanceEv
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccZOvaaZ.s 			page 15
+
+
+_ZN19BLEAdvertisedDevice20haveManufacturerDataEv
+_ZN19BLEAdvertisedDevice15haveServiceUUIDEv
+_ZN19BLEAdvertisedDevice11haveTXPowerEv
+_ZN19BLEAdvertisedDevice8haveRSSIEv
+_ZN19BLEAdvertisedDevice16getPayloadLengthEv
+_ZN19BLEAdvertisedDevice10getPayloadEv
+_ZN7BLEScan5startEmPFv14BLEScanResultsEbh
+puts
+_ZN5Print7printlnEPKc
+_ZN7BLEScan4stopEv
+_ZN8McuNRF5114getResetReasonEv
+printf
+_ZN15System_nRf52_DK15onButtonPressedEhPFvvE
+_ZN9BLEDevice4initENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+_ZN9BLEDevice7getScanEv
+_ZN7BLEScan28setAdvertisedDeviceCallbacksEP28BLEAdvertisedDeviceCallbacksb
+_ZN7BLEScan13setActiveScanEb
+_ZN8McuNRF5116getLastStackDumpEv
+System
+__aeabi_atexit
+__dso_handle
+_ZN28BLEAdvertisedDeviceCallbacks8onResultEP19BLEAdvertisedDevice
