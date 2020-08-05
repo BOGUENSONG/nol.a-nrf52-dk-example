@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Stark\AppData\Local\Temp\cczdGxX2.s 			page 1
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccMMwuOw.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Stark\AppData\Local\Temp\cczdGxX2.s 			page 1
   55              		.syntax unified
   56              		.thumb
   57              		.thumb_func
-ARM GAS  C:\Users\Stark\AppData\Local\Temp\cczdGxX2.s 			page 2
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccMMwuOw.s 			page 2
 
 
   58              		.fpu fpv4-sp-d16
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Stark\AppData\Local\Temp\cczdGxX2.s 			page 1
  112              	.L6:
  113 0046 0528     		cmp	r0, #5
  114 0048 01D0     		beq	.L4
-ARM GAS  C:\Users\Stark\AppData\Local\Temp\cczdGxX2.s 			page 3
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccMMwuOw.s 			page 3
 
 
  115 004a FFF7FEFF 		bl	app_error_handler_bare
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Stark\AppData\Local\Temp\cczdGxX2.s 			page 1
  169 000a 0646     		mov	r6, r0
  170 000c 254A     		ldr	r2, .L29
  171 000e 0A60     		str	r2, [r1]
-ARM GAS  C:\Users\Stark\AppData\Local\Temp\cczdGxX2.s 			page 4
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccMMwuOw.s 			page 4
 
 
  172 0010 0024     		movs	r4, #0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Stark\AppData\Local\Temp\cczdGxX2.s 			page 1
  226 009a 05B0     		add	sp, sp, #20
  227              		@ sp needed
  228 009c F0BD     		pop	{r4, r5, r6, r7, pc}
-ARM GAS  C:\Users\Stark\AppData\Local\Temp\cczdGxX2.s 			page 5
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccMMwuOw.s 			page 5
 
 
  229              	.L24:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Stark\AppData\Local\Temp\cczdGxX2.s 			page 1
  283 0004 00000000 		.word	__stop_sdh_ble_observers
  284 0008 08000000 		.word	8
  285              		.section	.sdh_stack_observers0,"a",%progbits
-ARM GAS  C:\Users\Stark\AppData\Local\Temp\cczdGxX2.s 			page 6
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccMMwuOw.s 			page 6
 
 
  286              		.align	2
@@ -308,37 +308,37 @@ ARM GAS  C:\Users\Stark\AppData\Local\Temp\cczdGxX2.s 			page 1
  290 0000 00000000 		.word	nrf_sdh_ble_evts_poll
  291 0004 00000000 		.word	0
  292              		.ident	"GCC: (GNU Tools for Arm Embedded Processors 7-2018-q2-update) 7.3.1 20180622 (release) [AR
-ARM GAS  C:\Users\Stark\AppData\Local\Temp\cczdGxX2.s 			page 7
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccMMwuOw.s 			page 7
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 NOLA_CONF@nrf_sdh_ble.c
-C:\Users\Stark\AppData\Local\Temp\cczdGxX2.s:16     .text.sd_ble_enable:00000000 $t
-C:\Users\Stark\AppData\Local\Temp\cczdGxX2.s:22     .text.sd_ble_enable:00000000 sd_ble_enable
-C:\Users\Stark\AppData\Local\Temp\cczdGxX2.s:35     .text.sd_ble_cfg_set:00000000 $t
-C:\Users\Stark\AppData\Local\Temp\cczdGxX2.s:41     .text.sd_ble_cfg_set:00000000 sd_ble_cfg_set
-C:\Users\Stark\AppData\Local\Temp\cczdGxX2.s:54     .text.sd_ble_evt_get:00000000 $t
-C:\Users\Stark\AppData\Local\Temp\cczdGxX2.s:60     .text.sd_ble_evt_get:00000000 sd_ble_evt_get
-C:\Users\Stark\AppData\Local\Temp\cczdGxX2.s:73     .text.nrf_sdh_ble_evts_poll:00000000 $t
-C:\Users\Stark\AppData\Local\Temp\cczdGxX2.s:79     .text.nrf_sdh_ble_evts_poll:00000000 nrf_sdh_ble_evts_poll
-C:\Users\Stark\AppData\Local\Temp\cczdGxX2.s:125    .text.nrf_sdh_ble_evts_poll:00000058 $d
-C:\Users\Stark\AppData\Local\Temp\cczdGxX2.s:129    .text.nrf_sdh_ble_app_ram_start_get:00000000 $t
-C:\Users\Stark\AppData\Local\Temp\cczdGxX2.s:136    .text.nrf_sdh_ble_app_ram_start_get:00000000 nrf_sdh_ble_app_ram_start_get
-C:\Users\Stark\AppData\Local\Temp\cczdGxX2.s:151    .text.nrf_sdh_ble_app_ram_start_get:00000010 $d
-C:\Users\Stark\AppData\Local\Temp\cczdGxX2.s:154    .text.nrf_sdh_ble_default_cfg_set:00000000 $t
-C:\Users\Stark\AppData\Local\Temp\cczdGxX2.s:161    .text.nrf_sdh_ble_default_cfg_set:00000000 nrf_sdh_ble_default_cfg_set
-C:\Users\Stark\AppData\Local\Temp\cczdGxX2.s:235    .text.nrf_sdh_ble_default_cfg_set:000000a4 $d
-C:\Users\Stark\AppData\Local\Temp\cczdGxX2.s:238    .text.nrf_sdh_ble_enable:00000000 $t
-C:\Users\Stark\AppData\Local\Temp\cczdGxX2.s:245    .text.nrf_sdh_ble_enable:00000000 nrf_sdh_ble_enable
-C:\Users\Stark\AppData\Local\Temp\cczdGxX2.s:261    .text.nrf_sdh_ble_enable:00000014 $d
-C:\Users\Stark\AppData\Local\Temp\cczdGxX2.s:274    .rodata.m_ram_start:00000000 m_ram_start
-C:\Users\Stark\AppData\Local\Temp\cczdGxX2.s:268    .bss.m_stack_is_enabled:00000000 m_stack_is_enabled
-C:\Users\Stark\AppData\Local\Temp\cczdGxX2.s:269    .bss.m_stack_is_enabled:00000000 $d
-C:\Users\Stark\AppData\Local\Temp\cczdGxX2.s:271    .rodata.m_ram_start:00000000 $d
-C:\Users\Stark\AppData\Local\Temp\cczdGxX2.s:277    .rodata.sdh_ble_observers:00000000 $d
-C:\Users\Stark\AppData\Local\Temp\cczdGxX2.s:281    .rodata.sdh_ble_observers:00000000 sdh_ble_observers
-C:\Users\Stark\AppData\Local\Temp\cczdGxX2.s:286    .sdh_stack_observers0:00000000 $d
-C:\Users\Stark\AppData\Local\Temp\cczdGxX2.s:289    .sdh_stack_observers0:00000000 m_nrf_sdh_ble_evts_poll
+C:\Users\Stark\AppData\Local\Temp\ccMMwuOw.s:16     .text.sd_ble_enable:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccMMwuOw.s:22     .text.sd_ble_enable:00000000 sd_ble_enable
+C:\Users\Stark\AppData\Local\Temp\ccMMwuOw.s:35     .text.sd_ble_cfg_set:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccMMwuOw.s:41     .text.sd_ble_cfg_set:00000000 sd_ble_cfg_set
+C:\Users\Stark\AppData\Local\Temp\ccMMwuOw.s:54     .text.sd_ble_evt_get:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccMMwuOw.s:60     .text.sd_ble_evt_get:00000000 sd_ble_evt_get
+C:\Users\Stark\AppData\Local\Temp\ccMMwuOw.s:73     .text.nrf_sdh_ble_evts_poll:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccMMwuOw.s:79     .text.nrf_sdh_ble_evts_poll:00000000 nrf_sdh_ble_evts_poll
+C:\Users\Stark\AppData\Local\Temp\ccMMwuOw.s:125    .text.nrf_sdh_ble_evts_poll:00000058 $d
+C:\Users\Stark\AppData\Local\Temp\ccMMwuOw.s:129    .text.nrf_sdh_ble_app_ram_start_get:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccMMwuOw.s:136    .text.nrf_sdh_ble_app_ram_start_get:00000000 nrf_sdh_ble_app_ram_start_get
+C:\Users\Stark\AppData\Local\Temp\ccMMwuOw.s:151    .text.nrf_sdh_ble_app_ram_start_get:00000010 $d
+C:\Users\Stark\AppData\Local\Temp\ccMMwuOw.s:154    .text.nrf_sdh_ble_default_cfg_set:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccMMwuOw.s:161    .text.nrf_sdh_ble_default_cfg_set:00000000 nrf_sdh_ble_default_cfg_set
+C:\Users\Stark\AppData\Local\Temp\ccMMwuOw.s:235    .text.nrf_sdh_ble_default_cfg_set:000000a4 $d
+C:\Users\Stark\AppData\Local\Temp\ccMMwuOw.s:238    .text.nrf_sdh_ble_enable:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccMMwuOw.s:245    .text.nrf_sdh_ble_enable:00000000 nrf_sdh_ble_enable
+C:\Users\Stark\AppData\Local\Temp\ccMMwuOw.s:261    .text.nrf_sdh_ble_enable:00000014 $d
+C:\Users\Stark\AppData\Local\Temp\ccMMwuOw.s:274    .rodata.m_ram_start:00000000 m_ram_start
+C:\Users\Stark\AppData\Local\Temp\ccMMwuOw.s:268    .bss.m_stack_is_enabled:00000000 m_stack_is_enabled
+C:\Users\Stark\AppData\Local\Temp\ccMMwuOw.s:269    .bss.m_stack_is_enabled:00000000 $d
+C:\Users\Stark\AppData\Local\Temp\ccMMwuOw.s:271    .rodata.m_ram_start:00000000 $d
+C:\Users\Stark\AppData\Local\Temp\ccMMwuOw.s:277    .rodata.sdh_ble_observers:00000000 $d
+C:\Users\Stark\AppData\Local\Temp\ccMMwuOw.s:281    .rodata.sdh_ble_observers:00000000 sdh_ble_observers
+C:\Users\Stark\AppData\Local\Temp\ccMMwuOw.s:286    .sdh_stack_observers0:00000000 $d
+C:\Users\Stark\AppData\Local\Temp\ccMMwuOw.s:289    .sdh_stack_observers0:00000000 m_nrf_sdh_ble_evts_poll
 
 UNDEFINED SYMBOLS
 nrf_section_iter_init

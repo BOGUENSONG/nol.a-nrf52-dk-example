@@ -36,7 +36,7 @@
      <property name="geometry">
       <rect>
        <x>40</x>
-       <y>520</y>
+       <y>480</y>
        <width>400</width>
        <height>40</height>
       </rect>
@@ -55,7 +55,7 @@
      <property name="geometry">
       <rect>
        <x>40</x>
-       <y>180</y>
+       <y>150</y>
        <width>401</width>
        <height>301</height>
       </rect>
@@ -70,22 +70,99 @@
       <property name="text">
        <string>abc</string>
       </property>
+      <property name="foreground">
+       <brush brushstyle="NoBrush">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </property>
+      <property name="flags">
+       <set>ItemIsSelectable|ItemIsEnabled</set>
+      </property>
      </item>
     </widget>
     <widget class="QLabel" name="label">
      <property name="geometry">
       <rect>
-       <x>0</x>
+       <x>70</x>
        <y>0</y>
-       <width>480</width>
-       <height>151</height>
+       <width>340</width>
+       <height>120</height>
       </rect>
      </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
      <property name="styleSheet">
-      <string notr="true">background : url(:/head/edgetitle.png)</string>
+      <string notr="true">background :url(:/newPrefix/EdgeGui_dev/edgetitle.png)</string>
      </property>
      <property name="text">
       <string/>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="comboBox">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>230</y>
+       <width>311</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>oMG</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>qwetqwet</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QComboBox" name="comboBox_2">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>330</y>
+       <width>311</width>
+       <height>21</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>93</x>
+       <y>190</y>
+       <width>301</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Service</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>93</x>
+       <y>290</y>
+       <width>301</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Characteristic</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
      </property>
     </widget>
    </widget>
@@ -128,7 +205,7 @@
   </action>
  </widget>
  <resources>
-  <include location="../../../../../AppData/Local/Programs/Python/Python38-32/Lib/site-packages/PySide2/title.qrc"/>
+  <include location="../grt.qrc"/>
  </resources>
  <connections/>
 </ui>

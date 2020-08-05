@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="newPrefix">
+    <file>EdgeGui_dev/edgetitle.png</file>
+  </qresource>
+</RCC>

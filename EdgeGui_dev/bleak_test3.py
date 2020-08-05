@@ -5,11 +5,12 @@ import platform
 from bleak import BleakClient
 
 CHARACTERISTIC_UUID = "f64f0100-7fdf-4b2c-ad31-e65ca15bef6b"
+
 async def print_services(mac_addr: str, loop: asyncio.AbstractEventLoop):
     async with BleakClient(mac_addr, loop=loop, timeout=10.0) as client:
         read = await client.read_gatt_char(CHARACTERISTIC_UUID)
         print(read)
-        await client.write_gatt_char(CHARACTERISTIC_UUID, bytearray([0x37]))
+        await client.write_gatt_char(CHARACTERISTIC_UUID, bytearray(b'write_str_test'))
         read = await client.read_gatt_char(CHARACTERISTIC_UUID)
         print(read)
         await client.write_gatt_char(CHARACTERISTIC_UUID, bytearray([0x38]))

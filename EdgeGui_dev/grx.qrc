@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="newPrefix">
+    <file>edgetitle.png</file>
+  </qresource>
+</RCC>

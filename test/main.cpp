@@ -1,5 +1,5 @@
 #include <cox.h>
-
+#include <stdlib.h>
 // unknwon
 
 Timer tPrint;
@@ -7,14 +7,17 @@ Timer tPrint2;
 
 uint8_t countNoInit __attribute__((section(".noinit")));
 //                      //
-
+uint8_t flag = 0;
+volatile int counter = 0;
 //bLE setting
 #include <BLEDevice.hpp>
 
 #define SERVICE_UUID        "f64f0000-7fdf-4b2c-ad31-e65ca15bef6b"
-#define CHARACTERISTIC_UUID "f64f0100-7fdf-4b2c-ad31-e65ca15bef6b"
+#define CH_GETIMAGE_UUID "f64f0100-7fdf-4b2c-ad31-e65ca15bef6b"
+#define CH_SNAP_UUID "f64f0200-7fdf-4b2c-ad31-e65ca15bef6b"
+#define CH_SETRTC_UUID "f64f0300-7fdf-4b2c-ad31-e65ca15bef6b"
 
-class MyCallbacks: public BLECharacteristicCallbacks {
+class getImageCallbacks: public BLECharacteristicCallbacks {
   void onRead(BLECharacteristic *pChar){
     printf("read request on!\r\n");
   }
@@ -27,7 +30,36 @@ class MyCallbacks: public BLECharacteristicCallbacks {
       printf("*******\n");
     }
   };
-} myCallbacks;
+} getImageCB;
+
+class snapCallbacks: public BLECharacteristicCallbacks {
+  void onRead(BLECharacteristic *pChar){
+    printf("read request on!\r\n");
+  }
+  // void onWrite(BLECharacteristic *pChar) {
+  //   std::string value = pChar->getValue();
+  //   printf("write request on!\r\n");
+  //   if (value.length() > 0) {
+  //     printf("*******\n");
+  //     printf("%s\n", value.c_str());
+  //     printf("*******\n");
+  //   }
+  // };
+} snapCB;
+class setRTCCallbacks: public BLECharacteristicCallbacks {
+  void onRead(BLECharacteristic *pChar){
+    printf("read request on!\r\n");
+  }
+  void onWrite(BLECharacteristic *pChar) {
+    std::string value = pChar->getValue();
+    printf("write request on!\r\n");
+    if (value.length() > 0) {
+      printf("*******\n");
+      printf("%s\n", value.c_str());
+      printf("*******\n");
+    }
+  };
+} setRTCCB;
 
 
 // Byte data function  //
@@ -51,6 +83,42 @@ uint8_t* snap(uint8_t format){
   return abc;
 }
 
+uint8_t* getImage(char* filename, int filesize, uint32_t offset, uint16_t chunk_length){
+  // type(1) length(2) offset(4) chunkLen(2) fnsize(1) fname(variable) checksum(1)
+  uint8_t type = 0x02; // getImage Type
+
+  uint8_t fn_size = strlen(filename);
+  uint8_t checksum = 0;
+
+  int size = 11 + fn_size;
+  uint16_t length = size-4; // total size - checksum size(1) - type size(1) - lengthsize(2)
+  uint8_t *imgFormat = new uint8_t[size];
+  imgFormat[0] = type;
+
+  imgFormat[1] = 0xff & (length);
+  imgFormat[2] = 0xff & (length >> 8);
+
+  imgFormat[3] = 0xff & offset;
+  imgFormat[4] = 0xff & (offset >> 8);
+  imgFormat[5] = 0xff & (offset >> 16);
+  imgFormat[6] = 0xff & (offset >> 24);
+
+  imgFormat[7] = 0xff & (chunk_length);
+  imgFormat[8] = 0xff & (chunk_length >> 8);
+
+  imgFormat[9] = fn_size;
+  for (int i = 0 ; i < fn_size; i++){
+    imgFormat[10 + i] = filename[i];
+  }
+
+  for (int j = 0 ; j < size; j++){
+    checksum = checksum + imgFormat[j];
+  }
+  imgFormat[10 + fn_size] = checksum;
+  return imgFormat;
+
+}
+
 uint8_t* setRTC(uint16_t year , uint8_t month, uint8_t day, uint8_t hour, uint8_t minute, uint8_t second){
   static uint8_t rtcmsg[11];
   uint8_t* yeartemp = int_tobyte(year);
@@ -71,26 +139,14 @@ uint8_t* setRTC(uint16_t year , uint8_t month, uint8_t day, uint8_t hour, uint8_
   return rtcmsg;
 }
 
-uint8_t* getImage(uint32_t offset, uint16_t chunkLength, uint8_t fnsize, char* filename){
-  return 0;
-}
-
-
-
 //                     //
 
 static void receivemsg(SerialPort &p) {
-  System.ledToggle(0);
-
   while (p.available() > 0){
-    // uint8_t* buf;
-    // p.readBytes(buf,17);
-    // printf("0x%x 0x%x 0x%x 0x%x 0x%x 0x%x 0x%x 0x%x\r\n",buf[0],buf[1],buf[2],buf[3],buf[4],buf[5],buf[6],buf[7]);
-    // printf("[0x%x 0x%x 0x%x 0x%x 0x%x 0x%x 0x%x 0x%x]\r\n",buf[8],buf[9],buf[10],buf[11],buf[12],buf[13],buf[14],buf[15]);
-    char c = p.read();
-    printf("[0x%x]\r\n",c);
-
+    p.read();
+    counter += 1;
   }
+  printf("[%d]\r\n",counter);
 }
 
 static void eventButtonPressed(uint8_t n) {
@@ -104,23 +160,43 @@ static void eventButton1Pressed() {
   uint8_t* abc = snap(0x01);
   // printf("[0x%x] [0x%x] [0x%x] [0x%x] [0x%x]\r\n",abc[0],abc[1],abc[2],abc[3],abc[4]);
   printf("send ok [%d]\r\n",Serial2.write(abc,5));
+  uint8_t *buffer = NULL;
+  int num = Serial2.readBytes(buffer,0xff);
+  printf("num = [%d]\r\n",num);
 }
 
 static void eventButton2Pressed() {
   eventButtonPressed(1);
   uint8_t* rtc = setRTC(2020,7,14,11,10,12);
   printf("send ok [%d]\r\n",Serial2.write(rtc,11));
+  uint8_t *buffer = NULL;
+  int num = Serial2.readBytes(buffer,0xff);
+  printf("num = [%d]\r\n",num);
+
 }
 
 static void eventButton3Pressed() {
   eventButtonPressed(2);
+  printf("button 1 selected. send getImage\r\n");
+  char* fname = "0001.jpg";
+  int msgsize = 11 + strlen(fname);
+  uint8_t* imgchunk =  getImage(fname, 2048, 0x00, 1024);
+  for (int i = 0 ; i < msgsize; i++){
+    printf("[0x%x] , ",imgchunk[i]);
+  }
+  printf("\r\n");
+  printf("send ok [%d]\r\n",Serial2.write(imgchunk,msgsize));
+  delete[] imgchunk;
 }
 
 static void eventButton4Pressed() {
-  reboot();
+  int tempsize = 95;
+  uint8_t abc[95];
+  for (uint8_t i = 0 ; i < tempsize ; i++){
+    abc[i] = i;
+  }
+  Serial2.write(abc,95);
 }
-
-
 
 
 void setup() {
@@ -137,12 +213,18 @@ void setup() {
   BLEService *service = server->createService(SERVICE_UUID);
   printf("- Service created\n");
 
-  BLECharacteristic *characteristic = service->createCharacteristic(
-    CHARACTERISTIC_UUID,
-    BLECharacteristic::PROPERTY_READ | BLECharacteristic::PROPERTY_WRITE_NR
-  );
-  characteristic->setValue("test200724");
-  characteristic->setCallbacks(&myCallbacks);
+  BLECharacteristic *ch_getimage = service->createCharacteristic(CH_GETIMAGE_UUID, BLECharacteristic::PROPERTY_READ | BLECharacteristic::PROPERTY_WRITE_NR);
+  ch_getimage->setValue("get_image");
+  ch_getimage->setCallbacks(&getImageCB);
+
+  BLECharacteristic *ch_snap = service->createCharacteristic(CH_SNAP_UUID, BLECharacteristic::PROPERTY_READ);
+  ch_snap->setValue("Snap");
+  ch_snap->setCallbacks(&snapCB);
+
+  BLECharacteristic *ch_setrtc = service->createCharacteristic(CH_SETRTC_UUID, BLECharacteristic::PROPERTY_READ | BLECharacteristic::PROPERTY_WRITE_NR);
+  ch_setrtc->setValue("setRTC");
+  ch_setrtc->setCallbacks(&setRTCCB);
+
   printf("- Characteristic created\n");
   service->start();
   printf("- Characteristic added\n");

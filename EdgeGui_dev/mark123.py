@@ -16,6 +16,10 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 
+EDGE_SERVICE_UUID = "f64f0000-7fdf-4b2c-ad31-e65ca15bef6b"
+CH_GETIMAGE_UUID = "f64f0100-7fdf-4b2c-ad31-e65ca15bef6b"
+CH_SNAP_UUID = "f64f0200-7fdf-4b2c-ad31-e65ca15bef6b"
+CH_SETRTC_UUID = "f64f0300-7fdf-4b2c-ad31-e65ca15bef6b"
 #----------- dict for save device, service List-------------#
 ble_devices = {}
 ble_services = {}
@@ -121,7 +125,9 @@ class Ui_MainWindow(object):
             if (res == QMessageBox.Yes):
                 self.device_selected_yes(mac_adr,dev_name)
         elif window == 1: # service List 화면에서 더블클릭시
-            self.debug_dialog("debug","window1")
+            service_name = self.deviceList.selectedItems()[0].text()
+            if (QtWidgets.QMessageBox.question(None,"Edge Eye","Select [" + service_name + "]") == QMessageBox.Yes):
+                self.device_selected_yes(1234,2020)
 
     # 사용자가 yes를 눌렀을 경우의 동작함수
     def device_selected_yes(self,mac_address,dev_name):
@@ -148,7 +154,12 @@ class Ui_MainWindow(object):
         if len(ble_services):
             self.deviceList.clear()
             for key,value in ble_services.items():
-                self.deviceList.addItem(key+" : " + value)
+                if (key == EDGE_SERVICE_UUID):
+                    self.deviceList.addItem("Edge_eye Service")
+                else:
+                    item = QListWidgetItem(value[0])
+                    self.deviceList.addItem(item)
+                self.deviceList.addItem(key)
             self.deviceList.repaint()
             window = 1
         else:
@@ -183,7 +194,11 @@ async def findService(mac_addr: str, loop: asyncio.AbstractEventLoop):
             svcs = client.services
             for service in svcs:
                 # print("Services : " + service.uuid + " Desc : " + service.description)
-                ble_services.setdefault(service.uuid,service.description)
+                valuelist = []
+                valuelist.append(service.description)
+                for char in service.characteristics:
+                    valuelist.append(char.uuid)
+                ble_services.setdefault(service.uuid,valuelist)
     except:
         print("not connect T.T")
 #장비 목록 가져오는 함수

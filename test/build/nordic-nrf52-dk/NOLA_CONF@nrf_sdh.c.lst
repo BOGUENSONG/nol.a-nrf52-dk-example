@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s 			page 1
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s 			page 1
   55              		.syntax unified
   56              		.thumb
   57              		.thumb_func
-ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s 			page 2
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s 			page 2
 
 
   58              		.fpu fpv4-sp-d16
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s 			page 1
  112 0028 0020     		movs	r0, #0
  113 002a 02E0     		b	.L9
  114              	.L12:
-ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s 			page 3
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s 			page 3
 
 
  115 002c 0020     		movs	r0, #0
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s 			page 1
  169              		.thumb_func
  170              		.fpu fpv4-sp-d16
  171              		.type	softdevices_evt_irq_enable, %function
-ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s 			page 4
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s 			page 4
 
 
  172              	softdevices_evt_irq_enable:
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s 			page 1
  226 0010 0020     		movs	r0, #0
  227 0012 FFF7FEFF 		bl	sdh_request_observer_notify
  228 0016 1128     		cmp	r0, #17
-ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s 			page 5
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s 			page 5
 
 
  229 0018 29D0     		beq	.L35
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s 			page 1
  283              		.thumb_func
  284              		.fpu fpv4-sp-d16
  285              		.type	nrf_sdh_disable_request, %function
-ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s 			page 6
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s 			page 6
 
 
  286              	nrf_sdh_disable_request:
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s 			page 1
  340              		.thumb_func
  341              		.fpu fpv4-sp-d16
  342              		.type	nrf_sdh_request_continue, %function
-ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s 			page 7
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s 			page 7
 
 
  343              	nrf_sdh_request_continue:
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s 			page 1
  397              		@ args = 0, pretend = 0, frame = 0
  398              		@ frame_needed = 0, uses_anonymous_args = 0
  399 0000 08B5     		push	{r3, lr}
-ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s 			page 8
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s 			page 8
 
 
  400 0002 054B     		ldr	r3, .L61
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s 			page 1
  454              		.align	1
  455              		.global	nrf_sdh_is_suspended
  456              		.syntax unified
-ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s 			page 9
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s 			page 9
 
 
  457              		.thumb
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s 			page 1
  511              		@ sp needed
  512 0024 5DF804FB 		ldr	pc, [sp], #4
  513              	.L80:
-ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s 			page 10
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s 			page 10
 
 
  514              		.align	2
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s 			page 1
  568              		.section	.rodata.sdh_stack_observers,"a",%progbits
  569              		.align	2
  570              		.set	.LANCHOR6,. + 0
-ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s 			page 11
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s 			page 11
 
 
  571              		.type	sdh_stack_observers, %object
@@ -617,67 +617,67 @@ ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s 			page 1
  584 0004 00000000 		.word	__stop_sdh_state_observers
  585 0008 08000000 		.word	8
  586              		.ident	"GCC: (GNU Tools for Arm Embedded Processors 7-2018-q2-update) 7.3.1 20180622 (release) [AR
-ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s 			page 12
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s 			page 12
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 NOLA_CONF@nrf_sdh.c
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:16     .text.sd_softdevice_enable:00000000 $t
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:22     .text.sd_softdevice_enable:00000000 sd_softdevice_enable
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:35     .text.sd_softdevice_disable:00000000 $t
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:41     .text.sd_softdevice_disable:00000000 sd_softdevice_disable
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:54     .text.softdevice_evt_irq_disable:00000000 $t
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:60     .text.softdevice_evt_irq_disable:00000000 softdevice_evt_irq_disable
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:80     .text.softdevice_evt_irq_disable:00000020 $d
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:84     .text.sdh_request_observer_notify:00000000 $t
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:90     .text.sdh_request_observer_notify:00000000 sdh_request_observer_notify
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:126    .text.sdh_request_observer_notify:00000038 $d
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:129    .text.sdh_state_observer_notify:00000000 $t
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:135    .text.sdh_state_observer_notify:00000000 sdh_state_observer_notify
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:163    .text.sdh_state_observer_notify:0000002c $d
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:166    .text.softdevices_evt_irq_enable:00000000 $t
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:172    .text.softdevices_evt_irq_enable:00000000 softdevices_evt_irq_enable
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:204    .text.softdevices_evt_irq_enable:0000003c $d
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:208    .text.nrf_sdh_enable_request:00000000 $t
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:215    .text.nrf_sdh_enable_request:00000000 nrf_sdh_enable_request
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:272    .text.nrf_sdh_enable_request:00000074 $d
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:279    .text.nrf_sdh_disable_request:00000000 $t
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:286    .text.nrf_sdh_disable_request:00000000 nrf_sdh_disable_request
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:332    .text.nrf_sdh_disable_request:0000005c $d
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:336    .text.nrf_sdh_request_continue:00000000 $t
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:343    .text.nrf_sdh_request_continue:00000000 nrf_sdh_request_continue
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:365    .text.nrf_sdh_request_continue:00000020 $d
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:369    .text.nrf_sdh_is_enabled:00000000 $t
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:376    .text.nrf_sdh_is_enabled:00000000 nrf_sdh_is_enabled
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:386    .text.nrf_sdh_is_enabled:00000008 $d
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:389    .text.nrf_sdh_suspend:00000000 $t
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:396    .text.nrf_sdh_suspend:00000000 nrf_sdh_suspend
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:414    .text.nrf_sdh_suspend:00000018 $d
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:418    .text.nrf_sdh_resume:00000000 $t
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:425    .text.nrf_sdh_resume:00000000 nrf_sdh_resume
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:449    .text.nrf_sdh_resume:00000028 $d
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:454    .text.nrf_sdh_is_suspended:00000000 $t
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:461    .text.nrf_sdh_is_suspended:00000000 nrf_sdh_is_suspended
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:479    .text.nrf_sdh_is_suspended:00000014 $d
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:483    .text.nrf_sdh_evts_poll:00000000 $t
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:490    .text.nrf_sdh_evts_poll:00000000 nrf_sdh_evts_poll
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:516    .text.nrf_sdh_evts_poll:00000028 $d
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:519    .text.SWI2_EGU2_IRQHandler:00000000 $t
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:526    .text.SWI2_EGU2_IRQHandler:00000000 SWI2_EGU2_IRQHandler
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:534    .rodata:00000000 $d
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:545    .bss.m_nrf_sdh_continue:00000000 m_nrf_sdh_continue
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:546    .bss.m_nrf_sdh_continue:00000000 $d
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:551    .bss.m_nrf_sdh_enabled:00000000 m_nrf_sdh_enabled
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:552    .bss.m_nrf_sdh_enabled:00000000 $d
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:557    .bss.m_nrf_sdh_suspended:00000000 m_nrf_sdh_suspended
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:558    .bss.m_nrf_sdh_suspended:00000000 $d
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:560    .rodata.sdh_req_observers:00000000 $d
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:564    .rodata.sdh_req_observers:00000000 sdh_req_observers
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:569    .rodata.sdh_stack_observers:00000000 $d
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:573    .rodata.sdh_stack_observers:00000000 sdh_stack_observers
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:578    .rodata.sdh_state_observers:00000000 $d
-C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s:582    .rodata.sdh_state_observers:00000000 sdh_state_observers
-ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccrokCLM.s 			page 13
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:16     .text.sd_softdevice_enable:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:22     .text.sd_softdevice_enable:00000000 sd_softdevice_enable
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:35     .text.sd_softdevice_disable:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:41     .text.sd_softdevice_disable:00000000 sd_softdevice_disable
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:54     .text.softdevice_evt_irq_disable:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:60     .text.softdevice_evt_irq_disable:00000000 softdevice_evt_irq_disable
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:80     .text.softdevice_evt_irq_disable:00000020 $d
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:84     .text.sdh_request_observer_notify:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:90     .text.sdh_request_observer_notify:00000000 sdh_request_observer_notify
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:126    .text.sdh_request_observer_notify:00000038 $d
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:129    .text.sdh_state_observer_notify:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:135    .text.sdh_state_observer_notify:00000000 sdh_state_observer_notify
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:163    .text.sdh_state_observer_notify:0000002c $d
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:166    .text.softdevices_evt_irq_enable:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:172    .text.softdevices_evt_irq_enable:00000000 softdevices_evt_irq_enable
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:204    .text.softdevices_evt_irq_enable:0000003c $d
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:208    .text.nrf_sdh_enable_request:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:215    .text.nrf_sdh_enable_request:00000000 nrf_sdh_enable_request
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:272    .text.nrf_sdh_enable_request:00000074 $d
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:279    .text.nrf_sdh_disable_request:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:286    .text.nrf_sdh_disable_request:00000000 nrf_sdh_disable_request
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:332    .text.nrf_sdh_disable_request:0000005c $d
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:336    .text.nrf_sdh_request_continue:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:343    .text.nrf_sdh_request_continue:00000000 nrf_sdh_request_continue
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:365    .text.nrf_sdh_request_continue:00000020 $d
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:369    .text.nrf_sdh_is_enabled:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:376    .text.nrf_sdh_is_enabled:00000000 nrf_sdh_is_enabled
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:386    .text.nrf_sdh_is_enabled:00000008 $d
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:389    .text.nrf_sdh_suspend:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:396    .text.nrf_sdh_suspend:00000000 nrf_sdh_suspend
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:414    .text.nrf_sdh_suspend:00000018 $d
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:418    .text.nrf_sdh_resume:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:425    .text.nrf_sdh_resume:00000000 nrf_sdh_resume
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:449    .text.nrf_sdh_resume:00000028 $d
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:454    .text.nrf_sdh_is_suspended:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:461    .text.nrf_sdh_is_suspended:00000000 nrf_sdh_is_suspended
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:479    .text.nrf_sdh_is_suspended:00000014 $d
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:483    .text.nrf_sdh_evts_poll:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:490    .text.nrf_sdh_evts_poll:00000000 nrf_sdh_evts_poll
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:516    .text.nrf_sdh_evts_poll:00000028 $d
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:519    .text.SWI2_EGU2_IRQHandler:00000000 $t
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:526    .text.SWI2_EGU2_IRQHandler:00000000 SWI2_EGU2_IRQHandler
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:534    .rodata:00000000 $d
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:545    .bss.m_nrf_sdh_continue:00000000 m_nrf_sdh_continue
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:546    .bss.m_nrf_sdh_continue:00000000 $d
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:551    .bss.m_nrf_sdh_enabled:00000000 m_nrf_sdh_enabled
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:552    .bss.m_nrf_sdh_enabled:00000000 $d
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:557    .bss.m_nrf_sdh_suspended:00000000 m_nrf_sdh_suspended
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:558    .bss.m_nrf_sdh_suspended:00000000 $d
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:560    .rodata.sdh_req_observers:00000000 $d
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:564    .rodata.sdh_req_observers:00000000 sdh_req_observers
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:569    .rodata.sdh_stack_observers:00000000 $d
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:573    .rodata.sdh_stack_observers:00000000 sdh_stack_observers
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:578    .rodata.sdh_state_observers:00000000 $d
+C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s:582    .rodata.sdh_state_observers:00000000 sdh_state_observers
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccLBJQji.s 			page 13
 
 
 

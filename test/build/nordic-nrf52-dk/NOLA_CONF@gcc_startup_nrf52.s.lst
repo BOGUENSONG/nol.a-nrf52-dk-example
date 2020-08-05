@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Stark\AppData\Local\Temp\cc7josLL.s 			page 1
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccG02e5D.s 			page 1
 
 
    1              	# 1 "c:\\users\\stark\\.atom\\nola-sdk\\nordic-nrf52-dk\\nola_conf@gcc_startup_nrf52.s"
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Stark\AppData\Local\Temp\cc7josLL.s 			page 1
   47      00000000 
   48              	    .size __StackLimit, . - __StackLimit
   49              	__StackTop:
-ARM GAS  C:\Users\Stark\AppData\Local\Temp\cc7josLL.s 			page 2
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccG02e5D.s 			page 2
 
 
   50              	    .size __StackTop, . - __StackTop
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Stark\AppData\Local\Temp\cc7josLL.s 			page 1
  100 005c 00000000 	    .long   SAADC_IRQHandler
  101 0060 00000000 	    .long   TIMER0_IRQHandler
  102 0064 00000000 	    .long   TIMER1_IRQHandler
-ARM GAS  C:\Users\Stark\AppData\Local\Temp\cc7josLL.s 			page 3
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccG02e5D.s 			page 3
 
 
  103 0068 00000000 	    .long   TIMER2_IRQHandler
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Stark\AppData\Local\Temp\cc7josLL.s 			page 1
  157 0140 00000000 	    .long   0                           /*Reserved */
  158 0144 00000000 	    .long   0                           /*Reserved */
  159 0148 00000000 	    .long   0                           /*Reserved */
-ARM GAS  C:\Users\Stark\AppData\Local\Temp\cc7josLL.s 			page 4
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccG02e5D.s 			page 4
 
 
  160 014c 00000000 	    .long   0                           /*Reserved */
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Stark\AppData\Local\Temp\cc7josLL.s 			page 1
  214              	    .align 1
  215              	    .globl Reset_Handler
  216              	    .type Reset_Handler, %function
-ARM GAS  C:\Users\Stark\AppData\Local\Temp\cc7josLL.s 			page 5
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccG02e5D.s 			page 5
 
 
  217              	Reset_Handler:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Stark\AppData\Local\Temp\cc7josLL.s 			page 1
  271              	/* Execute SystemInit function. */
  272 0012 FFF7FEFF 	    bl SystemInit
  273              	
-ARM GAS  C:\Users\Stark\AppData\Local\Temp\cc7josLL.s 			page 6
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccG02e5D.s 			page 6
 
 
  274              	/* Call _start function provided by libraries.
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Stark\AppData\Local\Temp\cc7josLL.s 			page 1
  325              	    .weak   SVC_Handler
  326              	    .type   SVC_Handler, %function
  327              	SVC_Handler:
-ARM GAS  C:\Users\Stark\AppData\Local\Temp\cc7josLL.s 			page 7
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccG02e5D.s 			page 7
 
 
  328 0032 FEE7     	    b       .
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Stark\AppData\Local\Temp\cc7josLL.s 			page 1
  371              	>  .weak NFCT_IRQHandler
  371              	>  .set NFCT_IRQHandler,Default_Handler
  372              	    IRQ  GPIOTE_IRQHandler
-ARM GAS  C:\Users\Stark\AppData\Local\Temp\cc7josLL.s 			page 8
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccG02e5D.s 			page 8
 
 
  372              	>  .weak GPIOTE_IRQHandler
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Stark\AppData\Local\Temp\cc7josLL.s 			page 1
  390              	>  .weak SWI4_EGU4_IRQHandler
  390              	>  .set SWI4_EGU4_IRQHandler,Default_Handler
  391              	    IRQ  SWI5_EGU5_IRQHandler
-ARM GAS  C:\Users\Stark\AppData\Local\Temp\cc7josLL.s 			page 9
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccG02e5D.s 			page 9
 
 
  391              	>  .weak SWI5_EGU5_IRQHandler
@@ -518,7 +518,7 @@ ARM GAS  C:\Users\Stark\AppData\Local\Temp\cc7josLL.s 			page 1
  402              	>  .set FPU_IRQHandler,Default_Handler
  403              	
  404              	  .end
-ARM GAS  C:\Users\Stark\AppData\Local\Temp\cc7josLL.s 			page 10
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccG02e5D.s 			page 10
 
 
 DEFINED SYMBOLS
@@ -527,9 +527,9 @@ C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf5
 C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:49     .stack:00004000 __StackTop
 C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:46     .stack:00000000 __StackLimit
 C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:53     .heap:00000000 $d
-C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:57     *ABS*:00004000 Heap_Size
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:57     *ABS*:00006000 Heap_Size
 C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:63     .heap:00000000 __HeapBase
-C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:68     .heap:00004000 __HeapLimit
+C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:68     .heap:00006000 __HeapLimit
 C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:72     .isr_vector:00000000 $d
 C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:74     .isr_vector:00000000 __isr_vector
 C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:217    .text:00000000 Reset_Handler
@@ -578,7 +578,7 @@ C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf5
 C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:357    .text:0000003a SPIM2_SPIS2_SPI2_IRQHandler
 C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:357    .text:0000003a RTC2_IRQHandler
 C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:357    .text:0000003a I2S_IRQHandler
-ARM GAS  C:\Users\Stark\AppData\Local\Temp\cc7josLL.s 			page 11
+ARM GAS  C:\Users\Stark\AppData\Local\Temp\ccG02e5D.s 			page 11
 
 
 C:/Users/Stark/.atom/nola-sdk/make/../nordic-nrf52-dk/NOLA_CONF@gcc_startup_nrf52.s:357    .text:0000003a FPU_IRQHandler
